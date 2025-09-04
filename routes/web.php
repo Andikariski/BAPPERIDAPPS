@@ -9,6 +9,9 @@ use Livewire\Volt\Volt;
 Route::get('/', function () {
     return view('homepage');
 })->name('home');
+Route::get('/blog', \App\Livewire\Blog\Index::class)->name('blog.index');
+Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -22,4 +25,4 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
