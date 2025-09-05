@@ -1,160 +1,125 @@
-{{-- Tag Head --}}
-@include('partials.homepage.head')
-{{-- end Tag Head --}}
-
-  <body class="index-page">
-    
-    {{-- Tag Header/Navbar --}}
-    @include('partials.homepage.header')
-    {{-- end Tag Header --}}
-
-    <main class="main">
-      <!-- Hero Section -->
-      <section id="hero" class="hero section">
-        <img
-          src="assets/img/hero-bg-abstract.jpg"
-          alt=""
-          data-aos="fade-in"
-          class="" />
+<x-layouts.public>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+        <img src="assets/img/hero-bg-abstract.jpg" alt="" data-aos="fade-in" class="" />
 
         <div class="container">
-          <div class="row justify-content-center" data-aos="zoom-out">
-            <div class="col-xl-7 col-lg-9 text-center">
-              <h2>BADAN PERENCANAAN PEMBANGUNAN RISET DAN INOVASI DAERAH</h2>
-              <p>PROVINSI PAPUA SELATAN</p>
-            </div>
-          </div>
-          <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
-            <a href="#about" class="btn-get-started">Get Started</a>
-          </div>
-
-          <div class="row gy-4 mt-5">
-            <div
-              class="col-md-6 col-lg-3"
-              data-aos="zoom-out"
-              data-aos-delay="100">
-              <div class="icon-box">
-                <div class="icon">
-                  <i class="bi bi-journal-bookmark-fill"></i>
+            <div class="row justify-content-center" data-aos="zoom-out">
+                <div class="col-xl-7 col-lg-9 text-center">
+                    <h2>BADAN PERENCANAAN PEMBANGUNAN RISET DAN INOVASI DAERAH</h2>
+                    <p>PROVINSI PAPUA SELATAN</p>
                 </div>
-                <h4 class="title"><a href="">RTRW</a></h4>
-                <p class="description">Rencana Tata Ruang Wilayah</p>
-              </div>
             </div>
-            <!--End Icon Box -->
+            <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
+                <a href="#about" class="btn-get-started">Get Started</a>
+            </div>
 
-            <div
-              class="col-md-6 col-lg-3"
-              data-aos="zoom-out"
-              data-aos-delay="200">
-              <div class="icon-box">
-                <div class="icon">
-                  <i class="bi bi-journal-bookmark-fill"></i>
+            <div class="row gy-4 mt-5">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+                    <div class="icon-box">
+                        <div class="icon">
+                            <i class="bi bi-journal-bookmark-fill"></i>
+                        </div>
+                        <h4 class="title"><a href="">RTRW</a></h4>
+                        <p class="description">Rencana Tata Ruang Wilayah</p>
+                    </div>
                 </div>
-                <h4 class="title"><a href="">RKPD</a></h4>
-                <p class="description">Rencana Kerja Pemerintah Daerah</p>
-              </div>
-            </div>
-            <!--End Icon Box -->
+                <!--End Icon Box -->
 
-            <div
-              class="col-md-6 col-lg-3"
-              data-aos="zoom-out"
-              data-aos-delay="300">
-              <div class="icon-box">
-                <div class="icon">
-                  <i class="bi bi-journal-bookmark-fill"></i>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="200">
+                    <div class="icon-box">
+                        <div class="icon">
+                            <i class="bi bi-journal-bookmark-fill"></i>
+                        </div>
+                        <h4 class="title"><a href="">RKPD</a></h4>
+                        <p class="description">Rencana Kerja Pemerintah Daerah</p>
+                    </div>
                 </div>
-                <h4 class="title"><a href="">RPJMD</a></h4>
-                <p class="description">
-                  Rencana Pembangunan Jangka Menengah Daerah
-                </p>
-              </div>
-            </div>
-            <!--End Icon Box -->
+                <!--End Icon Box -->
 
-            <div
-              class="col-md-6 col-lg-3"
-              data-aos="zoom-out"
-              data-aos-delay="400">
-              <div class="icon-box">
-                <div class="icon">
-                  <i class="bi bi-journal-bookmark-fill"></i>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="300">
+                    <div class="icon-box">
+                        <div class="icon">
+                            <i class="bi bi-journal-bookmark-fill"></i>
+                        </div>
+                        <h4 class="title"><a href="">RPJMD</a></h4>
+                        <p class="description">
+                            Rencana Pembangunan Jangka Menengah Daerah
+                        </p>
+                    </div>
                 </div>
-                <h4 class="title"><a href="">RPJPD</a></h4>
-                <p class="description">
-                  Rencana Pembangunan Jangka Panjang Daerah
-                </p>
-              </div>
+                <!--End Icon Box -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="400">
+                    <div class="icon-box">
+                        <div class="icon">
+                            <i class="bi bi-journal-bookmark-fill"></i>
+                        </div>
+                        <h4 class="title"><a href="">RPJPD</a></h4>
+                        <p class="description">
+                            Rencana Pembangunan Jangka Panjang Daerah
+                        </p>
+                    </div>
+                </div>
+                <!--End Icon Box -->
             </div>
-            <!--End Icon Box -->
-          </div>
         </div>
-      </section>
-      <!-- /Hero Section -->
+    </section>
+    <!-- /Hero Section -->
 
-      <!-- About Section -->
-      <section id="about" class="about section">
+    <!-- About Section -->
+    <section id="about" class="about section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Sejarah Bapperida PPS<br /></h2>
-          <p>
-            Sejarah Singkat Tentang Berdirinya Bapperida Provinsi Papua Selatan
-          </p>
+            <h2>Sejarah Bapperida PPS<br /></h2>
+            <p>
+                Sejarah Singkat Tentang Berdirinya Bapperida Provinsi Papua Selatan
+            </p>
         </div>
         <!-- End Section Title -->
 
         <div class="container">
-          <div class="row gy-4">
-            <div
-              class="col-lg-6 content"
-              data-aos="fade-up"
-              data-aos-delay="100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <ul>
-                <li>
-                  <i class="bi bi-check2-circle"></i>
-                  <span
-                    >Ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check2-circle"></i>
-                  <span
-                    >Duis aute irure dolor in reprehenderit in voluptate
-                    velit.</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check2-circle"></i>
-                  <span>Ullamco laboris nisi ut aliquip ex ea commodo</span>
-                </li>
-              </ul>
-            </div>
+            <div class="row gy-4">
+                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Duis aute irure dolor in reprehenderit in voluptate
+                                velit.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Ullamco laboris nisi ut aliquip ex ea commodo</span>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
-              </p>
-              <a href="#" class="read-more"
-                ><span>Read More</span><i class="bi bi-arrow-right"></i
-              ></a>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <p>
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                        aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                    <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-      <!-- /About Section -->
+    </section>
+    <!-- /About Section -->
 
-      <!-- Stats Section -->
-      <!-- <section id="stats" class="stats section light-background">
+    <!-- Stats Section -->
+    <!-- <section id="stats" class="stats section light-background">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
           <div class="col-lg-3 col-md-6">
@@ -188,121 +153,96 @@
       </div>
     </section> -->
 
-      <!-- About Alt Section -->
-      <section id="about-alt" class="about-alt section">
+    <!-- About Alt Section -->
+    <section id="about-alt" class="about-alt section">
         <div class="container">
-          <div class="row align-items-center">
-            <!-- Foto -->
-            <div
-              class="col-lg-4 col-md-5 text-center"
-              data-aos="fade-up"
-              data-aos-delay="100">
-              <img
-                src="assets/img/pegawai/01 Ulmi.png"
-                class=""
-                alt="Foto Pimpinan"
-                style="max-width: 75%; transform: scaleX(-1)" />
-            </div>
+            <div class="row align-items-center">
+                <!-- Foto -->
+                <div class="col-lg-4 col-md-5 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/img/pegawai/01 Ulmi.png" class="" alt="Foto Pimpinan"
+                        style="max-width: 75%; transform: scaleX(-1)" />
+                </div>
 
-            <!-- Kata Pengantar -->
-            <div
-              class="col-lg-8 col-md-7 content"
-              data-aos="fade-up"
-              data-aos-delay="200">
-              <h3 class="fw-bold mb-3">Kata Pengantar</h3>
-              <ul class="list-unstyled">
-                <li><span>Assalamualaikum Warahmatullahi Wbarakatuh,</span></li>
-                <li><span>Salam sejahtera bagi kita semua,</span></li>
-                <li>
-                  <span
-                    >Shalom, Om Swastyastu, Namo Buddhaya, Salam
-                    Kebajikan.</span
-                  >
-                </li>
-              </ul>
-              <p>
-                Puji syukur kami panjatkan kehadirat Tuhan Yang Maha Esa atas
-                rahmat dan karunia-Nya, sehingga kami dapat menyelesaikan
-                pembuatan Website Bapperida ini. Website ini hadir sebagai wujud
-                komitmen kami untuk menyediakan informasi yang akurat dan
-                terpercaya.<br /><br />
-                Website Bapperida ini diharapkan dapat menjadi informasi
-                terdepan dan sumber referensi yang mudah diakses bagi seluruh
-                Masyarakat. Kami menyadari bahwa keterbatasan akses informasi
-                yang relevan, Oleh karena itu, kami merancang website ini dengan
-                tampilan yang ramah pengguna, fitur interaktif dan konten yang
-                dikelola oleh para ahli di bidangnya. Kami mengucapkan terima
-                kasih kepada semua pihak yang telah mendukung proses
-                pengembangan website ini. Masukan dan saran yang membangun
-                sangat kami harapkan demi kemajuan dan penyempurnaan Website
-                Bapperida di masa mendatang. <br /><br />
-                <strong
-                  >Semoga website ini dapat memberikan manfaat sebesar-besarnya
-                  bagi kita semua.</strong
-                ><br />
-                <em>Hormat kami,</em>
-              </p>
+                <!-- Kata Pengantar -->
+                <div class="col-lg-8 col-md-7 content" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="fw-bold mb-3">Kata Pengantar</h3>
+                    <ul class="list-unstyled">
+                        <li><span>Assalamualaikum Warahmatullahi Wbarakatuh,</span></li>
+                        <li><span>Salam sejahtera bagi kita semua,</span></li>
+                        <li>
+                            <span>Shalom, Om Swastyastu, Namo Buddhaya, Salam
+                                Kebajikan.</span>
+                        </li>
+                    </ul>
+                    <p>
+                        Puji syukur kami panjatkan kehadirat Tuhan Yang Maha Esa atas
+                        rahmat dan karunia-Nya, sehingga kami dapat menyelesaikan
+                        pembuatan Website Bapperida ini. Website ini hadir sebagai wujud
+                        komitmen kami untuk menyediakan informasi yang akurat dan
+                        terpercaya.<br /><br />
+                        Website Bapperida ini diharapkan dapat menjadi informasi
+                        terdepan dan sumber referensi yang mudah diakses bagi seluruh
+                        Masyarakat. Kami menyadari bahwa keterbatasan akses informasi
+                        yang relevan, Oleh karena itu, kami merancang website ini dengan
+                        tampilan yang ramah pengguna, fitur interaktif dan konten yang
+                        dikelola oleh para ahli di bidangnya. Kami mengucapkan terima
+                        kasih kepada semua pihak yang telah mendukung proses
+                        pengembangan website ini. Masukan dan saran yang membangun
+                        sangat kami harapkan demi kemajuan dan penyempurnaan Website
+                        Bapperida di masa mendatang. <br /><br />
+                        <strong>Semoga website ini dapat memberikan manfaat sebesar-besarnya
+                            bagi kita semua.</strong><br />
+                        <em>Hormat kami,</em>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-      <!-- /About Alt Section -->
+    </section>
+    <!-- /About Alt Section -->
 
-      <!-- Clients Section -->
-      <section id="clients" class="clients section light-background">
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h3>MITRA BAPPERIDA PPS</h3>
-          <p>
-            Kementrian atau Lembaga yang menjadi acuan dalam menjalankan tugas
-            dan fungsi Bapperida
-          </p>
+            <h3>MITRA BAPPERIDA PPS</h3>
+            <p>
+                Kementrian atau Lembaga yang menjadi acuan dalam menjalankan tugas
+                dan fungsi Bapperida
+            </p>
         </div>
         <!-- End Section Title -->
         <div class="container" data-aos="fade-up">
-          <div class="row gy-4">
-            <!-- Mitra Kepengurusan -->
-            <div class="col-xl-3 col-md-3 col-6 client-logo">
-              <!-- <img src="assets/img/clients/client-1.png" class="img-fluid" alt=""> -->
-              <img
-                src="assets/img/mitrabapperida/bappenas.png"
-                class="img-fluid"
-                alt="" />
-            </div>
-            <!-- End Client Item -->
+            <div class="row gy-4">
+                <!-- Mitra Kepengurusan -->
+                <div class="col-xl-3 col-md-3 col-6 client-logo">
+                    <!-- <img src="assets/img/clients/client-1.png" class="img-fluid" alt=""> -->
+                    <img src="assets/img/mitrabapperida/bappenas.png" class="img-fluid" alt="" />
+                </div>
+                <!-- End Client Item -->
 
-            <div class="col-xl-3 col-md-3 col-6 client-logo">
-              <!-- <img src="assets/img/clients/client-2.png" class="img-fluid" alt=""> -->
-              <img
-                src="assets/img/mitrabapperida/kemenkeu1.png"
-                class="img-fluid"
-                alt="" />
-            </div>
-            <!-- End Client Item -->
+                <div class="col-xl-3 col-md-3 col-6 client-logo">
+                    <!-- <img src="assets/img/clients/client-2.png" class="img-fluid" alt=""> -->
+                    <img src="assets/img/mitrabapperida/kemenkeu1.png" class="img-fluid" alt="" />
+                </div>
+                <!-- End Client Item -->
 
-            <div class="col-xl-3 col-md-3 col-6 client-logo">
-              <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt=""> -->
-              <img
-                src="assets/img/mitrabapperida/kemendagri1.png"
-                class="img-fluid"
-                alt="" />
-            </div>
-            <!-- End Client Item -->
+                <div class="col-xl-3 col-md-3 col-6 client-logo">
+                    <!-- <img src="assets/img/clients/client-3.png" class="img-fluid" alt=""> -->
+                    <img src="assets/img/mitrabapperida/kemendagri1.png" class="img-fluid" alt="" />
+                </div>
+                <!-- End Client Item -->
 
-            <div class="col-xl-3 col-md-3 col-6 client-logo">
-              <!-- <img src="assets/img/clients/client-4.png" class="img-fluid" alt=""> -->
-              <img
-                src="assets/img/mitrabapperida/brin.png"
-                class="img-fluid"
-                alt="" />
+                <div class="col-xl-3 col-md-3 col-6 client-logo">
+                    <!-- <img src="assets/img/clients/client-4.png" class="img-fluid" alt=""> -->
+                    <img src="assets/img/mitrabapperida/brin.png" class="img-fluid" alt="" />
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-      <!-- /Clients Section -->
+    </section>
+    <!-- /Clients Section -->
 
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="testimonials section">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
         <!-- Section Title -->
         <!-- <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
@@ -408,12 +348,12 @@
         </div>
 
       </div> -->
-      </section>
-      <!-- /Testimonials Section -->
+    </section>
+    <!-- /Testimonials Section -->
 
-      <!-- Services Section -->
-      <!-- <section id="services" class="services section light-background">
-        
+    <!-- Services Section -->
+    <!-- <section id="services" class="services section light-background">
+
         <div class="container section-title" data-aos="fade-up">
           <h2>Services</h2>
           <p>
@@ -421,7 +361,7 @@
             consectetur velit
           </p>
         </div>
-       
+
 
         <div class="container">
           <div class="row gy-4">
@@ -454,7 +394,7 @@
                 </p>
               </div>
             </div>
-           
+
             <div
               class="col-lg-4 col-md-6"
               data-aos="fade-up"
@@ -483,7 +423,7 @@
                 </p>
               </div>
             </div>
-           
+
 
             <div
               class="col-lg-4 col-md-6"
@@ -513,7 +453,7 @@
                 </p>
               </div>
             </div>
-           
+
 
             <div
               class="col-lg-4 col-md-6"
@@ -544,7 +484,7 @@
                 <a href="service-details.html" class="stretched-link"></a>
               </div>
             </div>
-            
+
 
             <div
               class="col-lg-4 col-md-6"
@@ -575,7 +515,7 @@
                 <a href="service-details.html" class="stretched-link"></a>
               </div>
             </div>
-            
+
 
             <div
               class="col-lg-4 col-md-6"
@@ -606,421 +546,283 @@
                 <a href="service-details.html" class="stretched-link"></a>
               </div>
             </div>
-           
+
           </div>
         </div>
       </section> -->
-      <!-- /Services Section -->
+    <!-- /Services Section -->
 
-      <!-- Call To Action Section -->
-      <section
-        id="call-to-action"
-        class="call-to-action section accent-background">
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section accent-background">
         <div class="container">
-          <div
-            class="row justify-content-center"
-            data-aos="zoom-in"
-            data-aos-delay="100">
-            <div class="col-xl-10">
-              <div class="text-center">
-                <h3>Call To Action</h3>
-                <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident, sunt in culpa qui officia
-                  deserunt mollit anim id est laborum.
-                </p>
-                <a class="cta-btn" href="#">Call To Action</a>
-              </div>
+            <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-xl-10">
+                    <div class="text-center">
+                        <h3>Call To Action</h3>
+                        <p>
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                            occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                        </p>
+                        <a class="cta-btn" href="#">Call To Action</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-      <!-- /Call To Action Section -->
+    </section>
+    <!-- /Call To Action Section -->
 
-      <!-- Portfolio Section -->
-      <section id="portfolio" class="portfolio section">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Galeri</h2>
-          <p>
-            Berisi tentang semua kegiatan yang di adakan oleh Bapperida Provinsi
-            Papua Selatan
-          </p>
+            <h2>Galeri</h2>
+            <p>
+                Berisi tentang semua kegiatan yang di adakan oleh Bapperida Provinsi
+                Papua Selatan
+            </p>
         </div>
         <!-- End Section Title -->
 
         <div class="container">
-          <div
-            class="isotope-layout"
-            data-default-filter="*"
-            data-layout="masonry"
-            data-sort="original-order">
-            <ul
-              class="portfolio-filters isotope-filters"
-              data-aos="fade-up"
-              data-aos-delay="100">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-product">Card</li>
-              <li data-filter=".filter-branding">Web</li>
-            </ul>
+            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-app">App</li>
+                    <li data-filter=".filter-product">Card</li>
+                    <li data-filter=".filter-branding">Web</li>
+                </ul>
 
-            <div
-              class="row gy-4 isotope-container"
-              data-aos="fade-up"
-              data-aos-delay="200">
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg"
-                    title="App 1"
-                    data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
+                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>App 1</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1"
+                                data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg"
-                    title="Product 1"
-                    data-gallery="portfolio-gallery-product"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>Product 1</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1"
+                                data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg"
-                    title="Branding 1"
-                    data-gallery="portfolio-gallery-branding"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>Branding 1</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1"
+                                data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg"
-                    title="App 2"
-                    data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>App 2</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2"
+                                data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg"
-                    title="Product 2"
-                    data-gallery="portfolio-gallery-product"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>Product 2</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2"
+                                data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg"
-                    title="Branding 2"
-                    data-gallery="portfolio-gallery-branding"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>Branding 2</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2"
+                                data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg"
-                    title="App 3"
-                    data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>App 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3"
+                                data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
+                    <!-- End Portfolio Item -->
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg"
-                    title="Product 3"
-                    data-gallery="portfolio-gallery-product"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
-                </div>
-              </div>
-              <!-- End Portfolio Item -->
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>Product 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
+                                data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
+                    <!-- End Portfolio Item -->
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img
-                  src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg"
-                  class="img-fluid"
-                  alt="" />
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a
-                    href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg"
-                    title="Branding 2"
-                    data-gallery="portfolio-gallery-branding"
-                    class="glightbox preview-link"
-                    ><i class="bi bi-zoom-in"></i
-                  ></a>
-                  <a
-                    href="portfolio-details.html"
-                    title="More Details"
-                    class="details-link"
-                    ><i class="bi bi-link-45deg"></i
-                  ></a>
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid"
+                            alt="" />
+                        <div class="portfolio-info">
+                            <h4>Branding 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2"
+                                data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                    class="bi bi-zoom-in"></i></a>
+                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                    class="bi bi-link-45deg"></i></a>
+                        </div>
+                    </div>
+                    <!-- End Portfolio Item -->
                 </div>
-              </div>
-              <!-- End Portfolio Item -->
+                <!-- End Portfolio Container -->
             </div>
-            <!-- End Portfolio Container -->
-          </div>
         </div>
-      </section>
-      <!-- /Portfolio Section -->
+    </section>
+    <!-- /Portfolio Section -->
 
-      <!-- Team Section -->
-      <section id="team" class="team section light-background">
+    <!-- Team Section -->
+    <section id="team" class="team section light-background">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Pegawai</h2>
-          <p>Pegawai Bapperida Provinsi Papua Selatan</p>
+            <h2>Pegawai</h2>
+            <p>Pegawai Bapperida Provinsi Papua Selatan</p>
         </div>
         <!-- End Section Title -->
 
         <div class="container">
-          <div class="row gy-4">
-            <div
-              class="col-lg-3 col-md-6 d-flex align-items-stretch"
-              data-aos="fade-up"
-              data-aos-delay="100">
-              <div class="team-member">
-                <div class="member-img">
-                  <img
-                    src="assets/img/team/team-1.jpg"
-                    class="img-fluid"
-                    alt="" />
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="member-info">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
-                </div>
-              </div>
-            </div>
-            <!-- End Team Member -->
+                <!-- End Team Member -->
 
-            <div
-              class="col-lg-3 col-md-6 d-flex align-items-stretch"
-              data-aos="fade-up"
-              data-aos-delay="200">
-              <div class="team-member">
-                <div class="member-img">
-                  <img
-                    src="assets/img/team/team-2.jpg"
-                    class="img-fluid"
-                    alt="" />
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="" />
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="member-info">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
-                </div>
-              </div>
-            </div>
-            <!-- End Team Member -->
+                <!-- End Team Member -->
 
-            <div
-              class="col-lg-3 col-md-6 d-flex align-items-stretch"
-              data-aos="fade-up"
-              data-aos-delay="300">
-              <div class="team-member">
-                <div class="member-img">
-                  <img
-                    src="assets/img/team/team-3.jpg"
-                    class="img-fluid"
-                    alt="" />
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="" />
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="member-info">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
-                </div>
-              </div>
-            </div>
-            <!-- End Team Member -->
+                <!-- End Team Member -->
 
-            <div
-              class="col-lg-3 col-md-6 d-flex align-items-stretch"
-              data-aos="fade-up"
-              data-aos-delay="400">
-              <div class="team-member">
-                <div class="member-img">
-                  <img
-                    src="assets/img/team/team-4.jpg"
-                    class="img-fluid"
-                    alt="" />
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="" />
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter-x"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Amanda Jepson</h4>
+                            <span>Accountant</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="member-info">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
-                </div>
-              </div>
+                <!-- End Team Member -->
             </div>
-            <!-- End Team Member -->
-          </div>
         </div>
-      </section>
-      <!-- /Team Section -->
+    </section>
+    <!-- /Team Section -->
 
-      <!-- Pricing Section -->
-      <!-- <section id="pricing" class="pricing section">
-      
+    <!-- Pricing Section -->
+    <!-- <section id="pricing" class="pricing section">
+
         <div class="container section-title" data-aos="fade-up">
           <h2>Pricing</h2>
           <p>
@@ -1028,7 +830,6 @@
             consectetur velit
           </p>
         </div>
-       
 
         <div class="container">
           <div class="row g-4 g-lg-0">
@@ -1063,7 +864,7 @@
                 </div>
               </div>
             </div>
-           
+
 
             <div
               class="col-lg-4 featured"
@@ -1099,7 +900,7 @@
                 </div>
               </div>
             </div>
-            
+
 
             <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
               <div class="pricing-item">
@@ -1132,15 +933,15 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </section> -->
-      <!-- /Pricing Section -->
+    <!-- /Pricing Section -->
 
-      <!-- Faq Section -->
-      <!-- <section id="faq" class="faq section light-background">
-        
+    <!-- Faq Section -->
+    <!-- <section id="faq" class="faq section light-background">
+
         <div class="container section-title" data-aos="fade-up">
           <h2>Frequently Asked Questions</h2>
           <p>
@@ -1148,7 +949,7 @@
             consectetur velit
           </p>
         </div>
-       
+
 
         <div class="container">
           <div class="row justify-content-center">
@@ -1166,7 +967,7 @@
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                
+
 
                 <div class="faq-item">
                   <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
@@ -1182,7 +983,7 @@
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                
+
 
                 <div class="faq-item">
                   <h3>
@@ -1200,7 +1001,7 @@
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                
+
 
                 <div class="faq-item">
                   <h3>
@@ -1218,7 +1019,7 @@
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                
+
 
                 <div class="faq-item">
                   <h3>
@@ -1235,7 +1036,7 @@
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-                
+
 
                 <div class="faq-item">
                   <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
@@ -1248,169 +1049,113 @@
                   </div>
                   <i class="faq-toggle bi bi-chevron-right"></i>
                 </div>
-               
+
               </div>
             </div>
-            
+
           </div>
         </div>
       </section> -->
-      <!-- /Faq Section -->
+    <!-- /Faq Section -->
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Kontak</h2>
-          <p>
-            Detail kontak dan alamat pada website adalah resmi milik Bapperida
-            Provinsi Papua Selatan
-          </p>
+            <h2>Kontak</h2>
+            <p>
+                Detail kontak dan alamat pada website adalah resmi milik Bapperida
+                Provinsi Papua Selatan
+            </p>
         </div>
         <!-- End Section Title -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-            <iframe
-              style="border: 0; width: 100%; height: 270px"
-              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d246.636446535281!2d140.39097595967576!3d-8.481565903536248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBapperida%20papua%20selatan!5e0!3m2!1sid!2sid!4v1756768299034!5m2!1sid!2sid"
-              frameborder="0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <!-- End Google Maps -->
-
-          <div class="row gy-4">
-            <div class="col-lg-4">
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="300">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Alamat</h3>
-                  <p>
-                    Jl Trikora, Kec. Merauke, Kabupaten Merauke, Papua Selatan
-                    99614
-                  </p>
-                </div>
-              </div>
-              <!-- End Info Item -->
-
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="400">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Kontak</h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div>
-              <!-- End Info Item -->
-
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="500">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email</h3>
-                  <p>bapperida.pps@gmail.com</p>
-                </div>
-              </div>
-              <!-- End Info Item -->
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+                <iframe style="border: 0; width: 100%; height: 270px"
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d246.636446535281!2d140.39097595967576!3d-8.481565903536248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBapperida%20papua%20selatan!5e0!3m2!1sid!2sid!4v1756768299034!5m2!1sid!2sid"
+                    frameborder="0" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            <!-- End Google Maps -->
 
-            <div class="col-lg-8">
-              <form
-                action="forms/contact.php"
-                method="post"
-                class="php-email-form"
-                data-aos="fade-up"
-                data-aos-delay="200">
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control"
-                      placeholder="Your Name"
-                      required="" />
-                  </div>
-
-                  <div class="col-md-6">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      placeholder="Your Email"
-                      required="" />
-                  </div>
-
-                  <div class="col-md-12">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="subject"
-                      placeholder="Subject"
-                      required="" />
-                  </div>
-
-                  <div class="col-md-12">
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      rows="6"
-                      placeholder="Message"
-                      required=""></textarea>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">
-                      Your message has been sent. Thank you!
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bi bi-geo-alt flex-shrink-0"></i>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>
+                                Jl Trikora, Kec. Merauke, Kabupaten Merauke, Papua Selatan
+                                99614
+                            </p>
+                        </div>
                     </div>
+                    <!-- End Info Item -->
 
-                    <button type="submit">Send Message</button>
-                  </div>
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                        <i class="bi bi-telephone flex-shrink-0"></i>
+                        <div>
+                            <h3>Kontak</h3>
+                            <p>+1 5589 55488 55</p>
+                        </div>
+                    </div>
+                    <!-- End Info Item -->
+
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                        <i class="bi bi-envelope flex-shrink-0"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>bapperida.pps@gmail.com</p>
+                        </div>
+                    </div>
+                    <!-- End Info Item -->
                 </div>
-              </form>
+
+                <div class="col-lg-8">
+                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="row gy-4">
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                    required="" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                    required="" />
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                    required="" />
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">
+                                    Your message has been sent. Thank you!
+                                </div>
+
+                                <button type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Contact Form -->
             </div>
-            <!-- End Contact Form -->
-          </div>
         </div>
-      </section>
-      <!-- /Contact Section -->
-    </main>
-
-    {{-- Tag Footer --}}
-        @include('partials.homepage.footer')
-    {{-- end tag Footer --}}
-
-    <!-- Scroll Top -->
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
-
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
-  </body>
-</html>
+    </section>
+    @push('scripts')
+        <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+        <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+        <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    @endpush
+</x-layouts.public>
