@@ -19,7 +19,13 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     @if ($post->featured_image)
-                        <img src="{{ $post->featured_image }}" class="card-img-top" alt="{{ $post->title }}">
+                        <img src="{{ Storage::url('blog_cover_photo/' . $post->featured_image) }}" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" alt="{{ $post->title }}">
+                    @else
+                        <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary text-white"
+                            style="height: 200px;">
+                            <span class="text-sm">No Image</span>
+                        </div>
                     @endif
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>

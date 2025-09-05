@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
+use App\Livewire\Admin\Posts\Index as PostIndex;
+use App\Livewire\Admin\Posts\Create as PostCreate;
+use App\Livewire\Admin\Posts\Edit as PostEdit;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -18,6 +21,12 @@ Route::view('dashboard', 'dashboard')
     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
+    // Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/posts', PostIndex::class)->name('admin.posts.index');
+    Route::get('/posts/create', PostCreate::class)->name('admin.posts.create');
+    Route::get('/posts/{post}/edit', PostEdit::class)->name('admin.posts.edit');
+    // });
+
     Route::redirect('settings', 'settings/profile');
 
     Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
