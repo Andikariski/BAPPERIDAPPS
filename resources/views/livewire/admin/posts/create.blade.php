@@ -8,81 +8,94 @@
     @endphp
     <x-breadcrumb :items="$breadcrumbs" />
 
-    <div class="mt-10">
+    <div class="mt-4">
         <form wire:submit.prevent="{{ isset($post) ? 'update' : 'save' }}">
-            <div class="grid grid-cols-12 gap-20">
-                <div class="col-span-12 lg:col-span-8 space-y-10">
-                    <div class="space-y-2">
-                        <label class="block font-medium">Judul Artikel</label>
-                        <input type="text" wire:model="title" wire:model="post.title"
-                            class="border rounded w-full px-3 py-2">
+            <div class="row g-4">
+                <!-- Kolom Kiri -->
+                <div class="col-12 col-lg-8">
+                    <!-- Judul Artikel -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Judul Artikel</label>
+                        <input type="text" wire:model="title" wire:model="post.title" class="form-control">
                         @error('title')
-                            <span class="text-red-600">{{ $message }}</span>
+                            <div class="text-danger small">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="space-y-2" wire:ignore>
-                        <label class="block font-medium">Konten</label>
-                        <div class="h-[550px] relative overflow-auto border-b border-b-gray-300">
-                            <div id="editor" class="border rounded"></div>
+
+                    <!-- Konten Artikel -->
+                    <div class="mb-3" wire:ignore>
+                        <label class="form-label fw-semibold">Konten</label>
+                        <div class="border rounded" style="height: 550px; overflow: auto;">
+                            <div id="editor"></div>
                         </div>
                         <input type="hidden" wire:model="content" id="content">
                         @error('content')
-                            <span class="text-red-600">{{ $message }}</span>
+                            <div class="text-danger small">{{ $message }}</div>
                         @enderror
                     </div>
-                    <button type="submit" class="text-white px-4 py-2 rounded bg-blue-600">
+
+                    <button type="submit" class="btn btn-primary">
                         Simpan Artikel
                     </button>
                 </div>
-                <div class="col-span-12 lg:col-span-4 space-y-10">
-                    <div class="space-y-2" x-data="{ fileName: 'Pilih foto untuk thumbnail artikel' }">
-                        <label class="block font-medium text-gray-700">Foto Thumbnail Artikel</label>
 
-                        <!-- Custom File Upload -->
-                        <label
-                            class="flex w-full px-4 py-2 bg-white border rounded-lg shadow cursor-pointer hover:bg-gray-50">
-                            <span class="text-gray-600" x-text="fileName"></span>
-                            <input type="file" wire:model="featuredImage" class="hidden"
-                                @change="fileName = $event.target.files.length ? $event.target.files[0].name : 'Pilih foto untuk thumbnail artikel'">
-                        </label>
+                <!-- Kolom Kanan -->
+                <div class="col-12 col-lg-4">
+                    <!-- Thumbnail -->
+                    <div class="mb-3" x-data="{ fileName: 'Pilih foto untuk thumbnail artikel' }">
+                        <label class="form-label fw-semibold">Foto Thumbnail Artikel</label>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" x-model="fileName" readonly>
+                            <label class="input-group-text btn btn-outline-secondary">
+                                Pilih
+                                <input type="file" wire:model="featuredImage" class="d-none"
+                                    @change="fileName = $event.target.files.length ? $event.target.files[0].name : 'Pilih foto untuk thumbnail artikel'">
+                            </label>
+                        </div>
 
                         @error('featuredImage')
-                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                            <div class="text-danger small">{{ $message }}</div>
                         @enderror
 
-                        <!-- Preview -->
                         @if ($featuredImage)
-                            <div class="mt-3">
-                                <p class="text-sm text-gray-600">Preview:</p>
+                            <div class="mt-2">
+                                <p class="small text-muted">Preview:</p>
                                 <img src="{{ $featuredImage->temporaryUrl() }}" alt="Preview"
-                                    class="w-full h-[150px] object-cover rounded-lg shadow">
+                                    class="img-fluid rounded shadow-sm" style="height: 150px; object-fit: cover;">
                             </div>
                         @endif
                     </div>
-                    <div class="space-y-2">
-                        <label class="block font-medium">Kategori Artikel</label>
-                        <select wire:model="categoryId" wire:model="post.category_id"
-                            class="border rounded w-full px-3 py-2">
+
+                    <!-- Kategori -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Kategori Artikel</label>
+                        <select wire:model="categoryId" wire:model="post.category_id" class="form-select">
                             <option value="">-- Pilih Kategori --</option>
                             @foreach ($categories as $cat)
                                 <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="space-y-2">
-                        <label class="block font-medium">Tags Artikel</label>
-                        <div class="flex flex-col gap-2">
+
+                    <!-- Tags -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Tags Artikel</label>
+                        <div class="d-flex flex-column gap-1">
                             @foreach ($tags as $tag)
-                                <label>
-                                    <input type="checkbox" value="{{ $tag->id }}" wire:model="tagIds">
-                                    {{ $tag->name }}
-                                </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="{{ $tag->id }}"
+                                        wire:model="tagIds">
+                                    <label class="form-check-label">{{ $tag->name }}</label>
+                                </div>
                             @endforeach
                         </div>
                     </div>
-                    <div class="space-y-2">
-                        <label class="block font-medium">Status Publikasi</label>
-                        <select wire:model="status" wire:model="post.status" class="border rounded w-full px-3 py-2">
+
+                    <!-- Status Publikasi -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Status Publikasi</label>
+                        <select wire:model="status" wire:model="post.status" class="form-select">
                             <option value="draft">Draft</option>
                             <option value="published">Published</option>
                         </select>
@@ -92,6 +105,7 @@
         </form>
     </div>
 </div>
+
 
 
 @script
