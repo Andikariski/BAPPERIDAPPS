@@ -1,0 +1,36 @@
+:root {
+    --sidebar-width: 260px;
+    --layout-padding: 20px;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.breadcrumb a,
+.breadcrumb a:hover {
+    text-decoration: none !important;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.layout {
+    display: flex;
+    min-height: 100vh;
+    gap: 20px;
+    width: 100%;
+    padding: var(--layout-padding);
+}
+.sidebar {
+    width: var(--sidebar-width);
+    transition: margin-left 0.3s ease;
+}
+.sidebar.collapsed {
+    margin-left: calc(-1 * var(--sidebar-width) - var(--layout-padding));
+}
+.content {
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+}

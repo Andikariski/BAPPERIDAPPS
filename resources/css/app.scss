@@ -1,0 +1,64 @@
+// spacing scale modern
+$spacer: 1.25rem; // Naik dari 1rem -> 1.25rem untuk dasar spacing
+$spacers: (
+    0: 0,
+    1: $spacer * 0.5,
+    // 0.625rem
+    2: $spacer * 0.75,
+    // 0.9375rem
+    3: $spacer,
+    // 1.25rem
+    4: $spacer * 1.5,
+    // 1.875rem
+    5: $spacer * 2.5,
+    // 3.125rem
+    6: $spacer * 4,
+    // 5rem, buat section besar
+);
+// border radius
+$border-radius: 0.75rem !default; // Default radius lebih besar
+$border-radius-sm: 0.5rem !default; // Small tetap rounded
+$border-radius-lg: 1rem !default; // Lebih besar untuk card & modal
+$border-radius-xl: 1.5rem !default; // Super rounded untuk elemen besar
+$border-radius-xxl: 2.5rem !default; // Extra rounded, cocok untuk hero card
+$border-radius-pill: 50rem !default; // Tetap full pill (badge, tombol pill)
+
+// color pallete
+$primary: #219ebc;
+$secondary: #8ecae6;
+$dark: #023047;
+$warning: #ffb703;
+$danger: #fb8500;
+$info: #8ecae6;
+$light: #f8f9fa;
+$success: #4caf50;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "dark": $dark,
+    "warning": $warning,
+    "danger": $danger,
+    "info": $info,
+    "light": $light,
+    "success": $success,
+);
+
+// import bootstrap dan bootstrap icon
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// warna teks tombol terang
+.btn-primary,
+.btn-success,
+.btn-danger {
+    color: #fefefe !important; // Teks putih untuk warna tegas
+}
+
+// Warna teks tombol soft
+.btn-secondary,
+.btn-info,
+.btn-light,
+.btn-warning {
+    color: $dark !important; // Teks abu tua pekat untuk kontras
+}

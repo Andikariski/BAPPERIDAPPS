@@ -7,43 +7,39 @@
     @endphp
     <x-breadcrumb :items="$breadcrumbs" />
 
-    <div class="mt-10">
-        <div class="flex justify-between items-center mb-4">
-            <input type="text" placeholder="Search..." wire:model.live="search" class="border rounded px-3 py-2">
-            <a href="{{ route('admin.posts.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">
-                + New Post
-            </a>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-1 mt-4">
+        <input type="text" placeholder="Search..." wire:model.live="search" class="form-control w-25">
+        <a href="{{ route('admin.posts.create') }}" class="btn btn-primary d-flex align-items-center gap-1">
+            <i class="bi bi-pencil-square"></i>
+            <span>Tulis Berita</span>
+        </a>
+    </div>
 
-        <table class="w-full rounded-lg overflow-hidden">
-            <thead>
-                <tr class="bg-gray-300 text-left">
-                    <th class="px-4 py-4">Judul Artikel</th>
-                    <th class="px-4 py-4">Kategori</th>
-                    <th class="px-4 py-4">Status Publikasi</th>
-                    <th class="px-4 py-4">Aksi</th>
+    <table class="table table-striped table-hover table-bordered align-middle rounded-2 overflow-hidden">
+        <thead class="table-dark">
+            <tr>
+                <th class="px-4 py-2">Judul Artikel</th>
+                <th class="px-4 py-2">Kategori</th>
+                <th class="px-4 py-2">Status Publikasi</th>
+                <th class="px-4 py-2">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($posts as $post)
+                <tr>
+                    <td class="px-4 py-1">{{ $post->title }}</td>
+                    <td class="px-4 py-1">{{ $post->category->name ?? '-' }}</td>
+                    <td class="px-4 py-1">{{ ucfirst($post->status) }}</td>
+                    <td class="px-4 py-1">
+                        <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-sm btn-primary">Edit</a>
+                        <button wire:click="delete({{ $post->id }})" class="btn btn-sm btn-danger">Hapus</button>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($posts as $post)
-                    <tr class="odd:bg-white even:bg-gray-100">
-                        <td class="px-4 py-3">{{ $post->title }}</td>
-                        <td class="px-4 py-3">{{ $post->category->name ?? '-' }}</td>
-                        <td class="px-4 py-3">{{ ucfirst($post->status) }}</td>
-                        <td class="px-4 py-3 flex gap-4">
-                            <div class="bg-blue-500 text-white px-4 py-1 rounded-lg text-sm">
-                                <a href="{{ route('admin.posts.edit', $post) }}" class="">edit</a>
-                            </div>
-                            <button wire:click="delete({{ $post->id }})"
-                                class="bg-red-500 text-white px-4 py-1 rounded-lg text-sm">hapus</button>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+            @endforeach
+        </tbody>
+    </table>
 
-        <div class="mt-4">
-            {{ $posts->links() }}
-        </div>
+    <div class="mt-4">
+        {{ $posts->links('vendor.livewire.bootstrap-pagination') }}
     </div>
 </div>

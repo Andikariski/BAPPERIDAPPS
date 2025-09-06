@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Posts;
 
 use App\Models\Post;
+use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -18,6 +19,7 @@ class Index extends Component
         session()->flash('message', 'Post deleted successfully.');
     }
 
+    #[Layout('components.layouts.admin')]
     public function render()
     {
         $posts = Post::query()
