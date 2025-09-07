@@ -1,6 +1,6 @@
 @include('partials.admin.layout.head')
 
-<body x-cloak x-data="sidebarApp()" x-init="init()" class="bg-light">
+<body x-cloak x-data="sidebarApp()" x-init="init()" class="bg-light" data-bs-theme="light">
     <div class="layout">
         <!-- Sidebar -->
         @include('partials.admin.layout.sidebar')
