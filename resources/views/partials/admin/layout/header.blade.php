@@ -1,12 +1,12 @@
-<header class="navbar bg-white rounded-3 shadow-sm px-3 d-flex justify-content-between align-items-center">
+<header class="navbar bg-white rounded-1 shadow-sm pe-4 ps-3 d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center gap-4">
         <button class="btn btn-outline-primary-hover" @click="sidebarOpen = !sidebarOpen">
-            <i class="bi bi-list text-dark"></i>
+            <i class="bi bi-list text-dark fs-5"></i>
         </button>
     </div>
     <x-popover placement="bottom" triggerClass="cursor-pointer">
         <x-slot name="trigger">
-            <i class="bi bi-person-circle"></i>
+            <i class="bi bi-person-circle fs-5 text-dark"></i>
         </x-slot>
 
         <div class="flex flex-col">

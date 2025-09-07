@@ -1,4 +1,4 @@
-<aside class="sidebar py-2 px-4 rounded-3 bg-white d-flex flex-column shadow-sm" x-cloak
+<aside class="sidebar py-2 px-3 rounded-1 bg-white d-flex flex-column shadow-sm" x-cloak
     :class="{ 'collapsed': !sidebarOpen }" style="transition: all 0.3s ease;">
     <div class="py-2">
         <h2 class="fs-5 text-center mb-4">BAPPERIDA PPS</h2>
@@ -7,14 +7,14 @@
         <ul class="nav nav-pils flex-column">
             <li class="nav-item">
                 <a wire:navigate href="{{ route('dashboard') }}"
-                    class="nav-link rounded-2 d-flex align-items-center gap-1 {{ request()->routeIs('dashboard') ? 'bg-primary text-light' : 'bg-white text-dark' }}">
+                    class="nav-link rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('dashboard') ? 'bg-primary text-light' : 'bg-white text-dark' }}">
                     <i class="bi bi-speedometer2 {{ request()->routeIs('dashboard') ? 'text-light' : 'text-dark' }}"></i>
                     <span class="fs-6">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a wire:navigate href="{{ route('admin.posts.index') }}"
-                    class="nav-link text-dark rounded-2 d-flex align-items-center gap-1 {{ request()->routeIs('admin.posts.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}">
+                    class="nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.posts.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}">
                     <i class="bi bi-book {{ request()->routeIs('admin.posts.*') ? 'text-light' : 'text-dark' }}"></i>
                     <span>Berita</span>
                 </a>

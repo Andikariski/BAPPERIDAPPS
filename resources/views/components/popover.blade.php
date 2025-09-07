@@ -5,12 +5,12 @@
 
 <div x-data="popoverComponent('{{ $placement }}')" class="inline-block">
     <!-- Trigger -->
-    <div x-ref="trigger" @click="toggle" class="{{ $triggerClass }}">
+    <div x-ref="trigger" @click="toggle" class="{{ $triggerClass }}" style="cursor: pointer">
         {{ $trigger }}
     </div>
 
     <!-- Popover element (rendered in place but akan dipindah ke body pada init) -->
-    <div x-ref="popover" x-cloak x-show="open" @click.away="close" class="rounded-3 shadow-lg bg-white p-3"
+    <div x-ref="popover" x-cloak x-show="open" @click.away="close" class="rounded-1 shadow-lg bg-white p-3"
         style="min-width:180px; display:none;">
         {{ $slot }}
     </div>
