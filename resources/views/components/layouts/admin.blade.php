@@ -11,7 +11,7 @@
             @include('partials.admin.layout.header')
 
             <!-- Main -->
-            <main class="px-4 py-3 bg-white rounded-3 shadow-sm">
+            <main class="px-4 py-3 bg-white rounded-1 shadow-sm">
                 {{ $slot }}
             </main>
         </div>

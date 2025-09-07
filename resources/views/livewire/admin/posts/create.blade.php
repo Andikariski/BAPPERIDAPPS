@@ -34,8 +34,18 @@
                         @enderror
                     </div>
 
-                    <button type="submit" class="btn btn-primary">
-                        Simpan Artikel
+                    <button type="submit" class="btn btn-primary d-flex align-items-center gap-2">
+                        <span wire:loading>
+                            <div class="spinner-border spinner-border-sm text-dark" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </span>
+                        <span wire:loading.remove>
+                            Simpan Artikel
+                        </span>
+                        <span wire:loading>
+                            Menambahkan...
+                        </span>
                     </button>
                 </div>
 
