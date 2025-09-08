@@ -30,6 +30,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
                         <p class="card-text">{{ $post->excerpt }}</p>
+                        {{-- <p class="card-text">{{ $post->created_at }}</p> --}}
+                        <p class="card-text">{{ $post->created_at->translatedFormat('j F Y') }}</p>
+
                         <a href="{{ route('blog.show', $post->slug) }}" class="btn btn-primary">Selengkapnya</a>
                     </div>
                 </div>
