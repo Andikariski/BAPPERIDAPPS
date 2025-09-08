@@ -7,6 +7,18 @@
     display: none !important;
 }
 
+/* table */
+.table {
+    border-collapse: collapse !important; /* bikin border nempel */
+}
+.table td,
+.table th {
+    border-bottom: 1px solid #dee2e6; /* ganti border biar nggak dobel */
+}
+.table tr:last-child td {
+    border-bottom: none; /* hilangkan border bawah baris terakhir */
+}
+
 .breadcrumb a,
 .breadcrumb a:hover {
     text-decoration: none !important;

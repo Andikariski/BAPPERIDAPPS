@@ -12,11 +12,26 @@ class Index extends Component
     use WithPagination;
 
     public $search = '';
+    public $selectedPostId = null;
+    public $selectedPostTitle = '';
+    public $showDeleteModal = false;
 
-    public function delete(Post $post)
+    public function confirmDelete($id)
     {
-        $post->delete();
-        session()->flash('message', 'Post deleted successfully.');
+        $post = Post::find($id);
+        if ($post) {
+            $this->selectedPostId = $id;
+            $this->selectedPostTitle = $post->title;
+            $this->showDeleteModal   = true;
+        }
+    }
+
+    public function delete()
+    {
+        Post::find($this->selectedPostId)?->delete();
+
+        $this->reset(['selectedPostId', 'selectedPostTitle']);
+        $this->dispatch('close-modal');
     }
 
     #[Layout('components.layouts.admin')]
@@ -27,9 +42,8 @@ class Index extends Component
             ->where('title', 'like', "%{$this->search}%")
             ->latest()
             ->paginate(10);
-
         return view('livewire.admin.posts.index', [
-            'posts' => $posts,
+            'posts' => $posts
         ]);
     }
 }
