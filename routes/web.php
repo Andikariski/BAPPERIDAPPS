@@ -10,9 +10,9 @@ use App\Livewire\Admin\Posts\Edit as PostEdit;
 // Route::get('/', function () {
 //     return view('welcome');
 // })->name('home');
-Route::get('/', function () {
-    return view('homepage');
-})->name('home');
+Route::get('/', function () { return view('homepage');})->name('home');
+Route::get('/strukturOrganisasi', function(){ return view('strukturOrganisasi');})->name('strukrOrganisasi');
+Route::get('/tupoksi', function(){ return view('tupoksi');})->name('tupoksi');
 Route::get('/blog', \App\Livewire\Blog\Index::class)->name('blog.index');
 Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
 

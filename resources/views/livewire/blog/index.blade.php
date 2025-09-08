@@ -1,9 +1,9 @@
 <div class="container py-5">
-    <h1 class="mb-4">Blog</h1>
+    <h2 class="mb-4 text-center">Berita</h2>
 
     <!-- Search & filtering -->
     <div class="d-flex justify-content-between gap-2">
-        <input type="text" class="form-control mb-3" placeholder="cari artikel..." wire:model.live="search">
+        <input type="text" class="form-control mb-3" placeholder="cari berita..." wire:model.live="search">
         <div class="mb-3">
             <select wire:model.live="category" class="form-select">
                 <option class="px-4" value="">Kategori</option>

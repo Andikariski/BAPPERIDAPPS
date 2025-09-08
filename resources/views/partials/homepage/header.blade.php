@@ -11,22 +11,22 @@
                 <li>
                     <a href="{{ route('home') }}" class="active">Beranda<br /></a>
                 </li>
-                <li><a href="{{ route('blog.index') }}">Blog</a></li>
+                {{-- <li><a href="{{ route('blog.index') }}">Blog</a></li> --}}
                 <li class="dropdown">
                     <a href="#"><span>Tentang</span>
                         <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="#">Pengantar Kepala Badan</a></li>
                         <li><a href="#">Profile Pegawai</a></li>
-                        <li><a href="#">Struktur Organisasi</a></li>
-                        <li><a href="#">Tugas Pokok dan Fungsi</a></li>
+                        <li><a href="{{ route('strukrOrganisasi') }}">Struktur Organisasi</a></li>
+                        <li><a href="{{ route('tupoksi') }}">Tugas Pokok dan Fungsi</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#"><span>Berita</span>
                         <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <li><a href="#">Berita dan Informasi</a></li>
+                        <li><a href="{{ route('blog.index') }}">Berita dan Informasi</a></li>
                         <li><a href="#">Galeri Foto</a></li>
                     </ul>
                 </li>

@@ -3,7 +3,7 @@
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-about">
             <a href="index.html" class="logo d-flex align-items-center">
-              <span class="sitename">OnePage</span>
+              <span class="sitename">BapperidaPPS</span>
             </a>
             <p>
               Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
@@ -19,45 +19,43 @@
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Kabupaten</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Kab. Merauke</a></li>
+              <li><a href="#">Kab. Boven Digoel</a></li>
+              <li><a href="#">Kab. Mappi</a></li>
+              <li><a href="#">Kab. Asmat</a></li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Bidang dalam Bapperida</h4>
             <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Bidang Perencanaan</a></li>
+              <li><a href="#">Bidang Ekonomi Sosial Budaya</a></li>
+              <li><a href="#">Bidang Fisik dan Prasarana</a></li>
+              <li><a href="#">Bidang Riset Inovasi Daerah</a></li>
             </ul>
           </div>
 
-          <div
+          {{-- <div
             class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
+            <h4>Kontak</h4>
             <p>A108 Adam Street</p>
             <p>New York, NY 535022</p>
             <p>United States</p>
             <p class="mt-4">
               <strong>Phone:</strong> <span>+1 5589 55488 55</span>
             </p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
+            <p><strong>Email:</strong> <span>bapperida.pps@gmail.com</span></p>
+          </div> --}}
         </div>
       </div>
 
       <div class="container copyright text-center mt-4">
         <p>
           © <span>Copyright</span>
-          <strong class="px-1 sitename">OnePage</strong>
+          <strong class="px-1 sitename">Bapperida PPS</strong>
           <span>All Rights Reserved</span>
         </p>
         <div class="credits">
