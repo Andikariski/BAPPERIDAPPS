@@ -3,7 +3,7 @@
         $breadcrumbs = [
             ['name' => 'Beranda', 'url' => route('dashboard')],
             ['name' => 'Artikel', 'url' => route('admin.posts.index')],
-            ['name' => 'Buat Artikel Baru'],
+            ['name' => 'Buat Berita Baru'],
         ];
     @endphp
     <x-breadcrumb :items="$breadcrumbs" />
@@ -15,7 +15,7 @@
                 <div class="col-12 col-lg-8">
                     <!-- Judul Artikel -->
                     <div class="mb-3">
-                        <label class="form-label fw-semibold">Judul Artikel</label>
+                        <label class="form-label fw-semibold">Judul Berita</label>
                         <input type="text" wire:model="title" wire:model="post.title" class="form-control">
                         @error('title')
                             <div class="text-danger small">{{ $message }}</div>
@@ -24,7 +24,7 @@
 
                     <!-- Konten Artikel -->
                     <div class="mb-3" wire:ignore>
-                        <label class="form-label fw-semibold">Konten</label>
+                        <label class="form-label fw-semibold">Konten Berita</label>
                         <div class="border rounded" style="height: 550px; overflow: auto;">
                             <div id="editor"></div>
                         </div>
@@ -35,7 +35,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">
-                        Simpan Artikel
+                        Simpan Berita
                     </button>
                 </div>
 
@@ -43,14 +43,14 @@
                 <div class="col-12 col-lg-4">
                     <!-- Thumbnail -->
                     <div class="mb-3" x-data="{ fileName: 'Pilih foto untuk thumbnail artikel' }">
-                        <label class="form-label fw-semibold">Foto Thumbnail Artikel</label>
+                        <label class="form-label fw-semibold">Foto Thumbnail Berita</label>
 
                         <div class="input-group">
                             <input type="text" class="form-control" x-model="fileName" readonly>
                             <label class="input-group-text btn btn-outline-secondary">
                                 Pilih
                                 <input type="file" wire:model="featuredImage" class="d-none"
-                                    @change="fileName = $event.target.files.length ? $event.target.files[0].name : 'Pilih foto untuk thumbnail artikel'">
+                                    @change="fileName = $event.target.files.length ? $event.target.files[0].name : 'Pilih foto untuk thumbnail berita'">
                             </label>
                         </div>
 
@@ -69,9 +69,9 @@
 
                     <!-- Kategori -->
                     <div class="mb-3">
-                        <label class="form-label fw-semibold">Kategori Artikel</label>
+                        <label class="form-label fw-semibold">Bidang Pelaksana</label>
                         <select wire:model="categoryId" wire:model="post.category_id" class="form-select">
-                            <option value="">-- Pilih Kategori --</option>
+                            <option value="">-- Pilih Bidang --</option>
                             @foreach ($categories as $cat)
                                 <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                             @endforeach
@@ -80,7 +80,7 @@
 
                     <!-- Tags -->
                     <div class="mb-3">
-                        <label class="form-label fw-semibold">Tags Artikel</label>
+                        <label class="form-label fw-semibold">Tags Berita</label>
                         <div class="d-flex flex-column gap-1">
                             @foreach ($tags as $tag)
                                 <div class="form-check">
