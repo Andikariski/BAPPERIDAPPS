@@ -67,55 +67,7 @@
     </section>
     <!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Sejarah Bapperida PPS<br /></h2>
-            <p>
-                Sejarah Singkat Tentang Berdirinya Bapperida Provinsi Papua Selatan
-            </p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <ul>
-                        <li>
-                            <i class="bi bi-check2-circle"></i>
-                            <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.</span>
-                        </li>
-                        <li>
-                            <i class="bi bi-check2-circle"></i>
-                            <span>Duis aute irure dolor in reprehenderit in voluptate
-                                velit.</span>
-                        </li>
-                        <li>
-                            <i class="bi bi-check2-circle"></i>
-                            <span>Ullamco laboris nisi ut aliquip ex ea commodo</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                        aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.
-                    </p>
-                    <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <!-- /About Section -->
 
     <!-- Stats Section -->
@@ -199,6 +151,41 @@
         </div>
     </section>
     <!-- /About Alt Section -->
+    <!-- Section Sejarah Bapperida -->
+    <section id="about" class="about section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Sejarah Bapperida PPS<br /></h2>
+            <p>
+                Sejarah Singkat Tentang Berdirinya Bapperida Provinsi Papua Selatan
+            </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                       Berdasarkan kebutuhan untuk mempercepat pemerataan pembangunan, meningkatkan pelayanan publik, 
+                       dan kesejahteraan masyarakat, serta mengacu pada Undang-Undang Nomor 14 Tahun 2022 tentang Pembentukan Provinsi Papua Selatan, 
+                       dibentuklah Badan Perencanaan Pembangunan, Riset dan Inovasi Daerah (Bapperida) melalui Peraturan Gubernur  No 22 Tahun 2022 
+                       tentang SOTK Bapperida, sebagai dasar dalam melaksanakan tugas dan fungsi perencanaan pembangunan, riset, dan inovasi.
+                    </p>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <p>
+                      Badan Perencanaan Pembangunan, Riset dan Inovasi Daerah Provinsi Papua Selatan (Bapperida PPS)
+                      didirikan pada tanggal 1 Desember 2022, sebagai institusi dalam pelaksanaan percepatan perencanaan
+                      Pembangunan yang meresponi kebutuhan daerah maupun masyarakat sebagai tujuan dasar percepatan Pembangunan 
+                      Provinsi Papua Selatan yang lebih terarah pada Pendidikan, kesehatan, ekonomi Masyarakat, infrastruktur, 
+                      konektifitas serta meningkatkan peyanan publik menuju Papua Selatan bangkit, mandiri & Sejahtera.
+                    </p>
+                    {{-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Clients Section -->
     <section id="clients" class="clients section light-background">
