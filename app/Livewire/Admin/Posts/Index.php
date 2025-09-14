@@ -41,7 +41,7 @@ class Index extends Component
             ->with('category')
             ->where('title', 'like', "%{$this->search}%")
             ->latest()
-            ->paginate(10);
+            ->paginate(20);
         return view('livewire.admin.posts.index', [
             'posts' => $posts
         ]);

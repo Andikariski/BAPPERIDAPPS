@@ -1,6 +1,6 @@
 @include('partials.admin.layout.head')
 
-<body x-cloak x-data="sidebarApp()" x-init="init()" class="bg-light" data-bs-theme="light">
+<body x-cloak x-data="sidebarApp()" x-init="init()" class="bg-light vh-100" data-bs-theme="light">
     <div class="layout">
         <!-- Sidebar -->
         @include('partials.admin.layout.sidebar')
@@ -10,13 +10,13 @@
             <!-- Header -->
             @include('partials.admin.layout.header')
 
+
             <!-- Main -->
             <main class="px-4 py-3 bg-white rounded-1 shadow-sm">
                 {{ $slot }}
             </main>
         </div>
     </div>
-
     {{-- Scripts --}}
     <script>
         function sidebarApp() {
@@ -43,6 +43,13 @@
                 },
             };
         }
+
+        // lightbox.option({
+        //     'resizeDuration': 200,
+        //     'wrapAround': true,
+        //     'showImageNumberLabel': true,
+        //     'albumLabel': "Foto %1 dari %2"
+        // });
     </script>
     @stack('scripts') {{-- Tambahkan stack untuk JS khusus --}}
     @livewireScripts

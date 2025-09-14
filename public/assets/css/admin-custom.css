@@ -46,3 +46,68 @@ body {
     flex-grow: 1;
     transition: margin-left 0.3s ease;
 }
+
+.card:hover .gallery-overlay button {
+    transform: translateY(0) !important;
+}
+
+.dropzone-area:hover {
+    border-color: #0d6efd !important;
+}
+
+.group-hover-container:hover .photo-overlay {
+    opacity: 1 !important;
+}
+
+.photo-overlay {
+    transition: opacity 0.3s ease;
+}
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Hover effects for overlay */
+.position-relative:hover .position-absolute button {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Lightbox customization */
+.lb-data .lb-details {
+    width: 85%;
+}
+
+.lb-data .lb-caption {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4em;
+}
