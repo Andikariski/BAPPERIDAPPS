@@ -42,7 +42,7 @@ class BlogSeeder extends Seeder
         });
 
         // Posts
-        foreach (range(1, 10) as $i) {
+        foreach (range(1, 100) as $i) {
             $title = "Sample Blog Post $i";
             $post = Post::create([
                 'title' => $title,
