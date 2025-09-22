@@ -1,64 +1,145 @@
-:root {
-    --sidebar-width: 260px;
-    --layout-padding: 20px;
+body {
+    overflow-x: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    transition: width 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.collapsed {
+    width: 100px;
+    overflow-x: hidden;
+}
+
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    padding-top: 1rem;
+    width: 100%;
+}
+
+.sidebar-nav .nav-item,
+.sidebar-nav .sidebar-nav-item {
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    height: 45px;
+}
+
+.sidebar-nav-icon {
+    width: 20px;
+    margin-right: 0.75rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.sidebar-nav-text {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-nav-text {
+    opacity: 0;
+}
+
+/* Styling khusus untuk collapsed state */
+.sidebar.collapsed .sidebar-nav-link {
+    padding: 0.75rem 0.5rem;
+}
+
+/* Pastikan icon tetap centered ketika collapsed */
+.sidebar.collapsed .sidebar-nav-link i {
+    margin: 0;
+}
+
+.main-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+    min-height: 100vh;
+}
+
+.main-content.expanded {
+    margin-left: 70px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 999;
+    padding: 1rem;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+
+    .sidebar.show {
+        width: 250px;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content.expanded {
+        margin-left: 0;
+    }
 }
 
 [x-cloak] {
     display: none !important;
 }
 
-/* table */
+/* table custom styling */
 .table {
-    border-collapse: collapse !important; /* bikin border nempel */
+    border-collapse: collapse !important;
 }
 .table td,
 .table th {
-    border-bottom: 1px solid #dee2e6; /* ganti border biar nggak dobel */
+    border-bottom: 1px solid #dee2e6;
 }
 .table tr:last-child td {
-    border-bottom: none; /* hilangkan border bawah baris terakhir */
+    border-bottom: none;
 }
 
-.breadcrumb a,
-.breadcrumb a:hover {
-    text-decoration: none !important;
-}
-
-body {
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-.layout {
-    display: flex;
-    min-height: 100vh;
-    gap: 20px;
-    width: 100%;
-    padding: var(--layout-padding);
-}
-.sidebar {
-    width: var(--sidebar-width);
-    transition: margin-left 0.3s ease;
-}
-.sidebar.collapsed {
-    margin-left: calc(-1 * var(--sidebar-width) - var(--layout-padding));
-}
-.content {
-    flex-grow: 1;
-    transition: margin-left 0.3s ease;
-}
-
-.card:hover .gallery-overlay button {
-    transform: translateY(0) !important;
-}
-
+/* input poto drag n drop styling */
 .dropzone-area:hover {
     border-color: #0d6efd !important;
 }
-
 .group-hover-container:hover .photo-overlay {
     opacity: 1 !important;
 }
-
 .photo-overlay {
     transition: opacity 0.3s ease;
 }
@@ -68,7 +149,6 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
 .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -81,22 +161,18 @@ body {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
-
 /* Custom scrollbar for better UX */
 ::-webkit-scrollbar {
     width: 8px;
 }
-
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #c1c1c1;
     border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #a8a8a8;
 }
@@ -105,7 +181,6 @@ body {
 .lb-data .lb-details {
     width: 85%;
 }
-
 .lb-data .lb-caption {
     font-size: 16px;
     font-weight: normal;
