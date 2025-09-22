@@ -1,4 +1,4 @@
-<div>
+<div style="">
     @php
         $breadcrumbs = [
             ['name' => 'Beranda', 'url' => route('dashboard')],
@@ -7,6 +7,7 @@
     @endphp
     <x-breadcrumb :items="$breadcrumbs" />
 
+    {{-- search & filtering --}}
     <div class="d-flex justify-content-between align-items-center mb-1 mt-4">
         <input type="text" placeholder="Search..." wire:model.live="search" class="form-control w-25 rounded-1">
         <a href="{{ route('admin.posts.create') }}" class="btn btn-primary d-flex align-items-center rounded-1 gap-1">
@@ -15,7 +16,8 @@
         </a>
     </div>
 
-    <div class="rounded-1 overflow-hidden border p-0">
+    {{-- table data --}}
+    <div class="rounded overflow-hidden border">
         <table class="table table-striped align-middle mb-0">
             <thead class="table-secondary">
                 <tr>
@@ -42,7 +44,7 @@
                         </td>
 
                         <td class="px-4 py-1 d-flex gap-2">
-                            <a href="{{ route('admin.posts.edit', $post) }}"
+                            <a wire:navigate href="{{ route('admin.posts.edit', $post) }}"
                                 class="d-flex align-items-center gap-1 btn btn-sm btn-outline-dark">
                                 <i class="bi bi-pencil" style="font-size: 1rem;"></i>
                                 <span>Edit</span></a>
@@ -66,43 +68,43 @@
                 @endforelse
             </tbody>
         </table>
-        <!-- Modal Bootstrap -->
-        <div wire:ignore.self class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Hapus Artikel</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        @if ($selectedPostId)
-                            <p>Yakin ingin menghapus artikel <strong>{{ $selectedPostTitle }}</strong>?</p>
-                        @else
-                            <div class="d-flex flex-column align-items-center justify-content-center">
-                                <div class="spinner-border spinner-border-sm text-dark" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                                <p class="fs-5">memuat data...</p>
-                            </div>
-                        @endif
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
-                        <button wire:click="delete"
-                            class="btn btn-danger d-flex align-items-center justify-content-center gap-1">
-                            <div wire:loading="delete" class="spinner-border spinner-border-sm text-white"
-                                role="status">
+    </div>
+    <!-- Modal Bootstrap -->
+    <div wire:ignore.self class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hapus Artikel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    @if ($selectedPostId)
+                        <p>Yakin ingin menghapus artikel <strong>{{ $selectedPostTitle }}</strong>?</p>
+                    @else
+                        <div class="d-flex flex-column align-items-center justify-content-center">
+                            <div class="spinner-border spinner-border-sm text-dark" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <span wire:loading.remove="delete">Hapus Artikel</span>
-                            <span wire:loading="delete">Menghapus...</span>
-                        </button>
-                    </div>
+                            <p class="fs-5">memuat data...</p>
+                        </div>
+                    @endif
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                    <button wire:click="delete"
+                        class="btn btn-danger d-flex align-items-center justify-content-center gap-1">
+                        <div wire:loading="delete" class="spinner-border spinner-border-sm text-white" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <span wire:loading.remove="delete">Hapus Artikel</span>
+                        <span wire:loading="delete">Menghapus...</span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
+    {{-- pagination --}}
     <div class="mt-4">
         {{ $posts->links('vendor.livewire.bootstrap-pagination') }}
     </div>

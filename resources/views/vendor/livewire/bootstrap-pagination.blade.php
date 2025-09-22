@@ -28,29 +28,46 @@
             @endif
 
             {{-- Pagination Elements --}}
-            @foreach ($elements as $element)
-                {{-- "Three Dots" Separator --}}
-                @if (is_string($element))
-                    <li class="page-item disabled" aria-disabled="true"><span
-                            class="page-link">{{ $element }}</span></li>
-                @endif
+            {{-- Pagination Elements --}}
+            @php
+                $totalPages = $paginator->lastPage();
+                $currentPage = $paginator->currentPage();
+                $start = max($currentPage - 2, 1); // Mulai 2 halaman sebelum current
+                $end = min($currentPage + 2, $totalPages); // Sampai 2 halaman setelah current
+            @endphp
 
-                {{-- Array Of Links --}}
-                @if (is_array($element))
-                    @foreach ($element as $page => $url)
-                        @if ($page == $paginator->currentPage())
-                            <li class="page-item active" aria-current="page"><span
-                                    class="page-link">{{ $page }}</span></li>
-                        @else
-                            <li class="page-item">
-                                <button type="button" class="page-link" wire:click="gotoPage({{ $page }})">
-                                    {{ $page }}
-                                </button>
-                            </li>
-                        @endif
-                    @endforeach
+            {{-- First Page --}}
+            @if ($start > 1)
+                <li class="page-item">
+                    <button type="button" class="page-link" wire:click="gotoPage(1)">1</button>
+                </li>
+                @if ($start > 2)
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
                 @endif
-            @endforeach
+            @endif
+
+            {{-- Page Range --}}
+            @for ($i = $start; $i <= $end; $i++)
+                @if ($i == $currentPage)
+                    <li class="page-item active"><span class="page-link">{{ $i }}</span></li>
+                @else
+                    <li class="page-item">
+                        <button type="button" class="page-link"
+                            wire:click="gotoPage({{ $i }})">{{ $i }}</button>
+                    </li>
+                @endif
+            @endfor
+
+            {{-- Last Page --}}
+            @if ($end < $totalPages)
+                @if ($end < $totalPages - 1)
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                @endif
+                <li class="page-item">
+                    <button type="button" class="page-link"
+                        wire:click="gotoPage({{ $totalPages }})">{{ $totalPages }}</button>
+                </li>
+            @endif
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
