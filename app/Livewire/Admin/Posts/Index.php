@@ -34,7 +34,7 @@ class Index extends Component
         $this->dispatch('close-modal');
     }
 
-    #[Layout('components.layouts.admin')]
+    #[Layout('components.layouts.admin', ['title' => 'Admin | Berita', 'pageTitle' => 'Berita'])]
     public function render()
     {
         $posts = Post::query()

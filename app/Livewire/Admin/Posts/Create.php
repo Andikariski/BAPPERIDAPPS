@@ -126,7 +126,7 @@ class Create extends Component
         return Str::limit(strip_tags($paragraph), 160);
     }
 
-    #[Layout('components.layouts.admin')]
+    #[Layout('components.layouts.admin', ['title' => 'Admin | Berita', 'pageTitle' => 'Berita'])]
     public function render()
     {
         return view('livewire.admin.posts.create', [

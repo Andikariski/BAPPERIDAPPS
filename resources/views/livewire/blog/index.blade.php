@@ -1,3 +1,4 @@
+@section('title', 'Admin | Berita')
 <div class="container py-5">
     <h2 class="mb-4 text-center">Berita</h2>
 

@@ -1,7 +1,7 @@
 <div>
     @php
         $breadcrumbs = [
-            ['name' => 'Beranda', 'url' => route('dashboard')],
+            ['name' => 'Dashboard', 'url' => route('dashboard')],
             ['name' => 'Artikel', 'url' => route('admin.posts.index')],
             ['name' => 'Buat Berita Baru'],
         ];
@@ -34,19 +34,19 @@
                         @enderror
                     </div>
 
-<button type="submit" class="btn btn-primary d-flex align-items-center gap-2">
-    <span wire:loading>
-        <div class="spinner-border spinner-border-sm text-dark" role="status">
-            <span class="visually-hidden">loading...</span>
-        </div>
-    </span>
-    <span wire:loading.remove>
-        Simpan Berita
-    </span>
-    <span wire:loading>
-        Menambahkan...
-    </span>
-</button>
+                    <button type="submit" class="btn btn-primary d-flex align-items-center gap-2">
+                        <span wire:loading>
+                            <div class="spinner-border spinner-border-sm text-dark" role="status">
+                                <span class="visually-hidden">loading...</span>
+                            </div>
+                        </span>
+                        <span wire:loading.remove>
+                            Simpan Berita
+                        </span>
+                        <span wire:loading>
+                            Menambahkan...
+                        </span>
+                    </button>
                 </div>
 
                 <!-- Kolom Kanan -->

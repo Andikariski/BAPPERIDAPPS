@@ -1,7 +1,7 @@
 <div>
     @php
         $breadcrumbs = [
-            ['name' => 'Beranda', 'url' => route('dashboard')],
+            ['name' => 'Dashboard', 'url' => route('dashboard')],
             ['name' => 'Data Kegiatan', 'url' => route('admin.kegiatan.index')],
         ];
     @endphp
