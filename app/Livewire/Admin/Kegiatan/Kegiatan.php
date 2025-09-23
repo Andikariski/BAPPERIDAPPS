@@ -93,7 +93,7 @@ class Kegiatan extends Component
         }
     }
 
-    #[Layout('components.layouts.admin')]
+    #[Layout('components.layouts.admin', ['title' => 'Admin | Kegiatan', 'pageTitle' => 'Kegiatan'])]
     public function render()
     {
         $dataKegiatan = ModelsKegiatan::with(['bidang', 'fotoKegiatan'])

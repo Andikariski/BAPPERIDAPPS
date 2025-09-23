@@ -95,7 +95,7 @@ class Edit extends Component
         // delete gambar
         Storage::disk('public')->delete($path);
     }
-    #[Layout('components.layouts.admin')]
+    #[Layout('components.layouts.admin', ['title' => 'Admin | Berita', 'pageTitle' => 'Berita'])]
     public function render()
     {
         return view('livewire.admin.posts.edit', [

@@ -227,7 +227,7 @@ class KegiatanForm extends Component
             session()->flash('error', 'Gagal menyimpan kegiatan: ' . $e->getMessage());
         }
     }
-    #[Layout('components.layouts.admin')]
+    #[Layout('components.layouts.admin', ['title' => 'Admin | Kegiatan', 'pageTitle' => 'Kegiatan'])]
     public function render()
     {
         $dataBidang = Bidang::orderBy('nama_bidang')->get();

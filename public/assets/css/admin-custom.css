@@ -28,7 +28,6 @@ body {
 
 .sidebar-nav .nav-item,
 .sidebar-nav .sidebar-nav-item {
-    margin-bottom: 0.5rem;
     padding: 0 1rem;
 }
 
@@ -82,7 +81,7 @@ body {
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 999;
+    z-index: 990;
     padding: 1rem;
 }
 
@@ -97,6 +96,14 @@ body {
     cursor: pointer;
 }
 
+.brand-wrapper {
+    display: flex;
+    width: 100%;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Responsive untuk mobile */
 @media (max-width: 768px) {
     .sidebar {
@@ -104,8 +111,12 @@ body {
         overflow: hidden;
     }
 
+    .brand-wrapper {
+        justify-content: space-between;
+    }
+
     .sidebar.show {
-        width: 250px;
+        width: 100%;
     }
 
     .main-content {

@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Dashboard Admin</title>
+    <title>{{ $title ?? 'Default Title' }}</title>
+
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
