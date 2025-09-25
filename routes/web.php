@@ -1,6 +1,8 @@
 <?php
 
+use App\Livewire\Admin\Bidang\Bidang;
 use App\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\Jabatan\Jabatan;
 use App\Livewire\Admin\Kegiatan\Kegiatan;
 use App\Livewire\Admin\Kegiatan\KegiatanDetail;
 use App\Livewire\Admin\Kegiatan\KegiatanForm;
@@ -27,15 +29,18 @@ Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    // Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/posts', PostIndex::class)->name('admin.posts.index');
     Route::get('/posts/create', PostCreate::class)->name('admin.posts.create');
     Route::get('/posts/{post}/edit', PostEdit::class)->name('admin.posts.edit');
-    // });
+    // route kegiatan
     Route::get('/kegiatan', Kegiatan::class)->name('admin.kegiatan.index');
     Route::get('/kegiatan/create', KegiatanForm::class)->name('admin.kegiatan.create');
     Route::get('/kegiatan/{kegiatan}/edit', KegiatanForm::class)->name('admin.kegiatan.edit');
     Route::get('/kegiatan/{kegiatan}', KegiatanDetail::class)->name('admin.kegiatan.detail');
+    // route bidang
+    Route::get('/bidang', Bidang::class)->name('admin.bidang.index');
+    // route Jabatan
+    Route::get('/jabatan', Jabatan::class)->name('admin.jabatan.index');
 
     Route::redirect('settings', 'settings/profile');
 
