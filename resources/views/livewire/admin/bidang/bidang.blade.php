@@ -63,8 +63,7 @@
                                 </button>
 
                                 <!-- Tombol Hapus -->
-                                <button wire:click="hapus({{ $bidang->id }})"
-                                    wire:confirm="Apakah Anda yakin ingin menghapus bidang '{{ $bidang->nama_bidang }}'?"
+                                <button wire:click="$dispatch('confirm-delete-data-bidang', {{ $bidang }})"
                                     class="btn btn-sm btn-outline-dark d-flex align-items-center gap-1">
                                     <i class="bi bi-trash3"></i>
                                     <span>Hapus</span>

@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Bidang;
 use App\Models\Bidang as ModelsBidang;
 use Exception;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -64,34 +65,39 @@ class Bidang extends Component
                     'nama_bidang' => $this->namaBidang
                 ]);
 
-                session()->flash('message', 'Bidang berhasil diperbarui!');
+                $this->dispatch('success-edit-data');
             } else {
                 // Tambah data baru
                 ModelsBidang::create([
                     'nama_bidang' => $this->namaBidang
                 ]);
 
-                session()->flash('message', 'Bidang berhasil ditambahkan!');
+                $this->dispatch('success-add-data');
             }
 
             $this->closeModal();
-            $this->loadData();
         } catch (\Exception $e) {
-            session()->flash('error', 'Terjadi kesalahan: ' . $e->getMessage());
+            if ($this->isEdit) {
+                $this->dispatch('failed-edit-data');
+            } else {
+                $this->dispatch('failed-add-data');
+            }
         }
     }
 
-    public function hapus($bidangId)
+    #[On('delete-data-bidang')]
+    public function hapus($id)
     {
         try {
-            $bidang = ModelsBidang::find($bidangId);
+            $bidang = ModelsBidang::find($id);
             if ($bidang) {
                 $bidang->delete();
-                session()->flash('message', 'Bidang berhasil dihapus!');
-                $this->loadData();
+
+                $this->dispatch('success-delete-data');
+                $this->closeModal();
             }
         } catch (\Exception $e) {
-            session()->flash('error', 'Terjadi kesalahan: ' . $e->getMessage());
+            $this->dispatch('failed-delete-data');
         }
     }
 
