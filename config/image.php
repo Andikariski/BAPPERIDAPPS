@@ -11,13 +11,14 @@ return [
     ],
 
     'watermark' => [
-        'text' => env('APP_NAME', 'BAPPERIDA PPS'),
-        'font_size' => 20,
-        'font_path' => null, // null untuk menggunakan font default
-        'color' => 'ffffff', // tanpa # untuk v3
+        'text' => 'BAPPERIDA PPS',
+        'font_size' => 40,
+        'font_path' => './fonts/Thrive.ttf', // null untuk menggunakan font default
+        'color' => 'fff', // tanpa # untuk v3
+        'stroke' => '000',
         'position' => [
-            'x_offset' => 10,
-            'y_offset' => 10,
+            'x_offset' => 40,
+            'y_offset' => 40,
             'align' => 'right',
             'valign' => 'bottom',
         ],
@@ -31,8 +32,8 @@ return [
     ],
 
     'resize' => [
-        'max_width' => 1920,
-        'max_height' => 1080,
+        'max_width' => 1280,
+        'max_height' => 720,
     ],
 
     'paths' => [

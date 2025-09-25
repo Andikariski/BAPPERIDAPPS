@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManager;
+use Intervention\Image\Typography\FontFactory;
 
 class FotoKegiatan extends Model
 {
@@ -43,16 +44,17 @@ class FotoKegiatan extends Model
     {
         $deleted = true;
 
-        if (Storage::exists($this->path_file)) {
-            $deleted = Storage::delete($this->path_file);
+        if ($this->path_file && Storage::disk('public')->exists($this->path_file)) {
+            $deleted = Storage::disk('public')->delete($this->path_file);
         }
 
-        if ($this->path_thumbnail && Storage::exists($this->path_thumbnail)) {
-            Storage::delete($this->path_thumbnail);
+        if ($this->path_thumbnail && Storage::disk('public')->exists($this->path_thumbnail)) {
+            Storage::disk('public')->delete($this->path_thumbnail);
         }
 
         return $deleted;
     }
+
     public function getUkuranFileFormattedAttribute(): string
     {
         $bytes = $this->ukuran_file;
@@ -71,41 +73,49 @@ class FotoKegiatan extends Model
             ? ImageManager::imagick()
             : ImageManager::gd();
     }
-    private function resizeImage(string $path, ?int $maxWidth = null, ?int $maxHeight = null)
+    private function resizeImage(string $path, ?int $maxWidth = null, ?int $maxHeight = null): void
     {
-        $maxWidth = $maxWidth ?: config('image.resize.max_width', 1920);
-        $maxHeight = $maxHeight ?: config('image.resize.max_height', 1080);
+        $maxWidth = $maxWidth ?: config('image.resize.max_width', 100);
+        $maxHeight = $maxHeight ?: config('image.resize.max_height', 100);
         $quality = config('image.quality.resize', 85);
 
-        $fullPath = storage_path(config('image.paths.storage', 'app/public') . '/' . $path);
-
+        $fullPath = Storage::disk('public')->path($path);
         $image = self::getImageManager()->read($fullPath);
 
         if ($image->width() > $maxWidth || $image->height() > $maxHeight) {
-            $image->scaleDown($maxWidth, $maxHeight);
+            $image = $image->scaleDown($maxWidth, $maxHeight); // harus ditampung!
 
-            $encoded = $image->toJpeg(quality: $quality);
-            file_put_contents($fullPath, $encoded);
+            // Simpan dalam format asli
+            $format = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+            $encoded = match ($format) {
+                'png'  => $image->toPng(),
+                'webp' => $image->toWebp(quality: $quality),
+                default => $image->toJpeg(quality: $quality),
+            };
+
+            Storage::disk('public')->put($path, (string) $encoded);
         }
     }
+
     public static function addWatermark(string $imagePath): void
     {
         $config = config('image.watermark');
         $watermarkText = $config['text'];
-        $fullPath = storage_path(config('image.paths.storage', 'app/public') . '/' . $imagePath);
 
+        $fullPath = Storage::disk('public')->path($imagePath);
         $image = self::getImageManager()->read($fullPath);
 
         $image->text(
             $watermarkText,
             $image->width() - $config['position']['x_offset'],
             $image->height() - $config['position']['y_offset'],
-            function ($font) use ($config) {
+            function (FontFactory $font) use ($config) {
                 if ($config['font_path'] && file_exists($config['font_path'])) {
                     $font->filename($config['font_path']);
                 }
                 $font->size($config['font_size']);
                 $font->color($config['color']);
+                $font->stroke($config['stroke']);
                 $font->align($config['position']['align']);
                 $font->valign($config['position']['valign']);
                 $font->angle($config['angle']);
@@ -113,27 +123,38 @@ class FotoKegiatan extends Model
         );
 
         $quality = config('image.quality.default', 90);
-        $encoded = $image->toJpeg(quality: $quality);
-        file_put_contents($fullPath, $encoded);
+        $format = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+
+        $encoded = match ($format) {
+            'png'  => $image->toPng(),
+            'webp' => $image->toWebp(quality: $quality),
+            default => $image->toJpeg(quality: $quality),
+        };
+
+        Storage::disk('public')->put($imagePath, (string) $encoded);
     }
+
+
     public static function generateThumbnail(string $originalPath, ?int $width = null, ?int $height = null): string
     {
         $width = $width ?: config('image.thumbnail.width', 300);
         $height = $height ?: config('image.thumbnail.height', 200);
         $quality = config('image.quality.thumbnail', 80);
 
-        $thumbnailPath = str_replace('/kegiatan/', '/kegiatan/thumbnails/', $originalPath);
-        $thumbnailFullPath = storage_path(config('image.paths.storage', 'app/public') . '/' . $thumbnailPath);
+        // Pastikan replace benar
+        $thumbnailPath = str_replace("kegiatan/", "kegiatan/thumbnails/", $originalPath);
 
-        // Buat direktori thumbnail jika belum ada
+        // Path full
+        $thumbnailFullPath = Storage::disk('public')->path($thumbnailPath);
+
+        // Buat direktori thumbnail kalau belum ada
         $thumbnailDir = dirname($thumbnailFullPath);
-        if (!file_exists($thumbnailDir)) {
+        if (!is_dir($thumbnailDir)) {
             mkdir($thumbnailDir, 0755, true);
         }
 
-        $image = self::getImageManager()->read(storage_path(config('image.paths.storage', 'app/public') . '/' . $originalPath));
+        $image = self::getImageManager()->read(Storage::disk('public')->path($originalPath));
 
-        // Gunakan method dari konfigurasi
         $method = config('image.thumbnail.method', 'cover');
         switch ($method) {
             case 'contain':
@@ -149,8 +170,8 @@ class FotoKegiatan extends Model
         }
 
         $encoded = $image->toJpeg(quality: $quality);
-        file_put_contents($thumbnailFullPath, $encoded);
+        Storage::disk('public')->put($thumbnailPath, (string) $encoded);
 
-        return $thumbnailPath;
+        return $thumbnailPath; // relatif ke disk public
     }
 }

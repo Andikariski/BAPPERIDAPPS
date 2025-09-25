@@ -68,7 +68,7 @@
                     <div class="p-4">
                         <div class="mb-2">
                             <span class="badge p-1 bg-primary bg-opacity-10 text-primary">
-                                {{ $kegiatan->bidang->nama_bidang }}
+                                {{ $kegiatan->bidang ? $kegiatan->bidang->nama_bidang : 'belum di tentukan' }}
                             </span>
                         </div>
 
@@ -88,7 +88,7 @@
                                     <span>edit</span>
                                 </a>
                                 <!-- Updated Delete Button - menggunakan Livewire method -->
-                                <button wire:click="confirmDelete({{ $kegiatan->id }})"
+                                <button wire:click="$dispatch('confirm-delete-data-kegiatan',{{ $kegiatan }})"
                                     class="btn p-0 text-danger d-flex align-items-center" style="gap:4px;">
                                     <i class="bi bi-trash"></i>
                                     <span>hapus</span>
@@ -118,41 +118,6 @@
         {{ $dataKegiatan->links('vendor.livewire.bootstrap-pagination') }}
     </div>
 
-    <!-- Delete Confirmation Modal -->
-    @if ($showDeleteModal && $kegiatanToDelete)
-        <div class="modal d-block" style="background-color: rgba(0,0,0,0.5);" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body p-4">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                                <div class="bg-danger bg-opacity-10 d-flex align-items-center justify-content-center"
-                                    style="height: 80px; width:80px; border-radius:200px;">
-                                    <i class="bi bi-exclamation-triangle text-danger fs-2"></i>
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <h5 class="modal-title fw-medium text-dark mb-2">Hapus Kegiatan</h5>
-                                <p class="text-muted mb-0">
-                                    Yakin ingin menghapus kegiatan
-                                    <strong>"{{ $kegiatanToDelete->nama_kegiatan }}"</strong>?
-                                    Semua foto yang terkait juga akan dihapus permanen. Aksi ini tidak dapat dibatalkan.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer bg-light">
-                        <button type="button" wire:click="cancelDelete" class="btn btn-outline-secondary">
-                            Batal
-                        </button>
-                        <button type="button" wire:click="deleteKegiatan" class="btn btn-danger">
-                            Hapus
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
 </div>
 
 <script>

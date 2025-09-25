@@ -150,13 +150,10 @@
                                 <div class="position-relative">
                                     <img src="{{ $photo->temporaryUrl() }}" alt="Preview" class="img-fluid rounded"
                                         style="height: 128px; width: 100%; object-fit: cover;">
-                                    <button type="button" wire:click="removeExistingPhoto({{ $index }})"
-                                        class="position-absolute top-0 end-0 m-2 btn btn-danger btn-sm rounded-circle p-1">
-                                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd"
-                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                clip-rule="evenodd" />
-                                        </svg>
+                                    <button type="button" wire:click="removePhoto({{ $index }})"
+                                        class="position-absolute top-0 end-0 m-2 btn btn-danger btn-sm d-flex align-items-center justify-content-center"
+                                        style="height: 40px; width:40px; outline: none; border:none;">
+                                        <i class="bi bi-trash"></i>
                                     </button>
                                     <input type="text" wire:model="captions.{{ $index }}"
                                         placeholder="Caption foto..." class="form-control form-control-sm mt-2">
@@ -234,7 +231,6 @@
                 });
 
                 dropzone.addEventListener('drop', handleDrop, false);
-                dropzone.addEventListener('click', () => fileInput.click());
 
                 function preventDefaults(e) {
                     e.preventDefault();

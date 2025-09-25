@@ -6,6 +6,7 @@ use App\Models\Bidang;
 use App\Models\Kegiatan as ModelsKegiatan;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -14,9 +15,6 @@ class Kegiatan extends Component
     use WithPagination;
     public $search = '';
     public $bidang_filter = '';
-    // Untuk konfirmasi delete
-    public $showDeleteModal = false;
-    public $kegiatanToDelete = null;
 
     public function updatedSearch()
     {
@@ -27,69 +25,37 @@ class Kegiatan extends Component
         $this->resetPage();
     }
 
-    // Method untuk konfirmasi delete
-    public function confirmDelete($kegiatanId)
-    {
-        $this->kegiatanToDelete = ModelsKegiatan::find($kegiatanId);
-        $this->showDeleteModal = true;
-    }
-
-    // Method untuk membatalkan delete
-    public function cancelDelete()
-    {
-        $this->showDeleteModal = false;
-        $this->kegiatanToDelete = null;
-    }
-
     // Method untuk delete kegiatan
-    public function deleteKegiatan()
+    #[On('delete-data-kegiatan')]
+    public function deleteKegiatan($id)
     {
-        if (!$this->kegiatanToDelete) {
-            $this->dispatch('show-alert', [
-                'type' => 'error',
-                'message' => 'Kegiatan tidak ditemukan'
-            ]);
-            return;
-        }
-
         DB::beginTransaction();
 
         try {
             // Hapus semua foto fisik
-            foreach ($this->kegiatanToDelete->fotoKegiatan as $foto) {
-                $foto->hapusFile();
+            $kegiatan = ModelsKegiatan::find($id);
+            if ($kegiatan) {
+
+                foreach ($kegiatan->fotoKegiatan as $foto) {
+                    $foto->hapusFile();
+                }
+
+                // Hapus kegiatan (foto akan terhapus otomatis karena cascade)
+                $kegiatan->delete();
+
+                DB::commit();
+
+                // Show success message
+                $this->dispatch('success-delete-data');
+
+                // Refresh data
+                $this->resetPage();
             }
-
-            $namaKegiatan = $this->kegiatanToDelete->nama_kegiatan;
-
-            // Hapus kegiatan (foto akan terhapus otomatis karena cascade)
-            $this->kegiatanToDelete->delete();
-
-            DB::commit();
-
-            // Reset modal
-            $this->showDeleteModal = false;
-            $this->kegiatanToDelete = null;
-
-            // Show success message
-            $this->dispatch('show-alert', [
-                'type' => 'success',
-                'message' => "Kegiatan '{$namaKegiatan}' berhasil dihapus"
-            ]);
-
-            // Refresh data
-            $this->resetPage();
         } catch (\Exception $e) {
             DB::rollback();
 
-            $this->dispatch('show-alert', [
-                'type' => 'error',
-                'message' => 'Gagal menghapus kegiatan: ' . $e->getMessage()
-            ]);
-
-            // Reset modal state
-            $this->showDeleteModal = false;
-            $this->kegiatanToDelete = null;
+            dump($e);
+            $this->dispatch('failed-delete-data');
         }
     }
 

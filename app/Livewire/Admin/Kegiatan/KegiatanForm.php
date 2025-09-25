@@ -83,13 +83,32 @@ class KegiatanForm extends Component
             'photos.*' => 'image|mimes:jpeg,png,jpg,gif|max:10240'
         ]);
     }
+
+    public function removePhoto($index)
+    {
+        if (isset($this->photos[$index])) {
+            // unset dulu agar tidak error index
+            unset($this->photos[$index]);
+
+            // reset array key supaya indeks rapi lagi
+            $this->photos = array_values($this->photos);
+
+            // kalau ada captions ikut dihapus
+            if (isset($this->captions[$index])) {
+                unset($this->captions[$index]);
+                $this->captions = array_values($this->captions);
+            }
+        }
+    }
     public function removeExistingPhoto($photoId)
     {
         $this->photoToDelete[] = $photoId;
-        $this->existingPhotos = array_filter($this->existingPhotos, function ($photo) use ($photoId) {
-            return $photo['id'] != $photoId;
+
+        $this->existingPhotos = $this->existingPhotos->reject(function ($photo) use ($photoId) {
+            return $photo->id == $photoId;
         });
     }
+
     public function setMainPhoto($photoId)
     {
         foreach ($this->existingPhotos as $photo) {
@@ -111,45 +130,44 @@ class KegiatanForm extends Component
     public function uploadPhotos()
     {
         $urutanTerakhir = $this->kegiatan->fotoKegiatan()->max('urutan') ?? 0;
+        $isFirstPhoto = $this->kegiatan->fotoKegiatan()->count() === 0;
 
         foreach ($this->photos as $index => $photo) {
             $namaFileAsli = $photo->getClientOriginalName();
             $ekstensi = $photo->getClientOriginalExtension();
-            $namaFileBaru = Str::slug(pathinfo($namaFileAsli, PATHINFO_FILENAME)) . '_' . time() . '_' . uniqid() . '.' . $ekstensi;
+            $namaFileBaru = Str::slug(pathinfo($namaFileAsli, PATHINFO_FILENAME))
+                . '_' . time() . '_' . uniqid() . '.' . $ekstensi;
 
-            // buat direktori jika belum ada
-            $direktori = 'kegiatan/' . $this->kegiatan->id;
-            Storage::makeDirectory('public/' . $direktori);
-
-            // simpan file asli
+            // simpan file ke disk public
+            $direktori = "kegiatan/{$this->kegiatan->id}";
             $pathFile = $photo->storeAs($direktori, $namaFileBaru, 'public');
 
-            // resize gambar untuk optimasi
-            $this->resizeImage($pathFile);
+            // absolute path untuk manipulasi gambar
+            $absolutePath = storage_path('app/public/' . $pathFile);
 
-            // tambah watermark
+            // resize & watermark
+            $this->resizeImage($pathFile);
             FotoKegiatan::addWatermark($pathFile, config('app.name'));
 
             // generate thumbnail
             $thumbnailPath = FotoKegiatan::generatethumbnail($pathFile);
 
-            // dapatkan dimensi gambar
-            $imagePath = storage_path('app/public/' . $pathFile);
-            $imageInfo = getimagesize($imagePath);
+            // dimensi
+            $imageInfo = getimagesize($absolutePath);
 
-            // simpan ke database
+            // simpan database
             FotoKegiatan::create([
                 'fkid_kegiatan' => $this->kegiatan->id,
-                'nama_file' => $namaFileAsli,
-                'path_file' => $pathFile,
+                'nama_file'     => $namaFileAsli,
+                'path_file'     => $pathFile,              // relatif ke disk public
                 'path_thumbnail' => $thumbnailPath,
-                'mime_type' => $photo->getMimeType(),
-                'ukuran_file' => $photo->getSize(),
-                'urutan' => ++$urutanTerakhir,
-                'caption' => $this->captions[$index] ?? null,
-                'width' => $imageInfo[0] ?? null,
-                'height' => $imageInfo[1] ?? null,
-                'is_main' => $urutanTerakhir === 1 && $this->kegiatan->fotoKegiatan()->count() === 0
+                'mime_type'     => $photo->getMimeType(),
+                'ukuran_file'   => $photo->getSize(),
+                'urutan'        => ++$urutanTerakhir,
+                'caption'       => $this->captions[$index] ?? null,
+                'width'         => $imageInfo[0] ?? null,
+                'height'        => $imageInfo[1] ?? null,
+                'is_main'       => $isFirstPhoto && $urutanTerakhir === 1,
             ]);
         }
     }
@@ -219,7 +237,7 @@ class KegiatanForm extends Component
 
             DB::commit();
 
-            session()->flash('success', $this->isEdit ? 'Data kegiatan berhasil diupdate' : 'Data kegiatan berhasil dibuat');
+            $this->dispatch($this->isEdit ? 'success-edit-data' : 'success-add-data');
 
             return redirect()->route('admin.kegiatan.index');
         } catch (Exception $e) {
