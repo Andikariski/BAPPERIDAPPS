@@ -76,4 +76,21 @@ document.addEventListener("livewire:init", () => {
             }
         });
     });
+
+    Livewire.on("confirm-delete-data-kegiatan", (data) => {
+        Swal2.fire({
+            icon: "question",
+            title:
+                "Yakin ingin hapus data kegiatan <strong class='text-primary'>" +
+                data["nama_kegiatan"] +
+                "</strong> ?",
+            showCancelButton: true,
+            cancelButtonText: "Batal",
+            confirmButtonText: "Ya, hapus",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.dispatch("delete-data-kegiatan", { id: data["id"] });
+            }
+        });
+    });
 });
