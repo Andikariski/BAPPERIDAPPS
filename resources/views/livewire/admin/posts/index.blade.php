@@ -9,7 +9,8 @@
 
     {{-- search & filtering --}}
     <div class="d-flex justify-content-between align-items-center mb-1 mt-4">
-        <input type="text" placeholder="Search..." wire:model.live="search" class="form-control w-25 rounded-1">
+        <input type="text" placeholder="Search..." wire:model.live.debounce.500ms="search"
+            class="form-control w-25 rounded-1">
         <a href="{{ route('admin.posts.create') }}" class="btn btn-primary d-flex align-items-center rounded-1 gap-1">
             <i class="bi bi-pencil-square"></i>
             <span>Tulis Berita</span>
