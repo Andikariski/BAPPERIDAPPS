@@ -11,6 +11,7 @@ use Livewire\Volt\Volt;
 use App\Livewire\Admin\Posts\Index as PostIndex;
 use App\Livewire\Admin\Posts\Create as PostCreate;
 use App\Livewire\Admin\Posts\Edit as PostEdit;
+use App\Livewire\Admin\RAP\RAP;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -41,6 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/bidang', Bidang::class)->name('admin.bidang.index');
     // route Jabatan
     Route::get('/jabatan', Jabatan::class)->name('admin.jabatan.index');
+    // route RAP
+    Route::get('/rap', RAP::class)->name('admin.rap.index');
 
     Route::redirect('settings', 'settings/profile');
 

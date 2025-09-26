@@ -93,4 +93,21 @@ document.addEventListener("livewire:init", () => {
             }
         });
     });
+
+    Livewire.on("confirm-delete-data-jabatan", (data) => {
+        Swal2.fire({
+            icon: "question",
+            title:
+                "Yakin ingin hapus data jabatan <strong class='text-primary'>" +
+                data["nama_jabatan"] +
+                "</strong> ?",
+            showCancelButton: true,
+            cancelButtonText: "Batal",
+            confirmButtonText: "Ya, hapus",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.dispatch("delete-data-jabatan", { id: data["id"] });
+            }
+        });
+    });
 });

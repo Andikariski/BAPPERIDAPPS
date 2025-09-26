@@ -1,30 +1,8 @@
-@push('styles')
-    <style>
-        .modal-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1050;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-dialog {
-            max-width: 500px;
-            width: 90%;
-        }
-    </style>
-@endpush
-
-<div x-data="{ show: false }" x-cloak>
+<div x-cloak>
     @php
         $breadcrumbs = [
             ['name' => 'Dashboard', 'url' => route('dashboard')],
-            ['name' => 'Bidang', 'url' => route('admin.bidang.index')],
+            ['name' => 'Data Bidang', 'url' => route('admin.bidang.index')],
         ];
     @endphp
     <x-breadcrumb :items="$breadcrumbs" />

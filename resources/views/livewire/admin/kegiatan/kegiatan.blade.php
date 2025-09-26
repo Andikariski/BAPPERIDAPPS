@@ -8,8 +8,8 @@
     <x-breadcrumb :items="$breadcrumbs" />
 
     <!-- Header & Filters -->
-    <div class="my-4">
-        <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-between mb-3">
+    <div class="mt-4">
+        <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-between mb-1">
             <!-- Search & Filter -->
             <div class="row g-3">
                 <div class="col-lg-6">
