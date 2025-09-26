@@ -1,5 +1,8 @@
 <?php
 
+use App\Livewire\Admin\Berita\Berita;
+use App\Livewire\Admin\Berita\BeritaDetail;
+use App\Livewire\Admin\Berita\BeritaForm;
 use App\Livewire\Admin\Bidang\Bidang;
 use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Jabatan\Jabatan;
@@ -30,9 +33,6 @@ Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    Route::get('/posts', PostIndex::class)->name('admin.posts.index');
-    Route::get('/posts/create', PostCreate::class)->name('admin.posts.create');
-    Route::get('/posts/{post}/edit', PostEdit::class)->name('admin.posts.edit');
     // route kegiatan
     Route::get('/kegiatan', Kegiatan::class)->name('admin.kegiatan.index');
     Route::get('/kegiatan/create', KegiatanForm::class)->name('admin.kegiatan.create');
@@ -44,6 +44,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/jabatan', Jabatan::class)->name('admin.jabatan.index');
     // route RAP
     Route::get('/rap', RAP::class)->name('admin.rap.index');
+    // route berita
+    Route::get('/berita', Berita::class)->name('admin.berita.index');
+    Route::get('/berita/create', BeritaForm::class)->name('admin.berita.create');
+    Route::get('/berita/{berita}/edit', BeritaForm::class)->name('admin.berita.edit');
+    Route::get('/berita/{berita}', BeritaDetail::class)->name('admin.berita.detail');
 
     Route::redirect('settings', 'settings/profile');
 

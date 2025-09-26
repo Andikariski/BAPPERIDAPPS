@@ -18,11 +18,22 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->longText('konten_berita');
             $table->string('foto_thumbnail')->nullable();
-            $table->string('tags_berita')->nullable();
             $table->foreignId('author_id')->constrained('users')->onDelete('cascade');
             $table->enum('status_publikasi', ['draft', 'published', 'archive'])->default('draft');
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        // Pivot table for posts & tags
+
+        Schema::create('tbl_berita_tag', function (Blueprint $table) {
+            $table->foreignId('berita_id')
+                ->constrained('tbl_berita')
+                ->onDelete('cascade');
+            $table->foreignId('tag_id')
+                ->constrained('tbl_tag')
+                ->onDelete('cascade');
+            $table->primary(['berita_id', 'tag_id']); // composite PK
         });
     }
 

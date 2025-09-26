@@ -50,7 +50,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="2" class="px-4 py-5 text-center">
+                            <td colspan="3" class="px-4 py-5 text-center">
                                 <div class="d-inline-flex flex-column align-items-center justify-content-center">
                                     <i class="bi bi-emoji-tear text-warning" style="font-size: 60px"></i>
                                     <span class="fs-5 text-dark">data bidang masih kosong!</span>

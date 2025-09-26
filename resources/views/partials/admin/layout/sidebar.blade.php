@@ -28,15 +28,14 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a wire:navigate href="{{ route('admin.posts.index') }}"
-                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.posts.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
+                <a wire:navigate href="{{ route('admin.berita.index') }}"
+                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.berita.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
                     :class="{ 'justify-content-center': sidebarCollapsed }">
                     <i
-                        class="bi bi-journal-text {{ request()->routeIs('admin.posts.*') ? 'text-light' : 'text-dark' }}"></i>
+                        class="bi bi-journal-text {{ request()->routeIs('admin.berita.*') ? 'text-light' : 'text-dark' }}"></i>
                     <span x-show="!sidebarCollapsed">Berita</span>
                 </a>
             </li>
-
             <li class="sidebar-nav-item">
                 <a wire:navigate href="{{ route('admin.kegiatan.index') }}"
                     class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.kegiatan.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
