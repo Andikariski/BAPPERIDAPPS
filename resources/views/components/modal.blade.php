@@ -4,13 +4,13 @@
     x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
     x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
-    class="modal-backdrop position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-    style="background-color: rgba(0, 0, 0, 0.5); z-index: 1050; display: none;" {{ $attributes }}>
+    class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+    style="background-color: rgba(0, 0, 0, 0.5); z-index: 1050; display: none; z-index: 1060;" {{ $attributes }}>
 
-    <div class="modal-dialog {{ $size }}" x-transition:enter="transition ease-out duration-300"
+    <div class="{{ $size }}" x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 transform scale-75" x-transition:enter-end="opacity-100 transform scale-100"
         x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 transform scale-100"
-        x-transition:leave-end="opacity-0 transform scale-75">
+        x-transition:leave-end="opacity-0 transform scale-75" style="max-width: 500px; width: 90%;">
 
         <div class="modal-content bg-white rounded shadow p-4">
             <!-- Modal Header -->

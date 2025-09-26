@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             BlogSeeder::class,
-            // BidangSeeder::class,
-            // JabatanSeeder::class
+            BidangSeeder::class,
+            JabatanSeeder::class
         ]);
     }
 }

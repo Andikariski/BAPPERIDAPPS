@@ -28,15 +28,14 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a wire:navigate href="{{ route('admin.posts.index') }}"
-                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.posts.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
+                <a wire:navigate href="{{ route('admin.berita.index') }}"
+                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.berita.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
                     :class="{ 'justify-content-center': sidebarCollapsed }">
                     <i
-                        class="bi bi-journal-text {{ request()->routeIs('admin.posts.*') ? 'text-light' : 'text-dark' }}"></i>
+                        class="bi bi-journal-text {{ request()->routeIs('admin.berita.*') ? 'text-light' : 'text-dark' }}"></i>
                     <span x-show="!sidebarCollapsed">Berita</span>
                 </a>
             </li>
-
             <li class="sidebar-nav-item">
                 <a wire:navigate href="{{ route('admin.kegiatan.index') }}"
                     class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.kegiatan.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
@@ -67,11 +66,11 @@
             <li class="nav-item" x-data="{ open: false }">
                 <!-- Parent link (dropdown trigger) -->
                 <a href="#" @click.prevent="open = !open"
-                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center justify-content-between gap-1 {{ request()->routeIs('admin.jabatan.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
+                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center justify-content-between gap-1 {{ request()->routeIs('admin.rap.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
                     :class="{ 'justify-content-center': sidebarCollapsed }">
                     <div class="d-flex align-items-center gap-1">
                         <i
-                            class="bi bi-cash-stack {{ request()->routeIs('admin.jabatan.*') ? 'text-light' : 'text-dark' }}"></i>
+                            class="bi bi-cash-stack {{ request()->routeIs('admin.rap.*') ? 'text-light' : 'text-dark' }}"></i>
                         <span x-show="!sidebarCollapsed">RAP</span>
                     </div>
                     <i class="bi" :class="open ? 'bi-chevron-up' : 'bi-chevron-down'"
@@ -82,13 +81,13 @@
                 <ul class="list-unstyled ps-4 mt-1" x-show="open && !sidebarCollapsed" x-transition
                     style="display: none;">
                     <li>
-                        <a wire:navigate href="{{ route('admin.jabatan.index', ['type' => 'awal']) }}"
+                        <a wire:navigate href="{{ route('admin.rap.index', ['type' => 'awal']) }}"
                             class="d-block py-1 text-decoration-none {{ request()->get('type') === 'awal' ? 'fw-bold text-primary' : 'text-dark' }}">
                             RAP Awal
                         </a>
                     </li>
                     <li>
-                        <a wire:navigate href="{{ route('admin.jabatan.index', ['type' => 'perubahan']) }}"
+                        <a wire:navigate href="{{ route('admin.rap.index', ['type' => 'perubahan']) }}"
                             class="d-block py-1 text-decoration-none {{ request()->get('type') === 'perubahan' ? 'fw-bold text-primary' : 'text-dark' }}">
                             RAP Perubahan
                         </a>

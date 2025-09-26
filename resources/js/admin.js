@@ -58,6 +58,18 @@ document.addEventListener("livewire:init", () => {
             title: data.message || "gagal menghapus data",
         });
     });
+    Livewire.on("success-archive-data", (data) => {
+        Toast.fire({
+            icon: "success",
+            title: data.message || "berhasil mengarsipkan data",
+        });
+    });
+    Livewire.on("success-restore-data", (data) => {
+        Toast.fire({
+            icon: "success",
+            title: data.message || "berhasil mengembalikan data",
+        });
+    });
 
     // sweetalert modal
     Livewire.on("confirm-delete-data-bidang", (data) => {
@@ -76,7 +88,6 @@ document.addEventListener("livewire:init", () => {
             }
         });
     });
-
     Livewire.on("confirm-delete-data-kegiatan", (data) => {
         Swal2.fire({
             icon: "question",
@@ -90,6 +101,78 @@ document.addEventListener("livewire:init", () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 Livewire.dispatch("delete-data-kegiatan", { id: data["id"] });
+            }
+        });
+    });
+    Livewire.on("confirm-delete-data-jabatan", (data) => {
+        Swal2.fire({
+            icon: "question",
+            title:
+                "Yakin ingin hapus data jabatan <strong class='text-primary'>" +
+                data["nama_jabatan"] +
+                "</strong> ?",
+            showCancelButton: true,
+            cancelButtonText: "Batal",
+            confirmButtonText: "Ya, hapus",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.dispatch("delete-data-jabatan", { id: data["id"] });
+            }
+        });
+    });
+    // sweetalert data berita
+    Livewire.on("confirm-soft-delete-data-berita", (data) => {
+        Swal2.fire({
+            icon: "question",
+            title:
+                "Yakin ingin mengarsipkan berita <strong class='text-primary'>" +
+                data["judul_berita"] +
+                "</strong> ?",
+            showCancelButton: true,
+            cancelButtonText: "Batal",
+            confirmButtonText: "Ya, hapus",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.dispatch("soft-delete-data-berita", {
+                    id: data["id"],
+                });
+            }
+        });
+    });
+    Livewire.on("confirm-force-delete-data-berita", (data) => {
+        Swal2.fire({
+            icon: "question",
+            title:
+                "Yakin ingin hapus permanen berita <strong class='text-primary'>" +
+                data["judul_berita"] +
+                "</strong> ?",
+            showCancelButton: true,
+            cancelButtonText: "Batal",
+            confirmButtonText: "Ya, hapus permanen",
+            footer: '<strong class="text-danger">berita yang di hapus tidak akan bisa dikembalikan!</strong>',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.dispatch("force-delete-data-berita", {
+                    id: data["id"],
+                });
+            }
+        });
+    });
+    Livewire.on("confirm-restore-data-berita", (data) => {
+        Swal2.fire({
+            icon: "question",
+            title:
+                "Yakin ingin mengembalikan data berita <strong class='text-primary'>" +
+                data["judul_berita"] +
+                "</strong> ?",
+            showCancelButton: true,
+            cancelButtonText: "Batal",
+            confirmButtonText: "Ya, Kembalikan",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.dispatch("restore-data-berita", {
+                    id: data["id"],
+                });
             }
         });
     });

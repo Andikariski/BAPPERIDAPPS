@@ -26,6 +26,6 @@ class Bidang extends Model
     }
     public function berita(): HasMany
     {
-        return $this->hasMany(Pegawai::class, 'fkid_bidang');
+        return $this->hasMany(Berita::class, 'fkid_bidang');
     }
 }
