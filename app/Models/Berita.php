@@ -40,7 +40,7 @@ class Berita extends Model
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class, 'tbl_berita_tag', 'berita_id', 'tag_id');
+        return $this->belongsToMany(Tag::class, 'tbl_berita_tag', 'berita_id', 'tag_id')->withTimestamps();
     }
 
     public function scopePublished($query)
