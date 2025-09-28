@@ -66,7 +66,7 @@ class BeritaForm extends Component
             'bidangPelaksanaId' => 'required|exists:tbl_bidang,id',
             'statusPublikasi' => 'required|in:draft,published',
             'tagIds' => 'nullable',
-            'tagIds.*' => 'exists:tags,id',
+            'tagIds.*' => 'exists:tbl_tag,id',
         ];
 
         // Validasi slug dengan pengecualian untuk edit mode
@@ -142,7 +142,7 @@ class BeritaForm extends Component
             // Sync tags
             $berita->tags()->sync($this->tagIds);
 
-            session()->flash('success', $message);
+            $this->dispatch('success-add-data');
             return redirect()->route('admin.berita.index');
         } catch (Exception $e) {
             dump($e->getMessage());

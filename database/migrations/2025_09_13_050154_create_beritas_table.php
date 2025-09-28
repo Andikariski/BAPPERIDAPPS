@@ -22,10 +22,13 @@ return new class extends Migration
             $table->enum('status_publikasi', ['draft', 'published', 'archive'])->default('draft');
             $table->timestamps();
             $table->softDeletes();
+
+            // indexing
+            $table->index(['status_publikasi', 'created_at']);
+            $table->index('slug');
         });
 
         // Pivot table for posts & tags
-
         Schema::create('tbl_berita_tag', function (Blueprint $table) {
             $table->foreignId('berita_id')
                 ->constrained('tbl_berita')
@@ -33,7 +36,8 @@ return new class extends Migration
             $table->foreignId('tag_id')
                 ->constrained('tbl_tag')
                 ->onDelete('cascade');
-            $table->primary(['berita_id', 'tag_id']); // composite PK
+            $table->primary(['berita_id', 'tag_id']);
+            $table->timestamps();
         });
     }
 

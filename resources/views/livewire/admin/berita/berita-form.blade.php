@@ -24,9 +24,9 @@
                             </div>
 
                             <!-- Slug -->
-                            <div class="mb-3">
+                            <div class="mb-3" hidden>
                                 <label class="form-label fw-semibold" for="slug">Slug</label>
-                                <input type="text" wire:model="slug"
+                                <input disabled type="text" wire:model="slug"
                                     class="form-control @error('slug') is-invalid @enderror" id="slug">
                                 @error('slug')
                                     <div class="invalid-feedback">{{ $message }}</div>

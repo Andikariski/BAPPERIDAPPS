@@ -10,6 +10,7 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $table = "tbl_tag";
     protected $fillable = ['name', 'slug'];
 
     public function posts()
@@ -18,6 +19,6 @@ class Tag extends Model
     }
     public function berita(): BelongsToMany
     {
-        return $this->belongsToMany(Berita::class, 'tbl_berita_tag', 'tag_id', 'berita_id');
+        return $this->belongsToMany(Berita::class, 'tbl_berita_tag', 'tag_id', 'berita_id')->withTimestamps();
     }
 }
