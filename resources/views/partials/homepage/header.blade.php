@@ -16,8 +16,8 @@
                     <a href="#"><span>Tentang</span>
                         <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <li><a href="#">Pengantar Kepala Badan</a></li>
-                        <li><a href="#">Profile Pegawai</a></li>
+                        {{-- <li><a href="#">Pengantar Kepala Badan</a></li> --}}
+                        <li><a href="{{ route('pegawai') }}">Profile Pegawai</a></li>
                         <li><a href="{{ route('strukrOrganisasi') }}">Struktur Organisasi</a></li>
                         <li><a href="{{ route('tupoksi') }}">Tugas Pokok dan Fungsi</a></li>
                     </ul>

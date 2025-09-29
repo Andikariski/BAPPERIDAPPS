@@ -31,6 +31,8 @@ Route::get('/tupoksi', function () {
 Route::get('/blog', \App\Livewire\Blog\Index::class)->name('blog.index');
 Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
 
+Route::get('/pegawai',\App\Livewire\Pegawai\Index::class)->name('pegawai');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     // route kegiatan
