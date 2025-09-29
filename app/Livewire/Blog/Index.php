@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Blog;
 
+use App\Models\Berita;
 use App\Models\Category;
 use App\Models\Post;
 use Livewire\Attributes\Layout;
@@ -31,8 +32,8 @@ class Index extends Component
     #[Layout('components.layouts.public')]
     public function render()
     {
-        $query = Post::with('category', 'tags', 'author')
-            ->where('status', 'published');
+        $query = Berita::with('category', 'tags', 'author')
+            ->where('status_publikasi', 'published');
 
         if ($this->search) {
             $query->where(function ($q) {
