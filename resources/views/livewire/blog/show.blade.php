@@ -3,15 +3,17 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ route('blog.index') }}">Blog</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ $post->title }}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $berita->judul_berita }}</li>
         </ol>
     </nav>
     <div class="pt-4">
-        <h1>{{ $post->title }}</h1>
-        <p class="text-muted">
-            Category: {{ $post->category->name ?? 'Uncategorized' }}
-            | By {{ $post->author->name }}
-        </p>
-        <div>{!! $post->content !!}</div>
+        <div class="mb-4">
+            <h1>{{ $berita->judul_berita }}</h1>
+            <p class="text-muted">
+                Category: {{ $berita->bidang->nama_bidang ?? 'tidak terkategori' }}
+                | By {{ $berita->author->name }}
+            </p>
+        </div>
+        <div>{!! $berita->konten_berita !!}</div>
     </div>
 </div>
