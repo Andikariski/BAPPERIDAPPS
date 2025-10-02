@@ -1,6 +1,6 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <img src="assets/img/pps.png" alt="" />
             <h4 class="sitename">BAPPERIDA PPS</h4>
@@ -11,6 +11,7 @@
                 <li>
                     <a href="{{ route('home') }}" class="active">Beranda<br /></a>
                 </li>
+                <li><a href="#kata-pengantar">Kata Pengantar</a></li>
                 {{-- <li><a href="{{ route('blog.index') }}">Blog</a></li> --}}
                 <li class="dropdown">
                     <a href="#"><span>Tentang</span>
@@ -30,19 +31,10 @@
                         <li><a href="#">Galeri Foto</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#"><span>Dokumen Publik</span>
-                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">RKPD</a></li>
-                        <li><a href="#">RTRW</a></li>
-                        <li><a href="#">RPJMD</a></li>
-                        <li><a href="#">RPJPD</a></li>
-                        <li><a href="#">LKPJ</a></li>
-                        <li><a href="#">Dokumen Lain</a></li>
-                    </ul>
-                </li>
-                <li><a href="#about">Informasi Lainya</a></li>
+
+                <li><a href="{{ route('dokumenpublik') }}">Dokumen Publik</a></li>
+                
+                <li><a href="#about">Sejarah Bapperida</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

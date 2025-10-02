@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
-                <a href="#about" class="btn-get-started">Get Started</a>
+                <a href="#" class="btn-get-started disabled">BAPPERIDA</a>
             </div>
 
             <div class="row gy-4 mt-5">
@@ -106,7 +106,7 @@
     </section> -->
 
     <!-- About Alt Section -->
-    <section id="about-alt" class="about-alt section">
+    <section id="kata-pengantar" class="about-alt section">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Foto -->
@@ -221,7 +221,7 @@
 
                 <div class="col-xl-3 col-md-3 col-6 client-logo">
                     <!-- <img src="assets/img/clients/client-4.png" class="img-fluid" alt=""> -->
-                    <img src="assets/img/mitrabapperida/brin.png" class="img-fluid" alt="" />
+                    <img src="assets/img/mitrabapperida/brin1.png" class="img-fluid" alt="" />
                 </div>
             </div>
         </div>
@@ -1008,6 +1008,7 @@
                 </div>
 
                 <div class="col-lg-8">
+                  <h4 class="text-center m-3">Buku Digital Tamu</h4>
                     <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
                         data-aos-delay="200">
                         <div class="row gy-4">
