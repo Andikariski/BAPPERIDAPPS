@@ -12,6 +12,7 @@ class Show extends Component
 
     public function mount($slug)
     {
+
         $this->berita = Berita::with('bidang', 'tags', 'author')
             ->where('slug', $slug)
             ->firstOrFail();

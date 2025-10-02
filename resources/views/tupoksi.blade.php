@@ -1,7 +1,11 @@
 <x-layouts.public>
     <section id="about-alt" class="about-alt section">
         <div class="container">
-            <h2 class="mb-4 text-center"">Tugas Pokok dan Fungsi BAPPERIDA</h1>
+            {{-- <h2 class="mb-4 text-center">Tugas Pokok dan Fungsi BAPPERIDA</h1> --}}
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Tugas Pokok dan Fungsi BAPPERIDA</h2>
+                <p>Tugas Pokok Dan Fungsi BAPPERIDA Yang Menjadi Acuan Kerja Para Staff</p>
+            </div>
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">

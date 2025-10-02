@@ -33,6 +33,8 @@ Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
 
 Route::get('/pegawai',\App\Livewire\Pegawai\Index::class)->name('pegawai');
 
+Route::get('/dokumenPublik',\App\Livewire\Dokumen\Index::class)->name('dokumenpublik');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     // route kegiatan

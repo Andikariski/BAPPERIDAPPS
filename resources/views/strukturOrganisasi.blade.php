@@ -1,6 +1,10 @@
 <x-layouts.public>
     <section id="about-alt" class="about-alt section">
-        <h2 class="mb-4 text-center">Struktur Organisasi</h2>
+        {{-- <h2 class="mb-4 text-center">Struktur Organisasi</h2> --}}
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Struktur Organisasi</h2>
+            <p>Struktur Organisasi Badan Perencanaan Pembangunan Riset dan Inovasi Daerah</p>
+        </div>
         <div class="container">
             <div class="row align-items-center">
                 <!-- Foto -->

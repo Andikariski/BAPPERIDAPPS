@@ -1,5 +1,5 @@
 @section('title', 'Admin | Berita')
-<div class="container py-5">
+<div class="container py-2">
 
     <!-- Search & filtering -->
     <div class="d-flex justify-content-between gap-2">
@@ -17,7 +17,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
+                            <img src="assets/img/pegawai/1Esau.png"  class="img-fluid"/>
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter-x"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -36,7 +36,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="" />
+                            <img src="assets/img/pegawai/1fispra.png" class="img-fluid" alt=""/>
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter-x"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -55,7 +55,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="" />
+                            <img src="assets/img/pegawai/1Ary.png" class="img-fluid" alt="" />
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter-x"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -74,7 +74,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="" />
+                            <img src="assets/img/pegawai/1Yustisianus.png" class="img-fluid" alt="" />
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter-x"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>

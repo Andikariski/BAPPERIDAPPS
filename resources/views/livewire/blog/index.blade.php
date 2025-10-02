@@ -1,5 +1,5 @@
 @section('title', 'Admin | Berita')
-<div class="container py-5">
+<div class="container py-2">
     <h2 class="mb-4 text-center">Berita</h2>
 
     <!-- Search & filtering -->
