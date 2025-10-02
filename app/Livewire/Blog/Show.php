@@ -8,11 +8,12 @@ use Livewire\Component;
 
 class Show extends Component
 {
-    public $post;
+    public $berita;
 
     public function mount($slug)
     {
-        $this->post = Berita::with('category', 'tags', 'author')
+
+        $this->berita = Berita::with('bidang', 'tags', 'author')
             ->where('slug', $slug)
             ->firstOrFail();
     }

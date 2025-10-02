@@ -3,8 +3,7 @@
 namespace App\Livewire\Blog;
 
 use App\Models\Berita;
-use App\Models\Category;
-use App\Models\Post;
+use App\Models\Bidang;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -14,16 +13,16 @@ class Index extends Component
     use WithPagination;
 
     public $search = '';
-    public $category = '';
+    public $bidang = '';
 
-    protected $queryString = ['search', 'category', 'page'];
+    protected $queryString = ['search', 'bidang', 'page'];
 
     public function updatedSearch()
     {
         $this->resetPage();
     }
 
-    public function updatedCategory()
+    public function updatedBidang()
     {
         $this->resetPage();
     }
@@ -32,7 +31,7 @@ class Index extends Component
     #[Layout('components.layouts.public')]
     public function render()
     {
-        $query = Berita::with('category', 'tags', 'author')
+        $query = Berita::with('bidang', 'tags', 'author')
             ->where('status_publikasi', 'published');
 
         if ($this->search) {
@@ -42,15 +41,15 @@ class Index extends Component
             });
         }
 
-        if ($this->category) {
-            $query->whereHas('category', function ($q) {
-                $q->where('slug', $this->category);
+        if ($this->bidang) {
+            $query->whereHas('bidang', function ($q) {
+                $q->where('id', $this->bidang);
             });
         }
 
         return view('livewire.blog.index', [
             'posts' => $query->latest()->paginate(6),
-            'categories' => Category::all(),
+            'dataBidang' => Bidang::all(),
         ]);
     }
 }

@@ -6,10 +6,10 @@
     <div class="d-flex justify-content-between gap-2">
         <input type="text" class="form-control mb-3" placeholder="cari berita..." wire:model.live="search">
         <div class="mb-3">
-            <select wire:model.live="category" class="form-select">
+            <select wire:model.live="bidang" class="form-select">
                 <option class="px-4" value="">Kategori</option>
-                @foreach ($categories as $cat)
-                    <option value="{{ $cat->slug }}">{{ $cat->name }}</option>
+                @foreach ($dataBidang as $bidang)
+                    <option value="{{ $bidang->id }}">{{ $bidang->nama_bidang }}</option>
                 @endforeach
             </select>
         </div>
@@ -19,9 +19,10 @@
         @forelse($posts as $post)
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    @if ($post->featured_image)
-                        <img src="{{ Storage::url('blog_cover_photo/' . $post->featured_image) }}" class="card-img-top"
-                            style="height: 200px; object-fit: cover;" alt="{{ $post->title }}">
+                    @if ($post->foto_thumbnail)
+                        <img src="{{ Storage::url('foto_thumbnail_berita/' . $post->foto_thumbnail) }}"
+                            class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="{{ $post->judul_berita }}">
                     @else
                         <div class="card-img-top d-flex align-items-center justify-content-center bg-secondary text-white"
                             style="height: 200px;">
@@ -29,8 +30,7 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <h5 class="card-title">{{ $post->title }}</h5>
-                        <p class="card-text">{{ $post->excerpt }}</p>
+                        <h5 class="card-title">{{ $post->judul_berita }}</h5>
                         {{-- <p class="card-text">{{ $post->created_at }}</p> --}}
                         <p class="card-text">{{ $post->created_at->translatedFormat('j F Y') }}</p>
 
@@ -39,7 +39,9 @@
                 </div>
             </div>
         @empty
-            <p>No posts found.</p>
+            <div class="alert alert-warning d-flex align-items-center justify-content-center">
+                <p class="my-5">No posts found.</p>
+            </div>
         @endforelse
     </div>
 
