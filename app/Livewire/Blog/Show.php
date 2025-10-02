@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Blog;
 
-use App\Models\Post;
+use App\Models\Berita;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -12,7 +12,7 @@ class Show extends Component
 
     public function mount($slug)
     {
-        $this->post = Post::with('category', 'tags', 'author')
+        $this->post = Berita::with('category', 'tags', 'author')
             ->where('slug', $slug)
             ->firstOrFail();
     }

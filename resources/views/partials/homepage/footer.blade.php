@@ -6,35 +6,44 @@
               <span class="sitename">BapperidaPPS</span>
             </a>
             <p>
-              Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
-              nada terra videa magna derita valies darta donna mare fermentum
-              iaculis eu non diam phasellus.
+              Bersama masyarakat, pemerintah, dan pemangku kepentingan, Bapperida mewujudkan pembangunan daerah yang inklusif, berkeadilan, dan berorientasi pada masa depan.
             </p>
             <div class="social-links d-flex mt-4">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-youtube"></i></a>
+              {{-- <a href=""><i class="bi bi-twitter-x"></i></a> --}}
               <a href=""><i class="bi bi-facebook"></i></a>
               <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
+              {{-- <a href=""><i class="bi bi-linkedin"></i></a> --}}
             </div>
           </div>
 
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Kabupaten</h4>
-            <ul>
-              <li><a href="#">Kab. Merauke</a></li>
-              <li><a href="#">Kab. Boven Digoel</a></li>
-              <li><a href="#">Kab. Mappi</a></li>
-              <li><a href="#">Kab. Asmat</a></li>
-            </ul>
-          </div>
+         
 
-          <div class="col-lg-2 col-6 footer-links">
+          <div class="col-lg-2 col-4 footer-links">
             <h4>Bidang dalam Bapperida</h4>
             <ul>
               <li><a href="#">Bidang Perencanaan</a></li>
               <li><a href="#">Bidang Ekonomi Sosial Budaya</a></li>
               <li><a href="#">Bidang Fisik dan Prasarana</a></li>
               <li><a href="#">Bidang Riset Inovasi Daerah</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-4 footer-links">
+            <h4>Mitra Kerja K/L BAPPERIDA</h4>
+            <ul>
+              <li><a href="#">Kementrian Dalam Negeri</a></li>
+              <li><a href="#">Kementrian Keuangan RI</a></li>
+              <li><a href="#">Badan Perencanaan Pembangunan Nasional</a></li>
+              <li><a href="#">Badan Riset dan Inovasi Nasional</a></li>
+            </ul>
+          </div>
+           <div class="col-lg-2 col-4 footer-links">
+            <h4>Kabupaten</h4>
+            <ul>
+              <li><a href="#">Kabupaetn. Merauke</a></li>
+              <li><a href="#">Kabupaetn. Boven Digoel</a></li>
+              <li><a href="#">Kabupaetn. Mappi</a></li>
+              <li><a href="#">Kabupaetn. Asmat</a></li>
             </ul>
           </div>
 
