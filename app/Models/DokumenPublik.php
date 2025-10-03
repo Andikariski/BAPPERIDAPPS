@@ -13,7 +13,12 @@ class DokumenPublik extends Model
     protected $fillable = [
         'fkid_bidang',
         'nama_dokumen',
-        'deskripsi_dokumen'
+        'deskripsi_dokumen',
+        'file_path',
+        'file_name',
+        'file_size',
+        'file_type',
+        'thumbnail_path',
     ];
 
     public function bidang(): BelongsTo

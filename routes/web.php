@@ -5,6 +5,9 @@ use App\Livewire\Admin\Berita\BeritaDetail;
 use App\Livewire\Admin\Berita\BeritaForm;
 use App\Livewire\Admin\Bidang\Bidang;
 use App\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\DokumenPublik\DokumenPublik;
+use App\Livewire\Admin\DokumenPublik\DokumenPublikDetail;
+use App\Livewire\Admin\DokumenPublik\DokumenPublikForm;
 use App\Livewire\Admin\Jabatan\Jabatan;
 use App\Livewire\Admin\Kegiatan\Kegiatan;
 use App\Livewire\Admin\Kegiatan\KegiatanDetail;
@@ -31,7 +34,7 @@ Route::get('/pegawai', \App\Livewire\Pegawai\Index::class)->name('pegawai');
 
 Route::get('/dokumenPublik', \App\Livewire\Dokumen\Index::class)->name('dokumenpublik');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->prefix('admin/')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     // route kegiatan
     Route::get('/kegiatan', Kegiatan::class)->name('admin.kegiatan.index');
@@ -49,9 +52,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/berita/create', BeritaForm::class)->name('admin.berita.create');
     Route::get('/berita/{berita}/edit', BeritaForm::class)->name('admin.berita.edit');
     Route::get('/berita/{berita}', BeritaDetail::class)->name('admin.berita.detail');
-
     //Route Pegawai
     Route::get('/pegawai', Pegawai::class)->name('admin.pegawai.index');
+    // Route dokumen publik
+    Route::get('/dokumen-publik', DokumenPublik::class)->name('admin.dokumenpublik.index');
+    Route::get('/dokumen-publik/create', DokumenPublikForm::class)->name('admin.dokumenpublik.create');
+    Route::get('/dokumen-publik/{id}', DokumenPublikDetail::class)->name('admin.dokumenpublik.detail');
+    Route::get('/dokumen-publik/{id}/edit', DokumenPublikForm::class)->name('admin.dokumenpublik.edit');
 
     Route::redirect('settings', 'settings/profile');
 

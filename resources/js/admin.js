@@ -196,4 +196,24 @@ document.addEventListener("livewire:init", () => {
             }
         });
     });
+    // sweetalert data dokumen
+    Livewire.on("confirm-delete-data-dokumen", (data) => {
+        Swal2.fire({
+            icon: "question",
+            title:
+                "Yakin ingin hapus permanen file <strong class='text-primary'>" +
+                data["nama_dokumen"] +
+                "</strong> ?",
+            showCancelButton: true,
+            cancelButtonText: "Batal",
+            confirmButtonText: "Ya, hapus permanen",
+            footer: '<strong class="text-danger">data dokumen yang di hapus tidak akan bisa dikembalikan!</strong>',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Livewire.dispatch("delete-data-dokumen", {
+                    id: data["id"],
+                });
+            }
+        });
+    });
 });
