@@ -11,82 +11,85 @@
             </div>
             <!-- End Section Title -->
             <div class="p-4">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-5">
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Cari Dokumen">
-                    </div>
-                    <div class="col-5">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Bidang</option>
-                            <option value="1">Bidang Perencanaan</option>
-                            <option value="2">Bidang Ekonomi Sosial Budaya</option>
-                            <option value="3">Bidang Fisik dan prasarana</option>
-                            <option value="3">Bidang Riset dan Inovasi</option>
-                        </select>
-                    </div>
-                    <div class="col-2">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Tahun Dokumen</option>
-                            <option value="1">2024</option>
-                            <option value="2">2025</option>
-                            <option value="3">2026</option>
-                        </select>
-                    </div>
-                </div> 
-            </div>
-            <br>
-
-            <div class="container">
-                <div class="card shadow border-0 rounded-3 p-3">
-                    <div class="row align-items-center g-4">
-                    
-                    <!-- Gambar -->
-                    <div class="col-md-3 text-center">
-                        {{-- <img src="book.png" alt="Dokumen Icon" class="img-fluid" style="max-width:150px;"> --}}
-                       <div class="icon-box">
-                            <i class="bi bi-journal-bookmark-fill" style="font-size:180px; color:#296cc5; text-shadow: 3px 3px 6px rgba(0,0,0,0.25); "></i>
+                <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-6">
+                            <input wire:model.live.debounce.500ms="searchDokumen" type="text" class="form-control"
+                                id="exampleFormControlInput1" placeholder="Cari Dokumen">
                         </div>
-                    </div>
-
-                    <!-- Konten -->
-                    <div class="col-md-9">
-                       <h5 class="fw-bold mb-3">RENCANA PEMBANGUNAN JANGKA MENENGAH DAERAH</h5>
-
-                        <div class="row mb-1">
-                        <div class="col-3 col-md-2 fw-semibold">Kategori</div>
-                        <div class="col-auto px-0">:</div>
-                        <div class="col">RPJMD</div>
+                        <div class="col-6">
+                            <select wire:model.live="filterBidang" class="form-select"
+                                aria-label="Default select example">
+                                <option selected>-Semua Bidang-</option>
+                                @foreach ($dataBidang as $bidang)
+                                    <option value="{{ $bidang->id }}">{{ $bidang->nama_bidang }}</option>
+                                @endforeach
+                            </select>
                         </div>
-
-                        <div class="row mb-1">
-                        <div class="col-3 col-md-2 fw-semibold">Bidang</div>
-                        <div class="col-auto px-0">:</div>
-                        <div class="col">Ekonomi Sosial Budaya</div>
-                        </div>
-
-                        <div class="row mb-1">
-                        <div class="col-3 col-md-2 fw-semibold">Tahun</div>
-                        <div class="col-auto px-0">:</div>
-                        <div class="col">2023</div>
-                        </div>
-
-                        <div class="row mb-1">
-                        <div class="col-3 col-md-2 fw-semibold">Tanggal Upload</div>
-                        <div class="col-auto px-0">:</div>
-                        <div class="col">28-Jul-2025</div>
-                        </div>
-
-                        <!-- Tombol -->
-                        <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-primary px-4"><i class="bi bi-download me-2"></i>Download</a>
-                        <a href="#" class="btn btn-secondary px-4"><i class="bi bi-eye me-2"></i>Preview</a>
-                        </div>
-                    </div>
                     </div>
                 </div>
+                <br>
+
+                <div class="container">
+                    @forelse ($dataDokumen as $dokumen)
+                        <div class="card shadow border-0 rounded-3 p-3">
+                            <div class="row align-items-center g-4">
+                                <!-- Gambar -->
+                                <div class="col-md-3 text-center">
+                                    <img src="{{ Storage::url($dokumen->thumbnail_path) }}" alt="thumbnail file"
+                                        class="img-fluid" style="max-width:150px;">
+                                </div>
+
+                                <!-- Konten -->
+                                <div class="col-md-9">
+                                    <h5 class="fw-bold mb-3 text-uppercase">{{ $dokumen->nama_dokumen }}</h5>
+
+                                    <div class="row mb-1">
+                                        <div class="col-3 col-md-2 fw-semibold">Kategori</div>
+                                        <div class="col-auto px-0">:</div>
+                                        <div class="col">RPJMD</div>
+                                    </div>
+
+                                    <div class="row mb-1">
+                                        <div class="col-3 col-md-2 fw-semibold">Bidang</div>
+                                        <div class="col-auto px-0">:</div>
+                                        <div class="col">{{ $dokumen->bidang->nama_bidang ?? '-belum ditentukan-' }}
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-1">
+                                        <div class="col-3 col-md-2 fw-semibold">Tahun</div>
+                                        <div class="col-auto px-0">:</div>
+                                        <div class="col">{{ $dokumen->created_at->format('Y') }}</div>
+                                    </div>
+
+                                    <div class="row mb-1">
+                                        <div class="col-3 col-md-2 fw-semibold">Tanggal Upload</div>
+                                        <div class="col-auto px-0">:</div>
+                                        <div class="col">{{ $dokumen->created_at->format('d M Y') }}</div>
+                                    </div>
+
+                                    <!-- Tombol -->
+                                    <div class="d-flex gap-2">
+                                        <button
+                                            wire:click="download('{{ $dokumen->file_path }}','{{ $dokumen->file_name }}')"
+                                            class="btn btn-primary">
+                                            <i class="bi bi-download me-2"></i>
+                                            Download
+                                        </button>
+                                        <a href="#" class="btn btn-secondary px-4"><i
+                                                class="bi bi-eye me-2"></i>Preview</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="alert alert-warning text-center">
+                            <p class="my-3">dokumen masih kosong</p>
+                        </div>
+                    @endforelse
+                </div>
             </div>
-        </div>
         </section>
     </div>
     <!-- Articles -->
