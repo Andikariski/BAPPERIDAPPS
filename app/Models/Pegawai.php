@@ -14,7 +14,7 @@ class Pegawai extends Model
         'fkid_bidang',
         'fkid_jabatan',
         'nip',
-        'nama_pagawai',
+        'nama_pegawai',
         'foto_profile'
     ];
 

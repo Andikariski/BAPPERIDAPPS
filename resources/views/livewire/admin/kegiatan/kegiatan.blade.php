@@ -68,7 +68,7 @@
                     <div class="p-4">
                         <div class="mb-2">
                             <span class="badge p-1 bg-primary bg-opacity-10 text-primary">
-                                {{ $kegiatan->bidang ? $kegiatan->bidang->nama_bidang : 'belum di tentukan' }}
+                                {{ $kegiatan->bidang->nama_bidang ?? '-belum ditentukan-' }}
                             </span>
                         </div>
 

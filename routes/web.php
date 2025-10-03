@@ -9,17 +9,12 @@ use App\Livewire\Admin\Jabatan\Jabatan;
 use App\Livewire\Admin\Kegiatan\Kegiatan;
 use App\Livewire\Admin\Kegiatan\KegiatanDetail;
 use App\Livewire\Admin\Kegiatan\KegiatanForm;
-use App\Livewire\Admin\Pegawai\Index;
+use App\Livewire\Admin\Pegawai\Pegawai;
+use App\Livewire\Admin\Pegawai\PegawaiForm;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
-use App\Livewire\Admin\Posts\Index as PostIndex;
-use App\Livewire\Admin\Posts\Create as PostCreate;
-use App\Livewire\Admin\Posts\Edit as PostEdit;
 use App\Livewire\Admin\RAP\RAP;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
 Route::get('/', function () {
     return view('homepage');
 })->name('home');
@@ -32,9 +27,9 @@ Route::get('/tupoksi', function () {
 Route::get('/blog', \App\Livewire\Blog\Index::class)->name('blog.index');
 Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
 
-Route::get('/pegawai',\App\Livewire\Pegawai\Index::class)->name('pegawai');
+Route::get('/pegawai', \App\Livewire\Pegawai\Index::class)->name('pegawai');
 
-Route::get('/dokumenPublik',\App\Livewire\Dokumen\Index::class)->name('dokumenpublik');
+Route::get('/dokumenPublik', \App\Livewire\Dokumen\Index::class)->name('dokumenpublik');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
@@ -56,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/berita/{berita}', BeritaDetail::class)->name('admin.berita.detail');
 
     //Route Pegawai
-    Route::get('/pegawai-admin', Index::class)->name('pegawai-admin');
+    Route::get('/pegawai', Pegawai::class)->name('admin.pegawai.index');
 
     Route::redirect('settings', 'settings/profile');
 
