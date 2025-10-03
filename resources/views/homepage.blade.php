@@ -188,10 +188,10 @@
     </section>
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
+    <section id="about" class="clients section light-background about">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h3>MITRA BAPPERIDA PPS</h3>
+            <h2>MITRA BAPPERIDA PPS</h2>
             <p>
                 Kementrian atau Lembaga yang menjadi acuan dalam menjalankan tugas
                 dan fungsi Bapperida

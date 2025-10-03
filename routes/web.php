@@ -9,6 +9,7 @@ use App\Livewire\Admin\Jabatan\Jabatan;
 use App\Livewire\Admin\Kegiatan\Kegiatan;
 use App\Livewire\Admin\Kegiatan\KegiatanDetail;
 use App\Livewire\Admin\Kegiatan\KegiatanForm;
+use App\Livewire\Admin\Pegawai\Index;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Livewire\Admin\Posts\Index as PostIndex;
@@ -53,6 +54,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/berita/create', BeritaForm::class)->name('admin.berita.create');
     Route::get('/berita/{berita}/edit', BeritaForm::class)->name('admin.berita.edit');
     Route::get('/berita/{berita}', BeritaDetail::class)->name('admin.berita.detail');
+
+    //Route Pegawai
+    Route::get('/pegawai-admin', Index::class)->name('pegawai-admin');
 
     Route::redirect('settings', 'settings/profile');
 

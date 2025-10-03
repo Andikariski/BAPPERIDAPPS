@@ -10,7 +10,7 @@
         <div class="mb-4">
             <h1>{{ $berita->judul_berita }}</h1>
             <p class="text-muted">
-                Category: {{ $berita->bidang->nama_bidang ?? 'tidak terkategori' }}
+                Bidang Pelaksana: {{ $berita->bidang->nama_bidang ?? 'tidak terkategori' }}
                 | By {{ $berita->author->name }}
             </p>
         </div>
