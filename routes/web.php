@@ -17,6 +17,7 @@ use App\Livewire\Admin\Pegawai\PegawaiForm;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Livewire\Admin\RAP\RAP;
+use App\Livewire\Dokumen\Show;
 
 Route::get('/', function () {
     return view('homepage');
@@ -32,7 +33,8 @@ Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
 
 Route::get('/pegawai', \App\Livewire\Pegawai\Index::class)->name('pegawai');
 
-Route::get('/dokumenPublik', \App\Livewire\Dokumen\Index::class)->name('dokumenpublik');
+Route::get('/dokumen-publik', \App\Livewire\Dokumen\Index::class)->name('dokumenpublik');
+Route::get('/dokumen-publik/{id}', Show::class)->name('dokumenpublik.show');
 
 Route::middleware(['auth'])->prefix('admin/')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');

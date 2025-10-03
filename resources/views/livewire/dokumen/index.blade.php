@@ -77,8 +77,8 @@
                                             <i class="bi bi-download me-2"></i>
                                             Download
                                         </button>
-                                        <a href="#" class="btn btn-secondary px-4"><i
-                                                class="bi bi-eye me-2"></i>Preview</a>
+                                        <a href="{{ route('dokumenpublik.show', $dokumen->id) }}"
+                                            class="btn btn-secondary px-4"><i class="bi bi-eye me-2"></i>Preview</a>
                                     </div>
                                 </div>
                             </div>
