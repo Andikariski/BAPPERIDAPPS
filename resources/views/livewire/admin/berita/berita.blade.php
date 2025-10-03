@@ -29,7 +29,7 @@
                                 {{ $berita->judul_berita }}</td>
                             <td
                                 class="px-4 py-1 text-dark d-none d-lg-table-cell {{ $berita->deleted_at ? 'text-decoration-line-through' : '' }}">
-                                {{ $berita->bidang->nama_bidang }}
+                                {{ $berita->bidang->nama_bidang ?? '-belum ditentukan-' }}
                             </td>
                             <td class="px-4 py-1 text-dark d-none d-xl-table-cell">
                                 <span style="padding: 6px 0; opacity: 70%"

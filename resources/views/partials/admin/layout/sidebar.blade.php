@@ -55,11 +55,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a wire:navigate href="{{ route('pegawai-admin') }}"
-                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('pegawai-admin') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
+                <a wire:navigate href="{{ route('admin.pegawai.index') }}"
+                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.pegawai.index') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
                     :class="{ 'justify-content-center': sidebarCollapsed }">
                     <i
-                        class="bi bi-people {{ request()->routeIs('pegawai-admin') ? 'text-light' : 'text-dark' }}"></i>
+                        class="bi bi-people {{ request()->routeIs('admin.pegawai.index') ? 'text-light' : 'text-dark' }}"></i>
                     <span x-show="!sidebarCollapsed">Pegawai</span>
                 </a>
             </li>
@@ -72,7 +72,16 @@
                     <span x-show="!sidebarCollapsed">Jabatan</span>
                 </a>
             </li>
-            <li class="nav-item" x-data="{ open: false }">
+            <li class="nav-item">
+                <a wire:navigate href="{{ route('admin.dokumenpublik.index') }}"
+                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.dokumenpublik.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
+                    :class="{ 'justify-content-center': sidebarCollapsed }">
+                    <i
+                        class="bi bi-folder-symlink {{ request()->routeIs('admin.dokumenpublik.*') ? 'text-light' : 'text-dark' }}"></i>
+                    <span x-show="!sidebarCollapsed">Dokumen</span>
+                </a>
+            </li>
+            <li class="nav-item invisible" x-data="{ open: false }">
                 <!-- Parent link (dropdown trigger) -->
                 <a href="#" @click.prevent="open = !open"
                     class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center justify-content-between gap-1 {{ request()->routeIs('admin.rap.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"

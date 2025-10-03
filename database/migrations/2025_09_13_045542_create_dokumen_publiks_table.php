@@ -16,6 +16,11 @@ return new class extends Migration
             $table->foreignId('fkid_bidang')->constrained('tbl_bidang', 'id')->onDelete('cascade');
             $table->string('nama_dokumen');
             $table->text('deskripsi_dokumen');
+            $table->string('file_path'); // Path file asli
+            $table->string('file_name'); // Nama file original
+            $table->string('file_type'); // pdf, docx, xlsx, etc
+            $table->integer('file_size'); // dalam bytes
+            $table->string('thumbnail_path')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

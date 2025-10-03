@@ -47,7 +47,7 @@ class BeritaForm extends Component
             $this->judulBerita = $beritaModel->judul_berita;
             $this->slug = $beritaModel->slug;
             $this->kontenBerita = $beritaModel->konten_berita;
-            $this->bidangPelaksanaId = $beritaModel->fkid_bidang;
+            $this->bidangPelaksanaId = $beritaModel->fkid_bidang ?? null;
             $this->kontenBerita = $beritaModel->konten_berita;
             $this->tagIds = $berita->tags->pluck('id')->toArray();
             $this->statusPublikasi = $berita->status_publikasi;
