@@ -51,7 +51,7 @@ class DokumenPublikForm extends Component
             $this->dokumenId = $id;
             $dokumen = DokumenPublik::findOrFail($id);
 
-            $this->fkidBidang = $dokumen->fkid_bidang;
+            $this->fkidBidang = $dokumen->fkid_bidang ?? null;
             $this->namaDokumen = $dokumen->nama_dokumen;
             $this->deskripsiDokumen = $dokumen->deskripsi_dokumen;
             $this->existingFile = [
