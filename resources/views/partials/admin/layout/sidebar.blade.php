@@ -55,6 +55,15 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a wire:navigate href="{{ route('pegawai-admin') }}"
+                    class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('pegawai-admin') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
+                    :class="{ 'justify-content-center': sidebarCollapsed }">
+                    <i
+                        class="bi bi-people {{ request()->routeIs('pegawai-admin') ? 'text-light' : 'text-dark' }}"></i>
+                    <span x-show="!sidebarCollapsed">Pegawai</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a wire:navigate href="{{ route('admin.jabatan.index') }}"
                     class="sidebar-nav-link text-dark rounded-1 d-flex align-items-center gap-1 {{ request()->routeIs('admin.jabatan.*') ? 'bg-primary text-light' : 'bg-white text-dark' }}"
                     :class="{ 'justify-content-center': sidebarCollapsed }">
