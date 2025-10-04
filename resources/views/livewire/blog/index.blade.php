@@ -36,7 +36,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <a href="{{ route('blog.show', $post->slug) }}"
-                                class="card-title text-bold text-primary fs-4"><strong>{{ $post->judul_berita }}</strong></a>
+                                class="card-title text-bold text-primary fs-4 "><strong>{{ $post->judul_berita }}</strong></a>
                             <p>{{ Str::limit(strip_tags($post->konten_berita), 100) }}</p>
                             <div class="d-flex align-items-center justify-content-between">
                                 <span class="text-muted"
