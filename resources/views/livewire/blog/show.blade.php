@@ -7,8 +7,12 @@
         </ol>
     </nav>
     <div class="pt-4">
-        <div class="mb-4">
-            <h1>{{ $berita->judul_berita }}</h1>
+        <div class="">
+        <img src="{{ Storage::url('foto_thumbnail_berita/' . $berita->foto_thumbnail) }}"
+                            class="card-img-top mb-4" style="height: 550px; object-fit: cover;"
+                            alt="{{ $berita->judul_berita }}">
+                  
+            <h3>{{ $berita->judul_berita }}</h3>
             <p class="text-muted">
                 Bidang Pelaksana: {{ $berita->bidang->nama_bidang ?? 'tidak terkategori' }}
                 | By {{ $berita->author->name }}

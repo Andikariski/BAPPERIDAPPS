@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-center">
         <!-- Section Title -->
         <section id="team" class="team section w-100">
-            <div class="container section-title text-center" data-aos="fade-up">
+            <div class="container section-title text-center" data-aos="fade-up" wire:ignore>
                 <h2>DOKUMEN PUBLIK</h2>
                 <p>Dokumen yang telah di terbitkan oleh BAPPERIDA PPS</p>
             </div>
@@ -32,7 +32,7 @@
 
                 <div class="container">
                     @forelse ($dataDokumen as $dokumen)
-                        <div class="card shadow border-0 rounded-3 p-3">
+                        <div class="card shadow-sm border-0 rounded-3 p-3 mb-4">
                             <div class="row align-items-center g-4">
                                 <!-- Gambar -->
                                 <div class="col-md-3 text-center">
@@ -44,11 +44,11 @@
                                 <div class="col-md-9">
                                     <h5 class="fw-bold mb-3 text-uppercase">{{ $dokumen->nama_dokumen }}</h5>
 
-                                    <div class="row mb-1">
+                                    {{-- <div class="row mb-1">
                                         <div class="col-3 col-md-2 fw-semibold">Kategori</div>
                                         <div class="col-auto px-0">:</div>
                                         <div class="col">RPJMD</div>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="row mb-1">
                                         <div class="col-3 col-md-2 fw-semibold">Bidang</div>

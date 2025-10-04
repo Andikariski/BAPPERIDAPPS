@@ -1,5 +1,5 @@
 <div class="container py-2">
-    <div class="container section-title mt-5" data-aos="fade-up">
+    <div class="container section-title mt-5" data-aos="fade-up" wire:ignore>
         <h2>Kegiatan</h2>
         <p>Foto Foto Kegiatan dan Aktivitas BAPPERIDA PPS</p>
     </div>

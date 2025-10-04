@@ -32,7 +32,7 @@
             </div>
             <button type="button" class="btn btn-primary" wire:click="openTambahModal">
                 <i class="bi bi-plus-lg"></i>
-                <span>Tambah Jabatan</span>
+                <span>Tambah Pegawai</span>
             </button>
         </div>
 

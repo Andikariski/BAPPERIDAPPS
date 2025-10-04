@@ -561,7 +561,7 @@
     <!-- /Call To Action Section -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    {{-- <section id="portfolio" class="portfolio section">
         <div class="container section-title" data-aos="fade-up">
             <h2>Galeri</h2>
             <p>
@@ -713,7 +713,7 @@
                 <!-- End Portfolio Container -->
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- /Portfolio Section -->
 
     <!-- Pricing Section -->

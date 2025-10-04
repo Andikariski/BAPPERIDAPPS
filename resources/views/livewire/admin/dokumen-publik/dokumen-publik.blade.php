@@ -25,7 +25,7 @@
             </div>
             <a href="{{ route('admin.dokumenpublik.create') }}" class="btn btn-primary">
                 <i class="bi bi-plus-lg"></i>
-                <span>Tambah Jabatan</span>
+                <span>Tambah Dokumen</span>
             </a>
         </div>
 

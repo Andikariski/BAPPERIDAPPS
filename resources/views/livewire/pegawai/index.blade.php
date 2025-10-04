@@ -13,7 +13,7 @@
                 @forelse ($dataPegawai as $pegawai)
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="team-member">
-                            <div class="member-img" style="height: 270px">
+                            <div class="member-img" style="height: 350px">
                                 <img src="{{ Storage::url('foto_profil_pegawai/' . $pegawai->foto_profile) }}"
                                     class="h-100 w-100" style="object-fit: cover" />
                                 <div class="social">
