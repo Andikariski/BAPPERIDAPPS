@@ -13,16 +13,14 @@ class Index extends Component
     use WithPagination;
 
     public $search = '';
-    public $bidang = '';
+    public $selectedBidang = '';
 
-    protected $queryString = ['search', 'bidang', 'page'];
-
-    public function updatedSearch()
+    public function updatingSearch()
     {
         $this->resetPage();
     }
 
-    public function updatedBidang()
+    public function updatingSelectedBidang()
     {
         $this->resetPage();
     }
@@ -34,17 +32,11 @@ class Index extends Component
         $query = Berita::with('bidang', 'tags', 'author')
             ->where('status_publikasi', 'published');
 
-        if ($this->search) {
-            $query->where(function ($q) {
-                $q->where('judul_berita', 'like', "%{$this->search}%")
-                    ->orWhere('konten_berita', 'like', "%{$this->search}%");
-            });
+        if (!empty($this->search)) {
+            $query->where('judul_berita', 'like', "%{$this->search}%");
         }
-
-        if ($this->bidang) {
-            $query->whereHas('bidang', function ($q) {
-                $q->where('id', $this->bidang);
-            });
+        if (!empty($this->selectedBidang)) {
+            $query->where('fkid_bidang', $this->selectedBidang);
         }
 
         return view('livewire.blog.index', [
