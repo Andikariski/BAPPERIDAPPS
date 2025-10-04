@@ -1,6 +1,6 @@
 @section('title', 'Admin | Berita')
 <div class="container py-2">
-    <div class="container section-title mt-5" data-aos="fade-up">
+    <div class="container section-title mt-5" data-aos="fade-up" wire:ignore>
         <h2>Berita</h2>
         <p>Segala Berita Tentang Kegiatan dan Aktivitas BAPPERIDA PPS</p>
     </div>
@@ -35,15 +35,15 @@
                     @endif
                     <div class="card-body">
                         <div class="mb-3">
-                            <h5 class="card-title text-bold"><strong>{{ $post->judul_berita }}</strong></h5>
+                            <a href="{{ route('blog.show', $post->slug) }}"
+                                class="card-title text-bold text-primary fs-4"><strong>{{ $post->judul_berita }}</strong></a>
                             <p>{{ Str::limit(strip_tags($post->konten_berita), 100) }}</p>
-                            <span class="text-muted"
-                                style="font-size: 0.90rem;">{{ $post->created_at->diffForHumans() }} |
-                                Oleh {{ $post->author->name }}</span>
-                        </div>
-
-                        <div class="text-end">
-                            <a href="{{ route('blog.show', $post->slug) }}" class="text-primary">Selengkapnya</a>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="text-muted"
+                                    style="font-size: 0.90rem;">{{ $post->created_at->diffForHumans() }}</span>
+                                <span class="text-muted" style="font-size: 0.90rem;">Oleh
+                                    {{ $post->author->name }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
