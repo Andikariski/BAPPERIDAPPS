@@ -28,12 +28,12 @@
                         <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{ route('blog.index') }}">Berita dan Informasi</a></li>
-                        <li><a href="#">Galeri Foto</a></li>
+                        <li><a href="{{ route('kegiatan.index') }}">Kegiatan</a></li>
                     </ul>
                 </li>
 
                 <li><a href="{{ route('dokumenpublik') }}">Dokumen Publik</a></li>
-                
+
                 <li><a href="#about">Sejarah Bapperida</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -41,5 +41,5 @@
 
         <a class="btn-getstarted" href="{{ route('login') }}">Masuk</a>
         {{-- <a href="{{ route('login') }}" class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"> Log in</a> --}}
-      </div>
-    </header>
+    </div>
+</header>

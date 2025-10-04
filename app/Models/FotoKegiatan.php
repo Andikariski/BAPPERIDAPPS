@@ -35,6 +35,44 @@ class FotoKegiatan extends Model
         return $this->belongsTo(Kegiatan::class, 'fkid_kegiatan');
     }
 
+    // Scope untuk sorting berdasarkan urutan
+    public function scopeOrdered($query)
+    {
+        return $query->orderBy('urutan', 'asc');
+    }
+
+    // Scope untuk foto utama
+    public function scopeMainPhoto($query)
+    {
+        return $query->where('is_main', true);
+    }
+
+    // Get foto berikutnya berdasarkan urutan
+    public function getNextPhoto()
+    {
+        return static::where('fkid_kegiatan', $this->fkid_kegiatan)
+            ->where('urutan', '>', $this->urutan)
+            ->orderBy('urutan', 'asc')
+            ->first();
+    }
+
+    // Get foto sebelumnya berdasarkan urutan
+    public function getPreviousPhoto()
+    {
+        return static::where('fkid_kegiatan', $this->fkid_kegiatan)
+            ->where('urutan', '<', $this->urutan)
+            ->orderBy('urutan', 'desc')
+            ->first();
+    }
+
+    // Get posisi foto dalam galeri
+    public function getPositionAttribute()
+    {
+        return static::where('fkid_kegiatan', $this->fkid_kegiatan)
+            ->where('urutan', '<=', $this->urutan)
+            ->count();
+    }
+
     // helper
     public function getUrlAttribute(): string
     {
