@@ -13,11 +13,12 @@ use App\Livewire\Admin\Kegiatan\Kegiatan;
 use App\Livewire\Admin\Kegiatan\KegiatanDetail;
 use App\Livewire\Admin\Kegiatan\KegiatanForm;
 use App\Livewire\Admin\Pegawai\Pegawai;
-use App\Livewire\Admin\Pegawai\PegawaiForm;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Livewire\Admin\RAP\RAP;
 use App\Livewire\Dokumen\Show;
+use App\Livewire\Kegiatan\Index;
+use App\Livewire\Kegiatan\Show as KegiatanShow;
 
 Route::get('/', function () {
     return view('homepage');
@@ -35,6 +36,9 @@ Route::get('/pegawai', \App\Livewire\Pegawai\Index::class)->name('pegawai');
 
 Route::get('/dokumen-publik', \App\Livewire\Dokumen\Index::class)->name('dokumenpublik');
 Route::get('/dokumen-publik/{id}', Show::class)->name('dokumenpublik.show');
+
+Route::get('/kegiatan', Index::class)->name('kegiatan.index');
+Route::get('/kegiatan/{id}', KegiatanShow::class)->name('kegiatan.show');
 
 Route::middleware(['auth'])->prefix('admin/')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');

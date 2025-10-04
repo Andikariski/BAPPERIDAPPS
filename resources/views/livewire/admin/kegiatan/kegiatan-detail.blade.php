@@ -7,7 +7,6 @@
         ];
     @endphp
     <x-breadcrumb :items="$breadcrumbs" />
-    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
     <div class="mt-3">
         <div class="row g-5">
             <div class="col-sm-12 col-lg-4">

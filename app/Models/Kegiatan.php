@@ -25,6 +25,26 @@ class Kegiatan extends Model
     {
         return $this->hasMany(FotoKegiatan::class, 'fkid_kegiatan')->orderBy('urutan');
     }
+    // Get foto utama
+    public function fotoUtama()
+    {
+        return $this->hasOne(FotoKegiatan::class, 'fkid_kegiatan')
+            ->where('is_main', true)
+            ->orderBy('urutan', 'asc');
+    }
+
+    // Get foto pertama (berdasarkan urutan)
+    public function fotoPertama()
+    {
+        return $this->hasOne(FotoKegiatan::class, 'fkid_kegiatan')
+            ->orderBy('urutan', 'asc');
+    }
+    // Accessor untuk foto thumbnail
+    public function getThumbnailAttribute()
+    {
+        $foto = $this->fotoUtama ?? $this->fotoPertama;
+        return $foto ? $foto->path_thumbnail ?? $foto->path_file : null;
+    }
     public function getFotoUtama()
     {
         return $this->fotoKegiatan()->where('is_main', true)->first() ?: $this->fotoKegiatan()->first();
