@@ -21,6 +21,16 @@ const Swal2 = Swal.mixin({
 
 window.bootstrap = bootstrap;
 document.addEventListener("livewire:init", () => {
+    // Login Notifikasi
+    Livewire.on("success-login", (data) => {
+        Toast.fire({
+            icon: "success",
+            title: `${data.message} ${data.name}`,
+        });
+        setTimeout(() => {
+            window.location.href = "admin/dashboard";
+        }, 2500);
+    });
     // sweetalert toast
     Livewire.on("success-add-data", (data) => {
         Toast.fire({
@@ -215,5 +225,16 @@ document.addEventListener("livewire:init", () => {
                 });
             }
         });
+    });
+
+    //Sweet Alert Coming Soon
+    Livewire.on("coming-soon", (data) => {
+        Swal2.fire({
+            icon: "warning",
+            title: "Fitur Akan Segera Hadir",
+            showCancelButton: false,
+            confirmButtonText: "Tutup Notifikasi",
+            footer: '<strong class="text-danger">Fitur masih dalam tahap pengembangan!</strong>',
+        }).then((result) => {});
     });
 });

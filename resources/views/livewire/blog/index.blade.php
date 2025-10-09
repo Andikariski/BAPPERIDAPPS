@@ -11,7 +11,7 @@
             wire:model.live.debounce.500ms="search">
         <div class="mb-3">
             <select wire:model.live="selectedBidang" class="form-select">
-                <option class="px-4" value="">Pilih Bidang</option>
+                <option class="px-4" value="">Semua Bidang</option>
                 @foreach ($dataBidang as $bidang)
                     <option value="{{ $bidang->id }}">{{ $bidang->nama_bidang }}</option>
                 @endforeach
@@ -36,12 +36,12 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <a href="{{ route('blog.show', $post->slug) }}"
-                                class="card-title text-bold text-primary fs-4 "><strong>{{ $post->judul_berita }}</strong></a>
+                                class="card-title text-bold text-primary fs-4"><strong>{{ Str::limit(strip_tags($post->judul_berita),30) }}</strong></a>
                             <p>{{ Str::limit(strip_tags($post->konten_berita), 100) }}</p>
                             <div class="d-flex align-items-center justify-content-between">
                                 <span class="text-muted"
                                     style="font-size: 0.90rem;">{{ $post->created_at->diffForHumans() }}</span>
-                                <span class="text-muted" style="font-size: 0.90rem;">Oleh
+                                <span class="text-muted" style="font-size: 0.90rem;">Oleh | 
                                     {{ $post->author->name }}</span>
                             </div>
                         </div>

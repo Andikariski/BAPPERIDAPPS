@@ -15,6 +15,7 @@
             <h4 class="mb-0">{{ $pageTitle ?? 'Dashboard' }}</h4>
         </div>
     </div>
+    
 
     <div class="d-flex align-items-center">
         <!-- User Profile Dropdown -->
@@ -22,16 +23,17 @@
             <button class="btn bg-light dropdown-toggle text-dark" type="button" data-bs-toggle="dropdown">
                 <i class="bi bi-person-circle me-2"></i>{{ auth()->user()->name ?? 'Admin' }}
             </button>
+            
             <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                    <a class="dropdown-item" href="#">
+                    <button wire:click="$dispatch('coming-soon')" class="dropdown-item btn" id="testAlertBtn1">
                         <i class="bi bi-person me-2"></i>Profile
-                    </a>
+                    </button>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="#">
+                    <button wire:click="$dispatch('coming-soon')" class="dropdown-item btn" id="testAlertBtn2">
                         <i class="bi bi-gear me-2"></i>Settings
-                    </a>
+                    </button>
                 </li>
                 <li>
                     <hr class="dropdown-divider">
@@ -47,4 +49,39 @@
             </ul>
         </div>
     </div>
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js','resources/js/admin.js']) --}}
 </header>
+
+<!-- Tambahkan di <head> atau sebelum </body> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const testButtonProfile = document.getElementById("testAlertBtn1");
+    const testButtonSetting = document.getElementById("testAlertBtn2");
+
+    if (testButtonProfile) {
+        testButtonProfile.addEventListener("click", function() {
+            Swal.fire({
+                icon: "warning",
+                title: "Fitur Akan Segera Hadir",
+                showCancelButton: false,
+                confirmButtonText: "Tutup Notifikasi",
+                footer: '<strong class="text-danger">Fitur masih dalam tahap pengembangan!</strong>',
+            });
+        });
+    }
+    if(testButtonSetting){
+        testButtonSetting.addEventListener("click", function() {
+            Swal.fire({
+                icon: "warning",
+                title: "Fitur Akan Segera Hadir",
+                showCancelButton: false,
+                confirmButtonText: "Tutup Notifikasi",
+                footer: '<strong class="text-danger">Fitur masih dalam tahap pengembangan!</strong>',
+            });
+        });
+    }
+});
+
+</script>

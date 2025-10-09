@@ -78,7 +78,7 @@ class DokumenPublik extends Component
                 $query->where('fkid_bidang', $this->filterBidang);
             })
             ->latest()
-            ->paginate(12);
+            ->paginate(8);
 
         $dataBidang = Bidang::all();
 

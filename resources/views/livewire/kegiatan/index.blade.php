@@ -5,11 +5,11 @@
     </div>
     <!-- Search & filtering -->
     <div class="d-flex justify-content-between gap-2">
-        <input type="text" class="form-control mb-3" placeholder="cari berita..."
+        <input type="text" class="form-control mb-3" placeholder="cari Kegiatan..."
             wire:model.live.debounce.500ms="search">
         <div class="mb-3">
             <select wire:model.live="selectedBidang" class="form-select">
-                <option class="px-4" value="">Pilih Bidang</option>
+                <option class="px-4" value="">Semua Bidang</option>
                 @foreach ($dataBidang as $bidang)
                     <option value="{{ $bidang->id }}">{{ $bidang->nama_bidang }}</option>
                 @endforeach
@@ -56,7 +56,7 @@
                         <a href="{{ route('kegiatan.show', $kegiatan->id) }}"
                             class="card-title mb-3 fw-semibold text-primary text-decoration-none fs-5"
                             style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                            {{ $kegiatan->nama_kegiatan }}
+                            {{ Str::limit(strip_tags($kegiatan->nama_kegiatan),50) }}
                         </a>
 
                         <div class="d-flex align-items-center justify-content-between mt-auto">
