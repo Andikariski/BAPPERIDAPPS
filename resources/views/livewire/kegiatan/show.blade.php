@@ -1,4 +1,4 @@
-<div class="container py-2">
+<div class="container p-4 mt-3">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('kegiatan.index') }}">Kegiatan</a></li>
