@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
-                <a href="#about" class="btn-get-started">Get Started</a>
+                <a href="#" class="btn-get-started disabled">BAPPERIDA</a>
             </div>
 
             <div class="row gy-4 mt-5">
@@ -67,55 +67,7 @@
     </section>
     <!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Sejarah Bapperida PPS<br /></h2>
-            <p>
-                Sejarah Singkat Tentang Berdirinya Bapperida Provinsi Papua Selatan
-            </p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <ul>
-                        <li>
-                            <i class="bi bi-check2-circle"></i>
-                            <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.</span>
-                        </li>
-                        <li>
-                            <i class="bi bi-check2-circle"></i>
-                            <span>Duis aute irure dolor in reprehenderit in voluptate
-                                velit.</span>
-                        </li>
-                        <li>
-                            <i class="bi bi-check2-circle"></i>
-                            <span>Ullamco laboris nisi ut aliquip ex ea commodo</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                        aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.
-                    </p>
-                    <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <!-- /About Section -->
 
     <!-- Stats Section -->
@@ -154,7 +106,7 @@
     </section> -->
 
     <!-- About Alt Section -->
-    <section id="about-alt" class="about-alt section">
+    <section id="kata-pengantar" class="about-alt section">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Foto -->
@@ -199,12 +151,47 @@
         </div>
     </section>
     <!-- /About Alt Section -->
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients section light-background">
+    <!-- Section Sejarah Bapperida -->
+    <section id="about" class="about section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h3>MITRA BAPPERIDA PPS</h3>
+            <h2>Sejarah Bapperida PPS<br /></h2>
+            <p>
+                Sejarah Singkat Tentang Berdirinya Bapperida Provinsi Papua Selatan
+            </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                       Berdasarkan kebutuhan untuk mempercepat pemerataan pembangunan, meningkatkan pelayanan publik, 
+                       dan kesejahteraan masyarakat, serta mengacu pada Undang-Undang Nomor 14 Tahun 2022 tentang Pembentukan Provinsi Papua Selatan, 
+                       dibentuklah Badan Perencanaan Pembangunan, Riset dan Inovasi Daerah (Bapperida) melalui Peraturan Gubernur  No 22 Tahun 2022 
+                       tentang SOTK Bapperida, sebagai dasar dalam melaksanakan tugas dan fungsi perencanaan pembangunan, riset, dan inovasi.
+                    </p>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <p>
+                      Badan Perencanaan Pembangunan, Riset dan Inovasi Daerah Provinsi Papua Selatan (Bapperida PPS)
+                      didirikan pada tanggal 1 Desember 2022, sebagai institusi dalam pelaksanaan percepatan perencanaan
+                      Pembangunan yang meresponi kebutuhan daerah maupun masyarakat sebagai tujuan dasar percepatan Pembangunan 
+                      Provinsi Papua Selatan yang lebih terarah pada Pendidikan, kesehatan, ekonomi Masyarakat, infrastruktur, 
+                      konektifitas serta meningkatkan peyanan publik menuju Papua Selatan bangkit, mandiri & Sejahtera.
+                    </p>
+                    {{-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="about" class="clients section light-background about">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>MITRA BAPPERIDA PPS</h2>
             <p>
                 Kementrian atau Lembaga yang menjadi acuan dalam menjalankan tugas
                 dan fungsi Bapperida
@@ -234,7 +221,7 @@
 
                 <div class="col-xl-3 col-md-3 col-6 client-logo">
                     <!-- <img src="assets/img/clients/client-4.png" class="img-fluid" alt=""> -->
-                    <img src="assets/img/mitrabapperida/brin.png" class="img-fluid" alt="" />
+                    <img src="assets/img/mitrabapperida/brin1.png" class="img-fluid" alt="" />
                 </div>
             </div>
         </div>
@@ -729,97 +716,6 @@
     </section>
     <!-- /Portfolio Section -->
 
-    <!-- Team Section -->
-    <section id="team" class="team section light-background">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Pegawai</h2>
-            <p>Pegawai Bapperida Provinsi Papua Selatan</p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="team-member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Team Member -->
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                    <div class="team-member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Team Member -->
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                    <div class="team-member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Team Member -->
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-                    <div class="team-member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="" />
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Team Member -->
-            </div>
-        </div>
-    </section>
-    <!-- /Team Section -->
-
     <!-- Pricing Section -->
     <!-- <section id="pricing" class="pricing section">
 
@@ -1062,7 +958,7 @@
     <section id="contact" class="contact section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Kontak</h2>
+            <h2>Kontak & Informasi</h2>
             <p>
                 Detail kontak dan alamat pada website adalah resmi milik Bapperida
                 Provinsi Papua Selatan
@@ -1112,6 +1008,7 @@
                 </div>
 
                 <div class="col-lg-8">
+                  <h4 class="text-center m-3">Buku Digital Tamu</h4>
                     <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
                         data-aos-delay="200">
                         <div class="row gy-4">

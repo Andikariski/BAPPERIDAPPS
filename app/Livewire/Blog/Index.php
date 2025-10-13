@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Blog;
 
-use App\Models\Category;
-use App\Models\Post;
+use App\Models\Berita;
+use App\Models\Bidang;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -13,16 +13,14 @@ class Index extends Component
     use WithPagination;
 
     public $search = '';
-    public $category = '';
+    public $selectedBidang = '';
 
-    protected $queryString = ['search', 'category', 'page'];
-
-    public function updatedSearch()
+    public function updatingSearch()
     {
         $this->resetPage();
     }
 
-    public function updatedCategory()
+    public function updatingSelectedBidang()
     {
         $this->resetPage();
     }
@@ -31,25 +29,19 @@ class Index extends Component
     #[Layout('components.layouts.public')]
     public function render()
     {
-        $query = Post::with('category', 'tags', 'author')
-            ->where('status', 'published');
+        $query = Berita::with('bidang', 'tags', 'author')
+            ->where('status_publikasi', 'published');
 
-        if ($this->search) {
-            $query->where(function ($q) {
-                $q->where('title', 'like', "%{$this->search}%")
-                    ->orWhere('content', 'like', "%{$this->search}%");
-            });
+        if (!empty($this->search)) {
+            $query->where('judul_berita', 'like', "%{$this->search}%");
         }
-
-        if ($this->category) {
-            $query->whereHas('category', function ($q) {
-                $q->where('slug', $this->category);
-            });
+        if (!empty($this->selectedBidang)) {
+            $query->where('fkid_bidang', $this->selectedBidang);
         }
 
         return view('livewire.blog.index', [
             'posts' => $query->latest()->paginate(6),
-            'categories' => Category::all(),
+            'dataBidang' => Bidang::all(),
         ]);
     }
 }
