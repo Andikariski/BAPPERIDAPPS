@@ -1,0 +1,240 @@
+body {
+    overflow-x: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    transition: width 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.collapsed {
+    width: 100px;
+    overflow-x: hidden;
+}
+
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    padding-top: 1rem;
+    width: 100%;
+}
+
+.sidebar-nav .nav-item,
+.sidebar-nav .sidebar-nav-item {
+    padding: 0 1rem;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    height: 45px;
+}
+
+.sidebar-nav-icon {
+    width: 20px;
+    margin-right: 0.75rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.sidebar-nav-text {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-nav-text {
+    opacity: 0;
+}
+
+/* Styling khusus untuk collapsed state */
+.sidebar.collapsed .sidebar-nav-link {
+    padding: 0.75rem 0.5rem;
+}
+
+/* Pastikan icon tetap centered ketika collapsed */
+.sidebar.collapsed .sidebar-nav-link i {
+    margin: 0;
+}
+
+.main-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+    min-height: 100vh;
+}
+
+.main-content.expanded {
+    margin-left: 100px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 990;
+    padding: 1rem;
+}
+
+.content {
+    padding: 1rem 2rem;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.brand-wrapper {
+    display: flex;
+    width: 100%;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+
+    .brand-wrapper {
+        justify-content: space-between;
+    }
+
+    .sidebar.show {
+        width: 100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content.expanded {
+        margin-left: 0;
+    }
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* table custom styling */
+.table {
+    border-collapse: collapse !important;
+}
+.table td,
+.table th {
+    border-bottom: 1px solid #dee2e6;
+}
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+/* input poto drag n drop styling */
+.dropzone-area:hover {
+    border-color: #0d6efd !important;
+}
+.group-hover-container:hover .photo-overlay {
+    opacity: 1 !important;
+}
+.photo-overlay {
+    transition: opacity 0.3s ease;
+}
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Hover effects for overlay */
+.position-relative:hover .position-absolute button {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Lightbox customization */
+.lb-data .lb-details {
+    width: 85%;
+}
+.lb-data .lb-caption {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4em;
+}
+
+/* Gaya hanya berlaku untuk halaman dashboard */
+.dashboard-page {
+    background-color: #f8f9fa;
+    font-family: "Poppins", sans-serif;
+}
+
+.dashboard-page .card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-page .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-page .card-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.dashboard-page .text-muted {
+    font-size: 0.9rem;
+}
+
+.thumbnail-wrapper {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.thumbnail-wrapper img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover; /* menjaga rasio tanpa distorsi */
+    object-position: center;
+}
