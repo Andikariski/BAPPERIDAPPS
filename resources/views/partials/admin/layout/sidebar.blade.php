@@ -3,14 +3,11 @@
         <div class="brand-wrapper px-2" style="">
             <div class="d-flex align-items-center">
                 <a href="{{ route('dashboard') }}">
-                    <div class="oveflow-hidden d-flex align-items-center justify-content-center"
-                        style="height: 60px; width: auto" :class="{ 'me-2': !sidebarCollapsed }">
-                        <img style="object-fit: cover; height: 100%; width: auto" src="{{ asset('assets/img/pps.png') }}"
-                            alt="">
+                    <div class="oveflow-hidden d-flex align-items-center justify-content-center" style="height: 60px; width: auto" :class="{ 'me-2': !sidebarCollapsed }">
+                        <img style="object-fit: cover; height: 100%; width: auto" src="{{ asset('assets/img/pps.png') }}" alt="">
                     </div>
                 </a>
-                <p class="fw-semibold fs-5 text-dark" x-show="!sidebarCollapsed">BAPPERIDA
-                    PPS</p>
+                <p class="fw-semibold fs-5 text-dark" x-show="!sidebarCollapsed">BAPPERIDA PPS</p>
             </div>
             <button class="btn btn-outline-dark" x-show="showSidebar" type="button" @click="showSidebar = false">
                 <i class="bi bi-x fw-2"></i>

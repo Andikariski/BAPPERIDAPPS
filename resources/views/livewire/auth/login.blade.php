@@ -92,7 +92,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             Website Profile Bapperida Provinsi Papua Selatan
         </h4>
     </div>
-</div>
+    </div>
         <div class="col-md-7 p-5">
             <div class="text-center mb-4">
                 <h3 class="fw-bold display-6">Masuk</h3>
