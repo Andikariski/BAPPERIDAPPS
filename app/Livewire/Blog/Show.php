@@ -15,11 +15,15 @@ class Show extends Component
         $this->berita = Berita::with('bidang', 'tags', 'author')
             ->where('slug', $slug)
             ->firstOrFail();
-    }
 
+        }
+        
     #[Layout('components.layouts.public')]
     public function render()
     {
-        return view('livewire.blog.show');
+        $beritaTerbaru = Berita::orderBy('created_at', 'desc')->take(5)->get();
+        return view('livewire.blog.show',[
+            'beritaTerbaru' => $beritaTerbaru
+        ]);
     }
 }

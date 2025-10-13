@@ -39,8 +39,10 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
         RateLimiter::clear($this->throttleKey());
         Session::regenerate();
+          // 🔥 Tambahkan event Livewire untuk SweetAlert
+        $this->dispatch('success-login', message: 'Berhasil login, ' , name:Auth::user()->name);
 
-        $this->redirectIntended(default: route('dashboard', absolute: false));
+        // $this->redirectIntended(default: route('dashboard', absolute: false));
     }
 
     /**
@@ -73,41 +75,72 @@ new #[Layout('components.layouts.auth')] class extends Component {
     }
 }; ?>
 
-<div class="flex flex-col gap-6">
-    <x-auth-header :title="__('Log in untuk admin')" :description="__('Masukan email dan password untuk login')" />
 
-    <!-- Session Status -->
-    <x-auth-session-status class="text-center" :status="session('status')" />
 
-    <form method="POST" wire:submit="login" class="flex flex-col gap-6">
-        <!-- Email Address -->
-        <flux:input wire:model="email" :label="__('Alamat Email')" type="email" required autofocus autocomplete="email"
-            placeholder="email@example.com" />
+<div class="card shadow-lg border-0 overflow-hidden" style="width: 100%; max-width: 100%; border-radius: 1rem;">
+    <div class="row g-0">
+       <div class="col-md-5 d-none d-md-flex p-4 text-white dashboard-page"
+    style="background: linear-gradient(135deg, #467cce, #0090c1);">
 
-        <!-- Password -->
-        <div class="relative">
-            <flux:input wire:model="password" :label="__('Password')" type="password" required
-                autocomplete="current-password" :placeholder="__('Password')" viewable />
+    <div class="d-flex flex-column align-items-center justify-content-center w-100 text-center">
+        <img src="{{ asset('assets/img/pps.png') }}" 
+             alt="Logo Papua Selatan"
+             class="img-fluid mb-3" 
+             style="max-height: 250px; width: auto;">
 
-            @if (Route::has('password.request'))
-                <flux:link class="absolute end-0 top-0 text-sm" :href="route('password.request')" wire:navigate>
-                    {{ __('Lupa Password?') }}
-                </flux:link>
-            @endif
+        <h4 class=" mb-0 fs-6">
+            Website Profile Bapperida Provinsi Papua Selatan
+        </h4>
+    </div>
+    </div>
+        <div class="col-md-7 p-5">
+            <div class="text-center mb-4">
+                <h3 class="fw-bold display-6">Masuk</h3>
+                <p class="text-muted">Lanjutkan dengan Akun Anda</p>
+            </div>
+
+            <!-- Tambahkan wire:submit.prevent -->
+            <form wire:submit.prevent="login">
+                <div class="mb-3">
+                    <label for="email" class="form-label visually-hidden">Alamat Email</label>
+                    <input type="email" wire:model="email" class="form-control form-control-lg"
+                        placeholder="Alamat Email" required>
+                    @error('email')
+                        <div class="text-danger small mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="form-label visually-hidden">Kata Sandi</label>
+                    <input type="password" wire:model="password" class="form-control form-control-lg"
+                        placeholder="Kata Sandi" required>
+                    @error('password')
+                        <div class="text-danger small mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input type="checkbox" wire:model="remember" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">
+                            {{ __('Remember me') }}
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Ganti wire:click dengan type="submit" -->
+                <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold" data-test="login-button">
+                    <span wire:loading.remove wire:target="login">Login</span>
+                    <span wire:loading wire:target="login">
+                    </span>
+                </button>
+            </form>
+
+            <div class="text-center mt-3">
+                <a href="{{ route('home') }}" class="text-decoration-none text-muted small">Kembali Ke Homepage</a>
+            </div>
         </div>
-
-        <!-- Remember Me -->
-        <flux:checkbox wire:model="remember" :label="__('Ingatkan saya')" />
-
-        <div class="flex items-center justify-end">
-            <flux:button variant="primary" type="submit" class="w-full">{{ __('Log in') }}</flux:button>
-        </div>
-    </form>
-
-    @if (Route::has('register'))
-        <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-600 dark:text-zinc-400">
-            <span>{{ __('Belum punya account?') }}</span>
-            <flux:link :href="route('register')" wire:navigate>{{ __('Registrasi') }}</flux:link>
-        </div>
-    @endif
+    </div>
 </div>
+
+    

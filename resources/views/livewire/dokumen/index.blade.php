@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-center">
         <!-- Section Title -->
         <section id="team" class="team section w-100">
-            <div class="container section-title text-center" data-aos="fade-up">
+            <div class="container section-title text-center" data-aos="fade-up" wire:ignore>
                 <h2>DOKUMEN PUBLIK</h2>
                 <p>Dokumen yang telah di terbitkan oleh BAPPERIDA PPS</p>
             </div>
@@ -15,12 +15,12 @@
                     <div class="row gy-4">
                         <div class="col-6">
                             <input wire:model.live.debounce.500ms="searchDokumen" type="text" class="form-control"
-                                id="exampleFormControlInput1" placeholder="Cari Dokumen">
+                                id="exampleFormControlInput1" placeholder="Cari Dokumen....">
                         </div>
                         <div class="col-6">
                             <select wire:model.live="filterBidang" class="form-select"
                                 aria-label="Default select example">
-                                <option selected>-Semua Bidang-</option>
+                                <option selected value="">-Semua Bidang-</option>
                                 @foreach ($dataBidang as $bidang)
                                     <option value="{{ $bidang->id }}">{{ $bidang->nama_bidang }}</option>
                                 @endforeach
@@ -32,23 +32,21 @@
 
                 <div class="container">
                     @forelse ($dataDokumen as $dokumen)
-                        <div class="card shadow border-0 rounded-3 p-3">
+                        <div class="card shadow-sm border-0 rounded-3 p-3 mb-3">
                             <div class="row align-items-center g-4">
                                 <!-- Gambar -->
                                 <div class="col-md-3 text-center">
-                                    <img src="{{ Storage::url($dokumen->thumbnail_path) }}" alt="thumbnail file"
-                                        class="img-fluid" style="max-width:150px;">
+                                    {{-- <img src="{{ Storage::url($dokumen->thumbnail_path) }}" alt="thumbnail file"
+                                        class="img-fluid" style="max-width:150px;"> --}}
+                                    <div class="icon-box">
+                                        <i class="bi bi-journal-bookmark-fill" style="font-size:160px; color:#296cc5; text-shadow: 3px 3px 6px rgba(0,0,0,0.25); "></i>
+                                    </div>
                                 </div>
+                                
 
                                 <!-- Konten -->
                                 <div class="col-md-9">
                                     <h5 class="fw-bold mb-3 text-uppercase">{{ $dokumen->nama_dokumen }}</h5>
-
-                                    <div class="row mb-1">
-                                        <div class="col-3 col-md-2 fw-semibold">Kategori</div>
-                                        <div class="col-auto px-0">:</div>
-                                        <div class="col">RPJMD</div>
-                                    </div>
 
                                     <div class="row mb-1">
                                         <div class="col-3 col-md-2 fw-semibold">Bidang</div>
@@ -93,4 +91,8 @@
         </section>
     </div>
     <!-- Articles -->
+     <!-- Pagination -->
+    <div class="mb-4">
+        {{ $dataDokumen->links('vendor.livewire.bootstrap-pagination') }}
+    </div>
 </div>

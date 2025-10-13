@@ -11,7 +11,7 @@
         <div class="d-flex justify-content-between align-items-center mb-1 mt-4">
             <div class="row g-3">
                 <div class="col-lg-6">
-                    <input type="text" wire:model.live.debounce.500ms="search" placeholder="Cari kegiatan..."
+                    <input type="text" wire:model.live.debounce.500ms="search" placeholder="Cari Dokumen..."
                         class="form-control">
                 </div>
                 <div class="col-lg-6">
@@ -25,24 +25,25 @@
             </div>
             <a href="{{ route('admin.dokumenpublik.create') }}" class="btn btn-primary">
                 <i class="bi bi-plus-lg"></i>
-                <span>Tambah Jabatan</span>
+                <span>Tambah Dokumen</span>
             </a>
         </div>
 
         <div>
             {{-- Grid Card Dokumen --}}
-            <div class="row g-2">
+            <div class="row g-2 mt-3">
                 @forelse($dataDokumen as $dokumen)
                     <div class="col-md-3">
-                        <div class="h-100 shadow overflow-hidden rounded">
+                        <div class="h-100 shadow-sm overflow-hidden rounded">
                             {{-- Thumbnail --}}
-                            <div class="overflow-hidden" style="height: 300px;">
+                            <div class="overflow-hidden" style="height: 250px;">
                                 @if ($dokumen->thumbnail_path)
                                     <img src="{{ asset('storage/' . $dokumen->thumbnail_path) }}" class="card-img-top"
                                         alt="{{ $dokumen->nama_dokumen }}">
                                 @else
-                                    <img src="https://via.placeholder.com/400x200?text=No+Thumbnail"
-                                        class="card-img-top" alt="No Thumbnail">
+                                    <div class="icon-box text-center">
+                                        <i class="bi bi-journal-bookmark-fill" style="font-size:180px; color:#296cc5; text-shadow: 3px 3px 6px rgba(0,0,0,0.25); "></i>
+                                    </div>
                                 @endif
                             </div>
 
@@ -78,5 +79,9 @@
                 @endforelse
             </div>
         </div>
+        <!-- Pagination -->
+    </div>
+    <div class="mt-4 mb-4">
+        {{ $dataDokumen->links('vendor.livewire.bootstrap-pagination') }}
     </div>
 </div>

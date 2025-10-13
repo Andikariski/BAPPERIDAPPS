@@ -10,7 +10,7 @@
         <div class="d-flex justify-content-between align-items-center mb-1 mt-4">
             <div class="row g-3">
                 <div class="col-lg-4">
-                    <input type="text" wire:model.live.debounce.500ms="searchPegawai" placeholder="Cari kegiatan..."
+                    <input type="text" wire:model.live.debounce.500ms="searchPegawai" placeholder="Cari Pegawai..."
                         class="form-control">
                 </div>
                 <div class="col-lg-4">
@@ -32,7 +32,7 @@
             </div>
             <button type="button" class="btn btn-primary" wire:click="openTambahModal">
                 <i class="bi bi-plus-lg"></i>
-                <span>Tambah Jabatan</span>
+                <span>Tambah Pegawai</span>
             </button>
         </div>
 
@@ -150,6 +150,7 @@
             </x-slot>
         </x-modal>
     @endif
+    
     @if ($this->showModal)
         <x-modal :title="$modalTitle" :closeble="true" @click.self="$wire.closeModal()"
             @keydown.escape.window="$wire.closeModal()">
