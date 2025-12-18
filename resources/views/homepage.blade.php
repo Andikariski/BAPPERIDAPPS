@@ -236,14 +236,11 @@
             <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
-                        <h3>Call To Action</h3>
+                        <h3>Visi Misi</h3>
                         <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum.
+                            "TERWUJUDNYA PAPUA BANGKIT, MANDIRI & SEJAHTERA",sebagai dasar pembangunan Papua Selatan yang berkelanjutan dan berkeadilan dengan tetap terdepan dalam mempertahankan alam & budaya sebagai aset bagi kehidupan seluruh masyarakat Papua Selatan
                         </p>
-                        <a class="cta-btn" href="#">Call To Action</a>
+                        <a class="cta-btn" href="#">Beranda</a>
                     </div>
                 </div>
             </div>

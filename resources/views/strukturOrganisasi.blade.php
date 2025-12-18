@@ -9,7 +9,7 @@
             <div class="row align-items-center">
                 <!-- Foto -->
                 <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/img/strukturOrganisasi.jpg" class="" alt="Foto Pimpinan"
+                    <img src="assets/img/SOTK.jpg" class="" alt="Foto Pimpinan"
                         style="max-width: 75%;" />
                 </div>
             </div>

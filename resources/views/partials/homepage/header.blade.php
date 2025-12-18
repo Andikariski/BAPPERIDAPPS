@@ -11,7 +11,7 @@
                 <li>
                     <a href="{{ route('home') }}" class="active">Beranda<br /></a>
                 </li>
-                <li><a href="#kata-pengantar">Kata Pengantar</a></li>
+
                 {{-- <li><a href="{{ route('blog.index') }}">Blog</a></li> --}}
                 <li class="dropdown">
                     <a href="#"><span>Tentang</span>
@@ -34,7 +34,7 @@
 
                 <li><a href="{{ route('dokumenpublik') }}">Dokumen Publik</a></li>
 
-                <li><a href="#about">Sejarah Bapperida</a></li>
+
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
