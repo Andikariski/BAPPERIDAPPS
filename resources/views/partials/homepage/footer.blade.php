@@ -14,6 +14,7 @@
               <a href=""><i class="bi bi-facebook"></i></a>
               <a href=""><i class="bi bi-instagram"></i></a>
               {{-- <a href=""><i class="bi bi-linkedin"></i></a> --}}
+              <a href="{{ route('login') }}" class="btn-getstarted" ><i class="bi bi-box-arrow-in-right"></i></a>
             </div>
           </div>
 

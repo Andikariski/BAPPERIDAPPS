@@ -11,7 +11,7 @@
                 <li>
                     <a href="{{ route('home') }}" class="active">Beranda<br /></a>
                 </li>
-                <li><a href="#kata-pengantar">Kata Pengantar</a></li>
+
                 {{-- <li><a href="{{ route('blog.index') }}">Blog</a></li> --}}
                 <li class="dropdown">
                     <a href="#"><span>Tentang</span>
@@ -34,12 +34,12 @@
 
                 <li><a href="{{ route('dokumenpublik') }}">Dokumen Publik</a></li>
 
-                <li><a href="#about">Sejarah Bapperida</a></li>
+
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="{{ route('login') }}">Masuk</a>
+        {{-- <a class="btn-getstarted" href="{{ route('login') }}">Masuk</a> --}}
         {{-- <a href="{{ route('login') }}" class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"> Log in</a> --}}
     </div>
 </header>

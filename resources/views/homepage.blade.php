@@ -236,14 +236,11 @@
             <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
-                        <h3>Call To Action</h3>
+                        <h3>Visi Misi</h3>
                         <p>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum.
+                            "TERWUJUDNYA PAPUA BANGKIT, MANDIRI & SEJAHTERA",sebagai dasar pembangunan Papua Selatan yang berkelanjutan dan berkeadilan dengan tetap terdepan dalam mempertahankan alam & budaya sebagai aset bagi kehidupan seluruh masyarakat Papua Selatan
                         </p>
-                        <a class="cta-btn" href="#">Call To Action</a>
+                        <a class="cta-btn" href="#">Beranda</a>
                     </div>
                 </div>
             </div>
@@ -308,26 +305,26 @@
 
                 <div class="col-lg-8">
                   <h4 class="text-center m-3">Buku Digital Tamu</h4>
-                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                    <form action="" method="" class="php-email-form" data-aos="fade-up"
                         data-aos-delay="200">
                         <div class="row gy-4">
                             <div class="col-md-6">
                                 <input type="text" name="name" class="form-control" placeholder="Your Name"
-                                    required="" />
+                                     />
                             </div>
 
                             <div class="col-md-6">
                                 <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                    required="" />
+                                    />
                             </div>
 
                             <div class="col-md-12">
                                 <input type="text" class="form-control" name="subject" placeholder="Subject"
-                                    required="" />
+                                     />
                             </div>
 
                             <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                <textarea class="form-control" name="message" rows="6" placeholder="Message" ></textarea>
                             </div>
 
                             <div class="col-md-12 text-center">
@@ -337,7 +334,7 @@
                                     Your message has been sent. Thank you!
                                 </div>
 
-                                <button type="submit" disabled>Send Message</button>
+                                <button type="submit" id="testAlert">Kirim</button>
                             </div>
                         </div>
                     </form>
@@ -353,5 +350,16 @@
         <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.getElementById('testAlert').addEventListener('click', function() {
+            Swal.fire({
+                title: 'Segera Hadir.!',
+                text: 'Fitur Masih Dalam Tahap Pengambangan.',
+                icon: 'warning',
+                confirmButtonText: 'OK'
+                });
+            });
+        </script>
     @endpush
 </x-layouts.public>
