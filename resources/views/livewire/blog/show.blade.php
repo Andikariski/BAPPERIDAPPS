@@ -1,5 +1,16 @@
-<div class="container py-5">
-    <nav aria-label="breadcrumb">
+@section('title', 'Admin | Berita')
+<style>
+    .breadcrumb-custom {
+    margin-top: -90px;
+    margin-bottom: 15px;
+}
+</style>
+<div class="container">
+    <div class="banner-crop-full">
+        <img src="{{ asset('assets/img/element5.png') }}" alt="Banner Pegawai">
+    </div>
+
+    <nav aria-label="breadcrumb" class="breadcrumb-custom">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ route('blog.index') }}">Blog</a></li>
@@ -7,7 +18,7 @@
         </ol>
     </nav>
 
-<div class="row g-4">
+<div class="row g-4 mb-4">
     <!-- Kolom Kiri -->
     <div class="col-md-8">
         <div class="card border-0 shadow-sm">
