@@ -1,6 +1,10 @@
 @section('title', 'Admin | Berita')
-<div class="container py-2">
-    <div class="container section-title mt-5" data-aos="fade-up" wire:ignore>
+
+<div class="container">
+    <div class="banner-crop-full">
+        <img src="{{ asset('assets/img/element5.png') }}" alt="Banner Pegawai">
+    </div>
+<div class="container section-title" data-aos="fade-up" wire:ignore>
         <h2>Berita</h2>
         <p>Segala Berita Tentang Kegiatan dan Aktivitas BAPPERIDA PPS</p>
     </div>
@@ -49,8 +53,8 @@
                 </div>
             </div>
         @empty
-            <div class="alert alert-warning d-flex align-items-center justify-content-center">
-                <p class="my-5">tidak ada berita ditemukan</p>
+            <div class="alert alert-warning d-flex align-items-center justify-content-center m-2">
+                <p class="my-5">Belum ada berita</p>
             </div>
         @endforelse
     </div>

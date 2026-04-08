@@ -29,6 +29,8 @@ Route::get('/strukturOrganisasi', function () {
 Route::get('/tupoksi', function () {
     return view('tupoksi');
 })->name('tupoksi');
+
+
 Route::get('/blog', \App\Livewire\Blog\Index::class)->name('blog.index');
 Route::get('/blog/{slug}', \App\Livewire\Blog\Show::class)->name('blog.show');
 
