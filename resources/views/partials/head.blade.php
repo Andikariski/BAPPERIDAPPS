@@ -1,7 +1,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>{{ $title ?? config('app.name') }}</title>
+<title>Admin Bapperida PPS</title>
 
 <link rel="icon" href="/pps.png" sizes="any">
 <link rel="icon" href="/pps.png" type="image/svg+xml">

@@ -1,14 +1,17 @@
 @section('title', 'Admin | Berita')
-<div class="container py-2">
-
+<div class="container">
+    <div class="banner-crop-full">
+        <img src="{{ asset('assets/img/element5.png') }}" alt="Banner Pegawai">
+    </div>
+    <div class="container section-title text-center" data-aos="fade-up" wire:ignore>
+                <h2>DOKUMEN PUBLIK</h2>
+                <p>Dokumen yang telah di terbitkan oleh BAPPERIDA PPS</p>
+            </div>
     <!-- Search & filtering -->
     <div class="d-flex justify-content-center">
         <!-- Section Title -->
         <section id="team" class="team section w-100">
-            <div class="container section-title text-center" data-aos="fade-up" wire:ignore>
-                <h2>DOKUMEN PUBLIK</h2>
-                <p>Dokumen yang telah di terbitkan oleh BAPPERIDA PPS</p>
-            </div>
+            
             <!-- End Section Title -->
             <div class="p-4">
                 <div class="container">

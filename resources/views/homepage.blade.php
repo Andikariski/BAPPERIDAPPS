@@ -2,12 +2,13 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section">
         <img src="assets/img/hero-bg-abstract.jpg" alt="" data-aos="fade-in" class="" />
+         {{-- <img src="assets/img/KPP.jpeg" alt="" data-aos="fade-in" class="" /> --}}
 
-        <div class="container">
-            <div class="row justify-content-center" data-aos="zoom-out">
+        <div class="container mt-5">
+            <div class="row justify-content-center mt-5" data-aos="zoom-out">
                 <div class="col-xl-7 col-lg-9 text-center">
-                    <h2>BADAN PERENCANAAN PEMBANGUNAN RISET DAN INOVASI DAERAH</h2>
-                    <p>PROVINSI PAPUA SELATAN</p>
+                    <h2 style="color: white"><strong>BADAN PERENCANAAN PEMBANGUNAN RISET DAN INOVASI DAERAH</strong></h2>
+                    <p  style="color: white">PROVINSI PAPUA SELATAN</p>
                 </div>
             </div>
             <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
@@ -108,6 +109,7 @@
     <!-- About Alt Section -->
     <section id="kata-pengantar" class="about-alt section">
         <div class="container">
+            <div class="card shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
             <div class="row align-items-center">
                 <!-- Foto -->
                 <div class="col-lg-4 col-md-5 text-center" data-aos="fade-up" data-aos-delay="100">
@@ -148,13 +150,14 @@
                     </p>
                 </div>
             </div>
+            </div>
         </div>
     </section>
     <!-- /About Alt Section -->
     <!-- Section Sejarah Bapperida -->
-    <section id="about" class="about section">
+    <section id="about" class="about section mt-4">
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
+        <div class="container section-title-breanda" data-aos="fade-up">
             <h2>Sejarah Bapperida PPS<br /></h2>
             <p>
                 Sejarah Singkat Tentang Berdirinya Bapperida Provinsi Papua Selatan
@@ -188,9 +191,9 @@
     </section>
 
     <!-- Clients Section -->
-    <section id="about" class="clients section light-background about">
+    <section id="about" class="clients section light-background about mt-5">
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
+        <div class="container section-title-breanda" data-aos="fade-up">
             <h2>MITRA BAPPERIDA PPS</h2>
             <p>
                 Kementrian atau Lembaga yang menjadi acuan dalam menjalankan tugas
@@ -253,7 +256,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section">
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
+        <div class="container section-title-breanda" data-aos="fade-up">
             <h2>Kontak & Informasi</h2>
             <p>
                 Detail kontak dan alamat pada website adalah resmi milik Bapperida
