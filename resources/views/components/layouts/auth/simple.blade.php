@@ -24,7 +24,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
     <head>
-        @vite(['resources/css/app.scss', 'resources/js/app.js'])
+        @vite(['resources/css/app.scss'])
         @include('partials.head')
     </head>
     <body class="min-h-screen bg-primary antialiased bg-light-subtle">
