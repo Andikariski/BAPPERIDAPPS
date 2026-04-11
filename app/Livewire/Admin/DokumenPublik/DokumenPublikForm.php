@@ -93,7 +93,6 @@ class DokumenPublikForm extends Component
             'file_name' => $fileData['name'],
             'file_type' => $fileData['type'],
             'file_size' => $fileData['size'],
-            'thumbnail_path' => $fileData['thumbnail'] ?? null,
         ]);
     }
 
@@ -113,16 +112,12 @@ class DokumenPublikForm extends Component
             if (Storage::disk('public')->exists($dokumen->file_path)) {
                 Storage::disk('public')->delete($dokumen->file_path);
             }
-            if ($dokumen->thumbnail_path && Storage::disk('public')->exists($dokumen->thumbnail_path)) {
-                Storage::disk('public')->delete($dokumen->thumbnail_path);
-            }
 
             $fileData = $this->uploadFile();
             $data['file_path'] = $fileData['path'];
             $data['file_name'] = $fileData['name'];
             $data['file_type'] = $fileData['type'];
             $data['file_size'] = $fileData['size'];
-            $data['thumbnail_path'] = $fileData['thumbnail'] ?? null;
         }
 
         $dokumen->update($data);
@@ -145,18 +140,7 @@ class DokumenPublikForm extends Component
             'name' => $originalName,
             'type' => $extension,
             'size' => $fileSize,
-            'thumbnail' => null
         ];
-
-        // Generate thumbnail untuk PDF
-        if (strtolower($extension) === 'pdf') {
-            $thumbnailService = app(\App\services\PdfThumbnailService::class);
-            $thumbnailPath = $thumbnailService->generateThumbnail($path);
-
-            if ($thumbnailPath) {
-                $result['thumbnail'] = $thumbnailPath;
-            }
-        }
 
         return $result;
     }
