@@ -128,10 +128,16 @@ new #[Layout('components.layouts.auth')] class extends Component {
                     </div>
                 </div>
 
-                <!-- Ganti wire:click dengan type="submit" -->
-                <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold" data-test="login-button">
-                    <span wire:loading.remove wire:target="login">Login</span>
-                    <span wire:loading wire:target="login">
+                 <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold" data-test="login-button" wire:loading.attr="disabled" wire:target="login">
+                    {{-- Saat tidak loading --}}
+                    <span wire:loading.remove wire:target="login">
+                        Login
+                    </span>
+
+                    {{-- Saat loading --}}
+                    <span wire:loading wire:target="login" style="display:none;">
+                        <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                        Memproses..
                     </span>
                 </button>
             </form>
@@ -142,5 +148,3 @@ new #[Layout('components.layouts.auth')] class extends Component {
         </div>
     </div>
 </div>
-
-    
