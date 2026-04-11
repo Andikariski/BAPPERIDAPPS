@@ -14,5 +14,5 @@
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
 
 {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-@vite(['resources/css/app.css', 'resources/js/app.js','resources/js/admin.js'])
+@vite(['resources/css/app.css', 'resources/js/admin.js'])
 @fluxAppearance
