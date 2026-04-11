@@ -266,10 +266,11 @@
         <!-- End Section Title -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-                <iframe style="border: 0; width: 100%; height: 270px"
-                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d246.636446535281!2d140.39097595967576!3d-8.481565903536248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBapperida%20papua%20selatan!5e0!3m2!1sid!2sid!4v1756768299034!5m2!1sid!2sid"
+                <iframe style="border: 10px; width: 100%; height: 270px"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.206763073547!2d140.3398136754588!3d-8.282209891752244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x69b53f0026cb7cf1%3A0xbeb5ca9f9dc23560!2sBapperida%20Provinsi%20Papua%20Selatan!5e0!3m2!1sid!2sid!4v1775905178319!5m2!1sid!2sid"
                     frameborder="0" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
             <!-- End Google Maps -->
 
@@ -280,8 +281,7 @@
                         <div>
                             <h3>Alamat</h3>
                             <p>
-                                Jl Trikora, Kec. Merauke, Kabupaten Merauke, Papua Selatan
-                                99614
+                                Jl. Merauke – Kurik KM. 61 Kampung Salor Indah, Distrik Kurik, kab. Merauke, Provinsi Papua Selatan, 99646
                             </p>
                         </div>
                     </div>
@@ -291,7 +291,7 @@
                         <i class="bi bi-telephone flex-shrink-0"></i>
                         <div>
                             <h3>Kontak</h3>
-                            <p>+1 5589 55488 55</p>
+                            <p>+62 xxx xxx xxx</p>
                         </div>
                     </div>
                     <!-- End Info Item -->
@@ -312,22 +312,22 @@
                         data-aos-delay="200">
                         <div class="row gy-4">
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap"
                                      />
                             </div>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                <input type="email" class="form-control" name="email" placeholder="Email"
                                     />
                             </div>
 
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                <input type="text" class="form-control" name="subject" placeholder="Subjek"
                                      />
                             </div>
 
                             <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message" ></textarea>
+                                <textarea class="form-control" name="message" rows="6" placeholder="Pesan" ></textarea>
                             </div>
 
                             <div class="col-md-12 text-center">

@@ -150,7 +150,7 @@ class DokumenPublikForm extends Component
 
         // Generate thumbnail untuk PDF
         if (strtolower($extension) === 'pdf') {
-            $thumbnailService = app(\App\Services\PdfThumbnailService::class);
+            $thumbnailService = app(\App\services\PdfThumbnailService::class);
             $thumbnailPath = $thumbnailService->generateThumbnail($path);
 
             if ($thumbnailPath) {
